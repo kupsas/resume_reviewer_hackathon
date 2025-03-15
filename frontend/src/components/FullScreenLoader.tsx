@@ -1,45 +1,27 @@
 'use client';
 
-export default function FullScreenLoader() {
+const FullScreenLoader = () => {
   return (
-    <div className="fixed inset-0 bg-futuristic-dark/80 backdrop-blur-sm z-50 flex items-center justify-center">
-      <div className="relative flex items-center justify-center">
-        {/* Outer ring */}
-        <div 
-          className="absolute border-4 border-futuristic-accent/20 rounded-full animate-spin-slow"
-          style={{ width: '120px', height: '120px' }}
-        />
-        
-        {/* Middle ring */}
-        <div 
-          className="absolute border-4 border-t-futuristic-accent border-r-futuristic-accent/50 border-b-futuristic-accent/30 border-l-futuristic-accent/10 rounded-full animate-spin-reverse"
-          style={{ width: '80px', height: '80px' }}
-        />
-        
-        {/* Inner ring */}
-        <div 
-          className="absolute border-2 border-futuristic-accent/40 rounded-full animate-spin-slow"
-          style={{ width: '50px', height: '50px' }}
-        />
-        
-        {/* Center dot */}
-        <div className="absolute w-4 h-4 bg-futuristic-accent rounded-full animate-pulse-glow" />
-        
-        {/* Loading text */}
-        <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 whitespace-nowrap text-center">
-          <p className="text-futuristic-accent text-xl font-semibold mb-3">
-            Analyzing Resume
-          </p>
-          <div className="flex justify-center gap-2">
-            <div className="w-2 h-2 bg-futuristic-accent rounded-full animate-bounce" 
-                 style={{ animationDelay: '0s' }} />
-            <div className="w-2 h-2 bg-futuristic-accent rounded-full animate-bounce" 
-                 style={{ animationDelay: '0.2s' }} />
-            <div className="w-2 h-2 bg-futuristic-accent rounded-full animate-bounce" 
-                 style={{ animationDelay: '0.4s' }} />
+    <div className="fixed inset-0 bg-gray-900/80 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4 shadow-xl border border-gray-700">
+        <div className="flex flex-col items-center space-y-4">
+          <div className="relative">
+            <div className="w-16 h-16 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+            <div className="absolute inset-0 w-16 h-16 border-4 border-purple-400 border-b-transparent rounded-full animate-spin-slow"></div>
+          </div>
+          
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-blue-400 mb-2">
+              Analyzing Your Resume
+            </h3>
+            <p className="text-gray-400">
+              Our AI is reviewing your resume and preparing detailed feedback...
+            </p>
           </div>
         </div>
       </div>
     </div>
   );
-} 
+};
+
+export default FullScreenLoader; 

@@ -4,21 +4,20 @@ import { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 interface ResumeUploadProps {
-  onFileSelect: (file: File) => void;
+  onFileChange: (file: File) => void;
+  currentFile: File | null;
 }
 
-export default function ResumeUpload({ onFileSelect }: ResumeUploadProps) {
-  const [fileName, setFileName] = useState<string>('');
+const ResumeUpload: React.FC<ResumeUploadProps> = ({ onFileChange, currentFile }) => {
+  const [isDragging, setIsDragging] = useState(false);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
-    const file = acceptedFiles[0];
-    if (file) {
-      setFileName(file.name);
-      onFileSelect(file);
+    if (acceptedFiles.length > 0) {
+      onFileChange(acceptedFiles[0]);
     }
-  }, [onFileSelect]);
+  }, [onFileChange]);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
       'application/pdf': ['.pdf'],
@@ -28,47 +27,51 @@ export default function ResumeUpload({ onFileSelect }: ResumeUploadProps) {
   });
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-6">
-      <div
-        {...getRootProps()}
-        className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors
-          ${isDragActive ? 'border-blue-500 bg-blue-50' : 'border-gray-300 hover:border-blue-400'}`}
-      >
-        <input {...getInputProps()} />
-        <div className="space-y-4">
-          <div className="flex justify-center">
-            <svg
-              className={`w-12 h-12 ${isDragActive ? 'text-blue-500' : 'text-gray-400'}`}
-              fill="none"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
-              />
-            </svg>
-          </div>
-          
-          <div className="text-lg">
-            {fileName ? (
-              <p className="text-blue-600">Selected: {fileName}</p>
-            ) : (
+    <div
+      {...getRootProps()}
+      className={`
+        border-2 border-dashed rounded-lg p-6 text-center cursor-pointer
+        transition-colors duration-200 ease-in-out
+        ${isDragging ? 'border-blue-500 bg-blue-500/10' : 'border-gray-600 hover:border-gray-500'}
+      `}
+      onDragEnter={() => setIsDragging(true)}
+      onDragLeave={() => setIsDragging(false)}
+      onDrop={() => setIsDragging(false)}
+    >
+      <input {...getInputProps()} />
+      <div className="space-y-4">
+        <div className="flex justify-center">
+          <svg
+            className="w-12 h-12 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+            />
+          </svg>
+        </div>
+        <div>
+          <p className="text-lg font-medium">
+            {currentFile ? (
               <>
-                <p className="font-semibold">
-                  Drop your resume here or click to browse
-                </p>
-                <p className="text-sm text-gray-500 mt-2">
-                  Supports PDF and DOCX files
-                </p>
+                Selected file: <span className="text-blue-400">{currentFile.name}</span>
               </>
+            ) : (
+              'Drop your resume here or click to browse'
             )}
-          </div>
+          </p>
+          <p className="text-sm text-gray-400 mt-2">
+            Supports PDF and DOCX files
+          </p>
         </div>
       </div>
     </div>
   );
-} 
+};
+
+export default ResumeUpload; 
