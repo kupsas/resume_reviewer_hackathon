@@ -1,0 +1,57 @@
+JOHN DOE
+Software Engineer
+john.doe@email.com | (555) 123-4567 | San Francisco, CA
+LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe
+
+SUMMARY
+Experienced software engineer with 5 years of expertise in full-stack development, cloud computing, and AI/ML technologies. Proven track record of delivering scalable solutions and leading cross-functional teams.
+
+EXPERIENCE
+
+Senior Software Engineer | TechCorp Inc. | Jan 2021 - Present
+- Led development of cloud-based microservices architecture, improving system reliability by 99.9%
+- Implemented AI-powered recommendation engine, increasing user engagement by 45%
+- Mentored junior developers and conducted code reviews for team of 8 engineers
+- Developed and maintained RESTful APIs serving 1M+ daily requests
+
+Software Engineer | StartupXYZ | Mar 2019 - Dec 2020
+- Built responsive web applications using React.js and Node.js
+- Optimized database queries, reducing response time by 60%
+- Implemented CI/CD pipeline using Jenkins and Docker
+- Collaborated with product team to define technical requirements
+
+EDUCATION
+
+Bachelor of Science in Computer Science
+University of California, Berkeley | 2015-2019
+- GPA: 3.8/4.0
+- Relevant Coursework: Data Structures, Algorithms, Machine Learning, Cloud Computing
+
+SKILLS
+
+Programming Languages:
+- Python, JavaScript, TypeScript, Java
+- SQL, MongoDB
+
+Technologies:
+- React.js, Node.js, Express.js
+- Docker, Kubernetes
+- AWS, GCP
+- Git, Jenkins
+
+PROJECTS
+
+AI Resume Analyzer | 2023
+- Developed ML model to analyze and score resumes
+- Implemented using Python, FastAPI, and OpenAI
+- Achieved 90% accuracy in recommendations
+
+Cloud Storage System | 2022
+- Built distributed file storage system
+- Implemented using Go and AWS services
+- Handles 10TB+ of data with 99.99% uptime
+
+CERTIFICATIONS
+- AWS Certified Solutions Architect
+- Google Cloud Professional Developer
+- Docker Certified Associate 

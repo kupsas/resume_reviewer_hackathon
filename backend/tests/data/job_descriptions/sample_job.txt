@@ -1,0 +1,45 @@
+Software Engineer
+Location: Remote/San Francisco
+
+About the Role:
+We are seeking a talented Software Engineer to join our growing team. The ideal candidate will have a strong foundation in software development and a passion for building scalable applications.
+
+Required Skills:
+- 3+ years of experience in software development
+- Proficiency in Python, JavaScript, or similar languages
+- Experience with web frameworks (Django, Flask, or FastAPI)
+- Strong understanding of RESTful APIs
+- Experience with SQL and NoSQL databases
+- Version control with Git
+
+Responsibilities:
+- Design and implement new features for our cloud-based platform
+- Write clean, maintainable, and efficient code
+- Collaborate with cross-functional teams
+- Participate in code reviews and technical discussions
+- Debug and fix production issues
+- Write and maintain technical documentation
+
+Qualifications:
+- Bachelor's degree in Computer Science or related field
+- Strong problem-solving abilities
+- Excellent communication skills
+- Experience with cloud platforms (AWS, GCP, or Azure)
+- Knowledge of microservices architecture
+- Understanding of CI/CD practices
+
+Nice to Have:
+- Experience with React/Next.js
+- Knowledge of container technologies (Docker, Kubernetes)
+- Contributions to open-source projects
+- Experience with machine learning or AI technologies
+
+Benefits:
+- Competitive salary
+- Health, dental, and vision insurance
+- Flexible work hours
+- Remote work options
+- Professional development budget
+- Stock options
+
+We are an equal opportunity employer and value diversity at our company. 

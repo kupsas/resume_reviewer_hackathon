@@ -1,0 +1,168 @@
+Below is a proposed Product Requirements Document (PRD) in plain text format. 
+
+---
+
+# Product Requirements Document (PRD)
+
+## 1. Overview
+The AI-powered Resume Reviewer Website will guide users in creating more effective resumes by analyzing and comparing their resume content against best practices and specific job requirements. Users can optionally provide a job description to receive targeted, section-wise feedback. The product will support job seekers across all industries, leveraging AI capabilities for robust analysis and actionable feedback.
+
+## 2. Goals & Objectives
+1. **Help users craft better resumes** by providing clear and constructive feedback.  
+2. **Streamline the resume review process** with automated suggestions tailored to individual backgrounds and desired roles.  
+3. **Offer easy-to-understand scoring** so users can gauge their resume's effectiveness.  
+4. **Provide an integrated experience** including LinkedIn profile analysis, job description matching, and ATS compatibility checks.
+
+## 3. Key Features
+
+### 3.1 Job Description Alignment
+- **Optional Input**: Users can provide a job description along with their resume.  
+- **Alignment Analysis**: The platform highlights sections of the resume that align or diverge from the job requirements.  
+- **Actionable Suggestions**: If discrepancies are found, the AI offers targeted improvements (e.g., suggested keywords, rephrased accomplishments).
+
+### 3.2 Resume Formatting Guidance
+- **Format Recommendation**: Suggest the most suitable format (chronological, functional, or combination) based on the user's work history, skill set, and target industry.  
+- **Section-by-Section Breakdown**: Outline best practices for each resume section (e.g., Summary, Experience, Education, Skills).
+
+### 3.3 Automated Bullet Points
+- **AI-Generated Suggestions**: For users with incomplete or generic resume lines, the system can generate improved bullet points reflecting both their experience and the target job's needs.  
+- **Customization & Editing**: Users can refine or edit these bullet points before finalizing their resumes.
+
+### 3.4 Security and Data Privacy
+- **No Data Storage**: The application operates in a stateless manner, processing resumes in real-time without storing any user data.
+- **Secure Processing**: All resume analysis is performed in-memory and data is discarded after the session.
+- **Transparency**: Clear communication to users about the no-storage policy.
+
+### 3.5 Resume Strength Score
+- **Scoring Algorithm**: Assign a score based on factors such as keyword relevance, clarity, structure, and format adherence.  
+- **Progress Tracking**: Show improvements or changes in the score after users implement suggestions.
+
+### 3.6 Extended Integrations
+- **LinkedIn Profile Analysis**: Pull relevant data or skills from a user's LinkedIn profile to enhance resume content.  
+- **Job Description Matching**: Compare the user's resume directly to common keywords and requirements in job listings.  
+- **ATS Compatibility Checks**: Evaluate whether the resume meets formatting and content standards typically required by Applicant Tracking Systems.
+
+## 4. User Journey
+
+1. **Upload/Creation**: User uploads an existing resume.
+2. **Optional Job Description**: User inputs a job description (optional)
+3. **Analysis**: System performs alignment checks, format recommendations, bullet point generation, and scoring.  
+4. **Feedback & Suggestions**:  
+   - **Section-Wise Review**: Summary, Experience, Education, Skills, etc.  
+   - **Alignment Insights**: Specific highlights showing how well each section matches the job requirements.  
+   - **Improvement Opportunities**: Tailored bullet points, rephrasing suggestions, and formatting enhancements.  
+5. **Score Report**: Display an overall resume strength score with a breakdown of contributing factors.  
+6. **Iteration**: User may revise sections and re-check their resume for an updated score.  
+
+## 5. Functional Requirements
+
+1. **Data Input**  
+   - Resume upload (PDF, DOCX, or text) for real-time processing
+   - Optional job description input (text)
+   - All processing done in-memory with no data persistence
+
+2. **AI Integration**  
+   - Use OpenAI's API for content analysis and generation.  
+   - Implement a rules-based system or additional ML models for scoring.  
+
+3. **Performance**  
+   - The analysis should complete within acceptable timeframes (e.g., under 30 seconds for standard resumes).  
+   - System must handle multiple concurrent users without noticeable slowdowns.  
+
+4. **Security**  
+   - Stateless application design
+   - No storage of user data or resumes
+   - All processing done in secure memory
+   - Basic compliance with data protection regulations where applicable
+
+5. **User Interface**  
+   - Simple, intuitive layout for uploading resumes and receiving feedback.  
+   - Clear visual indicators for alignment or discrepancy with job descriptions.  
+   - Interactive bullet point suggestions (copy, replace, edit).  
+
+6. **Scoring Mechanism**  
+   - Configurable weighting for alignment, formatting, clarity, and content depth.  
+   - Provide a straightforward percentile or numerical score.  
+
+7. **ATS Compatibility Checks**  
+   - Evaluate for appropriate keyword density, standard headings, consistent formatting.  
+   - Highlight potential ATS reading issues (e.g., incorrect file type, unusual layouts).  
+
+8. **Reporting & Documentation**  
+   - Optional download of feedback report in PDF or text format.  
+   - High-level analytics for site administrators (e.g., average user score, most common improvement suggestions).
+
+## 6. Non-Functional Requirements
+
+1. **Reliability**  
+   - Maintain consistent uptime
+   - Ensure reliable real-time processing
+   - Clear error handling for failed analyses
+2. **Scalability**  
+   - Handle multiple concurrent users
+   - Efficient memory management for parallel processing
+3. **Maintainability**  
+   - Code should be modular and well-documented
+   - Clear separation of processing components
+4. **Usability**  
+   - Intuitive user flows
+   - Clear indication of no-storage policy
+   - Responsive design for mobile and desktop
+
+## 8. Open Questions / Assumptions
+- Assumption: Detailed user segmentation (like years of experience or industry) is not mandatory unless gleaned from the resume itself.  
+- Assumption: No advanced collaboration tools (e.g., multiple reviewers) are needed at this time.  
+
+---
+
+## 9. Implementation Status (Current)
+
+### Completed Features
+1. **Core Infrastructure**
+   - Next.js frontend with TypeScript and Tailwind CSS
+   - FastAPI backend with Python
+   - OpenAI API integration for resume analysis
+
+2. **User Interface**
+   - Modern, futuristic design with dark theme
+   - Drag-and-drop resume upload (PDF, DOCX)
+   - Job description input field
+   - Loading animations and error handling
+   - Responsive layout
+
+3. **Analysis Features**
+   - Resume content extraction and processing
+   - Job description matching
+   - Structured analysis output with:
+     - Overall match score
+     - Key strengths identification
+     - Areas for improvement
+     - Section-by-section analysis
+     - ATS compatibility assessment
+
+4. **Security & Performance**
+   - Stateless processing
+   - No data persistence
+   - Real-time analysis
+   - CORS security implementation
+
+### Pending Features
+1. **Extended Analysis**
+   - LinkedIn profile integration
+   - Automated bullet point generation
+   - Format recommendations
+   - Progress tracking
+
+2. **Additional Features**
+   - Feedback report download
+   - Admin analytics
+   - Multiple resume comparison
+   - Detailed ATS compatibility checks
+
+3. **UI Enhancements**
+   - Mobile responsiveness optimization
+   - Interactive bullet point editing
+   - Progress tracking visualization
+   - Loading animation refinements
+
+---
