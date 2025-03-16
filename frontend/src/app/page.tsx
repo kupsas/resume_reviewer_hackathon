@@ -30,9 +30,14 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch('http://localhost:8001/api/resume/analyze', {
+      const response = await fetch('http://localhost:8000/api/resume/analyze', {
         method: 'POST',
         body: formData,
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
       });
 
       if (!response.ok) {
