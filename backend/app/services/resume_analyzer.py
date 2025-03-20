@@ -1,346 +1,355 @@
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any, Tuple
 import docx
 from PyPDF2 import PdfReader
-from openai import OpenAI
+from openai import AsyncOpenAI
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import json
+import uuid
+import asyncio
+import re
+from .openai_service import RESUME_ANALYSIS_FUNCTIONS, JOB_MATCH_FUNCTIONS
+from app.core.config import settings
+from .resume_formats import (
+    POINT_EXTRACTION_FORMAT,
+    RESUME_ANALYSIS_FORMAT,
+    JOB_MATCH_FORMAT,
+    INTEGRATED_IMPROVEMENTS_FORMAT
+)
 
 load_dotenv()
 
 class ResumeAnalyzer:
-    def __init__(self):
-        self.openai_api_key = os.getenv("OPENAI_API_KEY")
-        if not self.openai_api_key:
-            raise ValueError("OpenAI API key not found in environment variables")
-        self.client = OpenAI(api_key=self.openai_api_key)
-
-    def extract_text_from_docx(self, file_path: str) -> str:
-        """Extract text from a DOCX file."""
-        try:
-            doc = docx.Document(file_path)
-            return "\n".join([paragraph.text for paragraph in doc.paragraphs])
-        except Exception as e:
-            raise Exception(f"Error extracting text from DOCX: {str(e)}")
-
-    def extract_text_from_pdf(self, file_path: str) -> str:
-        """Extract text from a PDF file."""
-        try:
-            reader = PdfReader(file_path)
-            text = ""
-            for page in reader.pages:
-                text += page.extract_text()
-            if not text.strip():
-                raise Exception("No text could be extracted from the PDF")
-            return text
-        except Exception as e:
-            raise Exception(f"Error extracting text from PDF: {str(e)}")
-
-    def analyze_resume(self, resume_text: str, job_description: Optional[str] = None) -> Dict:
-        """Analyze resume content using OpenAI API."""
+    """
+    A class to analyze resumes using OpenAI's GPT models.
+    Provides functionality for resume analysis, job matching, and generating improvements.
+    """
+    
+    def __init__(self, openai_client: Optional[AsyncOpenAI] = None):
+        """Initialize the ResumeAnalyzer with OpenAI client and configurations."""
+        # Initialize OpenAI client
+        self.client = openai_client or AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
         
-        base_scoring_criteria = """
-Resume Strength Scoring Criteria:
-- Technical Skills (20 points): Quality and relevance of technical abilities
-- Experience Quality (20 points): Impact and depth of work history
-- Education (20 points): Academic background and certifications
-- Resume Format (20 points): Structure, readability, and organization
-- Overall Presentation (20 points): Professional impression and clarity
-"""
+        # Model configuration - using standard OpenAI models
+        self.model = settings.OPENAI_MODEL  # Use model from settings
+        
+        # Initialize token usage tracking
+        self.token_usage = {
+            "total_tokens": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_cost": 0
+        }
+        
+        # System messages for different analyses
+        self.system_messages = {
+            "analysis": """You are an expert resume analyzer with deep experience in technical recruitment and career coaching. 
+Analyze each bullet point for:
+1. STAR Format components
+2. Metrics and quantifiable achievements
+3. Technical depth and complexity
+4. Individual vs team contributions
+Return detailed analysis in JSON format.""",
 
-        job_match_criteria = """
-Job Match Scoring Criteria:
-- Skills Match (25 points): Alignment with required technical skills
-- Experience Match (25 points): Match with required experience level and type
-- Education Match (20 points): Match with educational requirements
-- Requirements Match (20 points): Coverage of specific job requirements
-- Overall Fit (10 points): General suitability for the role
-""" if job_description else ""
+            "job_match": """Expert technical recruiter analyzing resume-job fit. Focus on:
+1. Technical skills alignment
+2. Experience relevance
+3. Project complexity match
+4. Missing critical requirements
+Return detailed JSON analysis with specific examples."""
+        }
 
-        # Prepare the prompt based on whether a job description is provided
-        if job_description:
-            prompt = f"""Analyze this resume against the job description and provide detailed feedback. 
-Follow this structured format strictly:
+    # ===== Core Analysis Methods =====
 
-{base_scoring_criteria}
-
-{job_match_criteria}
-
-Resume:
-{resume_text}
-
-Job Description:
-{job_description}
-
-Provide your analysis in exactly this format (do not deviate):
-
-1. RESUME STRENGTH CATEGORIES:
-Technical Skills: [number]
-Experience Quality: [number]
-Education: [number]
-Resume Format: [number]
-Overall Presentation: [number]
-
-2. RESUME STRENGTH DETAILS:
-Technical Skills:
-• [Detailed explanation of technical skills score]
-• [Specific examples from resume]
-
-Experience Quality:
-• [Detailed explanation of experience quality score]
-• [Notable achievements or areas for improvement]
-
-Education:
-• [Detailed explanation of education score]
-• [Analysis of qualifications relevance]
-
-Resume Format:
-• [Detailed explanation of format score]
-• [Specific formatting feedback]
-
-Overall Presentation:
-• [Detailed explanation of presentation score]
-• [Specific suggestions if any]
-
-3. FORMAT SUGGESTIONS:
-[[ DO NOT INCLUDE THIS IN OUTPUT - this is for context only
-The STAR format helps showcase achievements effectively:
-- Situation: Set the context of the challenge or opportunity
-- Task: Describe the specific responsibility or requirement
-- Action: Detail the steps you took to address it
-- Result: Quantify the impact with specific metrics (e.g., increased efficiency by 25%, reduced costs by $100K)]]
-
-Examples from your resume to rewrite in STAR format (provide at least 3):
-• [Original example from resume]
-• [Improved example in STAR format]
-
-General Format Issues:
-• [Specific formatting issue and how to fix it]
-• [Grammar/punctuation issue and correction]
-• [Consistency issue and solution]
-
-4. KEY STRENGTHS (provide at least 3):
-- [Strength 1 with brief explanation]
-- [Strength 2 with brief explanation]
-- [Strength 3 with brief explanation]
-
-5. AREAS FOR IMPROVEMENT (provide at least 3):
-- [Area 1 with specific improvement suggestion]
-- [Area 2 with specific improvement suggestion]
-- [Area 3 with specific improvement suggestion]
-
-6. JOB MATCH CATEGORIES:
-Skills Match: [number]
-Experience Match: [number]
-Education Match: [number]
-Requirements Match: [number]
-Overall Fit: [number]
-
-7. JOB MATCH DETAILS:
-Skills Match:
-• [Detailed explanation of skills match score]
-• [Specific skills present and missing]
-
-Experience Match:
-• [Detailed explanation of experience match]
-• [Specific experience alignment points]
-
-Education Match:
-• [Detailed explanation of education match]
-• [Specific qualifications analysis]
-
-Requirements Match:
-• [Detailed explanation of requirements coverage]
-• [Key requirements met and gaps]
-
-Overall Fit:
-• [Detailed explanation of overall fit]
-• [Cultural and professional alignment]
-
-8. JOB-SPECIFIC RECOMMENDATIONS (provide at least 3):
-- [Recommendation 1 with specific action items]
-- [Recommendation 2 with specific action items]
-- [Recommendation 3 with specific action items]
-"""
-        else:
-            prompt = f"""Analyze this resume and provide detailed feedback.
-Follow this structured format strictly:
-
-{base_scoring_criteria}
-
-Resume:
-{resume_text}
-
-Provide your analysis in exactly this format (do not deviate):
-
-1. RESUME STRENGTH CATEGORIES:
-Technical Skills: [number]
-Experience Quality: [number]
-Education: [number]
-Resume Format: [number]
-Overall Presentation: [number]
-
-2. RESUME STRENGTH DETAILS:
-Technical Skills:
-• [Detailed explanation of technical skills score]
-• [Specific examples from resume]
-
-Experience Quality:
-• [Detailed explanation of experience quality score]
-• [Notable achievements or areas for improvement]
-
-Education:
-• [Detailed explanation of education score]
-• [Analysis of qualifications relevance]
-
-Resume Format:
-• [Detailed explanation of format score]
-• [Specific formatting feedback]
-
-Overall Presentation:
-• [Detailed explanation of presentation score]
-• [Specific suggestions if any]
-
-3. FORMAT SUGGESTIONS:
-[[ DO NOT INCLUDE THIS IN OUTPUT - this is for context only
-The STAR format helps showcase achievements effectively:
-- Situation: Set the context of the challenge or opportunity
-- Task: Describe the specific responsibility or requirement
-- Action: Detail the steps you took to address it
-- Result: Quantify the impact with specific metrics (e.g., increased efficiency by 25%, reduced costs by $100K)]]
-
-Examples from your resume to rewrite in STAR format (provide at least 3):
-• [Original example from resume]
-• [Improved example in STAR format]
-
-General Format Issues:
-• [Specific formatting issue and how to fix it]
-• [Grammar/punctuation issue and correction]
-• [Consistency issue and solution]
-
-4. KEY STRENGTHS (provide at least 3):
-- [Strength 1 with brief explanation]
-- [Strength 2 with brief explanation]
-- [Strength 3 with brief explanation]
-
-5. AREAS FOR IMPROVEMENT (provide at least 3):
-- [Area 1 with specific improvement suggestion]
-- [Area 2 with specific improvement suggestion]
-- [Area 3 with specific improvement suggestion]
-"""
+    async def analyze_resume(self, resume_text: str, job_description: Optional[str] = None) -> Dict[str, Any]:
+        """
+        Main entry point for resume analysis. Performs comprehensive analysis including:
+        - Section identification and analysis
+        - STAR format checking
+        - Metrics extraction
+        - Job matching (if job description provided)
+        """
+        if not resume_text or resume_text.strip() == "":
+            raise ValueError("Resume text cannot be empty")
 
         try:
-            response = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",  # Using GPT-3.5 for more consistent responses
+            # Extract and analyze sections
+            sections = self._split_resume_into_sections(resume_text)
+            
+            # Analyze sections using OpenAI
+            response = await self.client.chat.completions.create(
+                model=self.model,
                 messages=[
-                    {
-                        "role": "system", 
-                        "content": """You are an expert resume reviewer. Follow these rules strictly:
-1. Always use the exact format specified in the prompt
-2. Return scores as plain numbers only (no text, no '/100', no symbols)
-3. Never add explanatory text to scores
-4. Never skip any sections
-5. Keep responses concise and to the point
-6. Always provide STAR format examples with clear Situation, Task, Action, and Result components
-7. Extract real achievements from the resume and rewrite them in STAR format
-8. Label each STAR component explicitly in the improved examples"""
-                    },
-                    {"role": "user", "content": prompt}
+                    {"role": "system", "content": self.system_messages["analysis"]},
+                    {"role": "user", "content": f"Analyze the following resume sections:\n\n{resume_text}"}
                 ],
-                temperature=0.0,  #Zero randomness for consistent responses
-                max_tokens=2000,
-                presence_penalty=0.0,
-                frequency_penalty=0.0
+                functions=RESUME_ANALYSIS_FUNCTIONS,
+                function_call={"name": "analyze_resume_section"}
             )
+
+            # Extract analysis results
+            analysis_result = json.loads(response.choices[0].message.function_call.arguments)
             
-            if not response.choices or not response.choices[0].message.content:
-                raise Exception("No response received from OpenAI API")
+            # Update token usage
+            self._update_token_usage(response)
+
+            # If job description is provided, perform job matching
+            job_match_result = None
+            if job_description:
+                if not job_description.strip():
+                    raise ValueError("Job description cannot be empty")
+                    
+                job_match_response = await self.client.chat.completions.create(
+                    model=self.model,
+                    messages=[
+                        {"role": "system", "content": self.system_messages["job_match"]},
+                        {"role": "user", "content": f"Resume:\n{resume_text}\n\nJob Description:\n{job_description}"}
+                    ],
+                    functions=JOB_MATCH_FUNCTIONS,
+                    function_call={"name": "analyze_job_match"}
+                )
+                
+                job_match_result = json.loads(job_match_response.choices[0].message.function_call.arguments)
+                self._update_token_usage(job_match_response)
+
+            # Prepare final response
+            result = {
+                "status": "success",
+                "resumeAnalysis": {
+                    "sections": analysis_result["sections"]
+                },
+                "tokenUsage": self.token_usage.copy()
+            }
+
+            if job_match_result:
+                result["jobMatchAnalysis"] = job_match_result
+
+            return result
+
+        except Exception as e:
+            logger.error(f"Error in analyze_resume: {str(e)}")
+            return {
+                "status": "error",
+                "message": str(e),
+                "sections": [],
+                "tokenUsage": self.token_usage.copy()
+            }
+
+    async def analyze_job_match(self, resume_text: str, job_description: str) -> Dict[str, Any]:
+        """Dedicated method for job matching analysis."""
+        try:
+            # Extract job requirements
+            requirements = await self._extract_job_requirements(job_description)
             
-            # Parse and standardize the response
-            parsed_response = self._parse_openai_response(response.choices[0].message.content, bool(job_description))
+            # Perform detailed matching
+            match_result = await self._perform_job_matching(resume_text, requirements)
             
             return {
-                "analysis": parsed_response,
-                "status": "success"
+                "status": "success",
+                "matchAnalysis": match_result
             }
         except Exception as e:
             return {
                 "status": "error",
-                "message": f"OpenAI API Error: {str(e)}"
+                "error": str(e)
             }
 
-    def _parse_openai_response(self, response: str, has_job_description: bool) -> str:
-        """Parse and standardize OpenAI response format."""
-        try:
-            # Split response into sections
-            sections = response.split('\n\n')
-            parsed_sections = []
+    # ===== Section Analysis Methods =====
+
+    def _split_resume_into_sections(self, resume_text: str) -> str:
+        """Split resume text into sections for analysis."""
+        # Simple preprocessing to clean the text
+        cleaned_text = resume_text.strip()
+        cleaned_text = re.sub(r'\n\s*\n', '\n\n', cleaned_text)  # Normalize multiple newlines
+        return cleaned_text
+
+    async def _analyze_sections(self, sections: List[Dict[str, str]]) -> List[Dict[str, Any]]:
+        """Analyze each section with appropriate analysis type."""
+        results = []
+        
+        for section in sections:
+            if section["type"] == "EDUCATION":
+                result = await self._analyze_education(section["content"])
+            else:
+                result = await self._analyze_general_section(section["content"], section["type"])
+            results.append(result)
+        
+        return results
+
+    async def _analyze_education(self, content: str) -> Dict[str, Any]:
+        """Analyze education section with specialized focus."""
+        response = await self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": self.system_messages["analysis"]},
+                {"role": "user", "content": content}
+            ],
+            response_format={"type": "json_object"},
+            temperature=0
+        )
+        
+        self._update_token_usage(response)
+        return json.loads(response.choices[0].message.content)
+
+    async def _analyze_general_section(self, content: str, section_type: str) -> Dict[str, Any]:
+        """Analyze non-education sections focusing on STAR format and metrics."""
+        response = await self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": self.system_messages["analysis"]},
+                {"role": "user", "content": f"Analyze this {section_type} section:\n{content}"}
+            ],
+            response_format={"type": "json_object"},
+            temperature=0
+        )
+        
+        self._update_token_usage(response)
+        return json.loads(response.choices[0].message.content)
+
+    # ===== Job Matching Methods =====
+
+    async def _extract_job_requirements(self, job_description: str) -> Dict[str, Any]:
+        """Extract structured requirements from job description."""
+        response = await self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": """Extract key job requirements focusing on:
+1. Technical skills (required vs preferred)
+2. Experience level and domain expertise
+3. Project complexity and scale
+4. Soft skills and qualifications"""
+                },
+                {"role": "user", "content": job_description}
+            ],
+            response_format={"type": "json_object"},
+            temperature=0
+        )
+        
+        self._update_token_usage(response)
+        return json.loads(response.choices[0].message.content)
+
+    async def _perform_job_matching(self, resume_text: str, requirements: Dict[str, Any]) -> Dict[str, Any]:
+        """Match resume against extracted job requirements."""
+        response = await self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": self.system_messages["job_match"]},
+                {
+                    "role": "user",
+                    "content": f"""Compare this resume against the job requirements:
+Resume: {resume_text}
+Requirements: {json.dumps(requirements, indent=2)}"""
+                }
+            ],
+            response_format={"type": "json_object"},
+            temperature=0
+        )
+        
+        self._update_token_usage(response)
+        return json.loads(response.choices[0].message.content)
+
+    # ===== Utility Methods =====
+
+    def _update_token_usage(self, response: Any) -> None:
+        """Update token usage statistics from API response."""
+        if hasattr(response, 'usage'):
+            self.token_usage["prompt_tokens"] += response.usage.prompt_tokens
+            self.token_usage["completion_tokens"] += response.usage.completion_tokens
+            self.token_usage["total_tokens"] += response.usage.total_tokens
             
-            for section in sections:
-                if section.strip():
-                    # Handle the resume strength score section
-                    if "RESUME STRENGTH SCORE" in section:
-                        try:
-                            # Extract just the number from the score section
-                            score_lines = section.split('\n')
-                            for line in score_lines:
-                                if ':' in line:
-                                    score = line.split(':')[1].strip()
-                                    # Remove any '/100' or other text, keep just the number
-                                    score = ''.join(filter(str.isdigit, score))
-                                    section = f"RESUME STRENGTH SCORE: {score}"
-                                    break
-                        except Exception:
-                            # If parsing fails, keep the section as is
-                            pass
-                    
-                    # Handle resume strength categories section
-                    elif "RESUME STRENGTH CATEGORIES" in section:
-                        try:
-                            score_lines = section.split('\n')
-                            parsed_scores = ["RESUME STRENGTH CATEGORIES:"]
-                            for line in score_lines[1:]:  # Skip the header
-                                if ':' in line:
-                                    category, score = line.split(':')
-                                    # Clean up the score to just the number
-                                    score = ''.join(filter(str.isdigit, score.strip()))
-                                    parsed_scores.append(f"{category.strip()}: {score}")
-                            section = '\n'.join(parsed_scores)
-                        except Exception:
-                            # If parsing fails, keep the section as is
-                            pass
-                    
-                    # Handle job match score section if present
-                    elif has_job_description and "JOB MATCH SCORE" in section:
-                        try:
-                            score_lines = section.split('\n')
-                            for line in score_lines:
-                                if ':' in line:
-                                    score = line.split(':')[1].strip()
-                                    score = ''.join(filter(str.isdigit, score))
-                                    section = f"JOB MATCH SCORE: {score}"
-                                    break
-                        except Exception:
-                            pass
-                    
-                    # Handle job match categories section if present
-                    elif has_job_description and "JOB MATCH CATEGORIES" in section:
-                        try:
-                            score_lines = section.split('\n')
-                            parsed_scores = ["JOB MATCH CATEGORIES:"]
-                            for line in score_lines[1:]:
-                                if ':' in line:
-                                    category, score = line.split(':')
-                                    score = ''.join(filter(str.isdigit, score.strip()))
-                                    parsed_scores.append(f"{category.strip()}: {score}")
-                            section = '\n'.join(parsed_scores)
-                        except Exception:
-                            pass
-                    
-                    parsed_sections.append(section.strip())
-            
-            # Join sections back together
-            return '\n\n'.join(parsed_sections)
-        except Exception:
-            # If parsing fails, return the original response
-            return response 
+            # Calculate costs based on model pricing
+            prompt_cost = (response.usage.prompt_tokens / 1000) * 0.01  # $0.01 per 1K tokens
+            completion_cost = (response.usage.completion_tokens / 1000) * 0.03  # $0.03 per 1K tokens
+            self.token_usage["total_cost"] += prompt_cost + completion_cost
+
+    def _calculate_scores(self, sections: List[Dict[str, Any]]) -> Dict[str, float]:
+        """Calculate various scores from the analysis results."""
+        total_points = 0
+        star_complete = 0
+        metrics_count = 0
+        technical_score_sum = 0
+
+        for section in sections:
+            for point in section["points"]:
+                total_points += 1
+                if point["star"]["complete"]:
+                    star_complete += 1
+                metrics_count += len(point["metrics"])
+                technical_score_sum += point["technical_score"]
+
+        # Calculate average scores
+        star_score = (star_complete / total_points) * 5 if total_points > 0 else 0
+        metrics_score = min(5, metrics_count / total_points * 2.5) if total_points > 0 else 0
+        technical_score = technical_score_sum / total_points if total_points > 0 else 0
+
+        return {
+            "star_format": round(star_score, 2),
+            "metrics_usage": round(metrics_score, 2),
+            "technical_depth": round(technical_score, 2),
+            "overall": round((star_score + metrics_score + technical_score) / 3, 2)
+        }
+
+    def _generate_recommendations(self, analysis_results: List[Dict[str, Any]]) -> List[Dict[str, str]]:
+        """Generate prioritized recommendations based on analysis."""
+        recommendations = []
+        
+        # Analyze STAR format usage
+        star_missing = []
+        metrics_missing = []
+        technical_weak = []
+        
+        for result in analysis_results:
+            for point in result.get("points", []):
+                if not point.get("star", {}).get("complete", False):
+                    star_missing.append(point["text"])
+                if not point.get("metrics", []):
+                    metrics_missing.append(point["text"])
+                if float(point.get("technical_score", 0)) < 3:
+                    technical_weak.append(point["text"])
+        
+        # Generate recommendations
+        if star_missing:
+            recommendations.append({
+                "priority": "high",
+                "area": "STAR Format",
+                "action": "Add missing STAR components to key achievements",
+                "examples": star_missing[:2]  # Show first 2 examples
+            })
+        
+        if metrics_missing:
+            recommendations.append({
+                "priority": "high",
+                "area": "Metrics",
+                "action": "Add quantifiable metrics to demonstrate impact",
+                "examples": metrics_missing[:2]
+            })
+        
+        if technical_weak:
+            recommendations.append({
+                "priority": "medium",
+                "area": "Technical Depth",
+                "action": "Enhance technical details in project descriptions",
+                "examples": technical_weak[:2]
+            })
+        
+        return recommendations
+
+    def get_token_usage(self) -> Dict[str, Any]:
+        """Get current token usage statistics."""
+        return self.token_usage.copy()
+
+#What do I want to see from the resume analysis?
+
+#RESUME ANALYSIS
+#- A resume strength score is useless for most people as it doesn't tell them what to do with the feedback.
+#- I want to see what is good about the resume: has the candidate mentioned their skills well? have they used STAR format? have they mentioned outcomes for each resume point? have they mentioned metrics? 
+#- I want to see projects where the candidate has individually contributed v group projects.
+#- I want all formatting and grammatical errors called out clearly.
+#- I want to see corrected / improved examples of points from the resume.
+
+#JOB DESCRIPTION <> RESUME MATCHING
+#- I want to see how well the resume matches the job description - includes tech skills (tools, technology, etc.), soft skills (has the candidate done B2B sales, or project management), industries they have worked in, etc.
+#- I want to see how the resume can be improved to match the job description.
