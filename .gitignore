@@ -1,6 +1,7 @@
 # Python
 venv/
 __pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -25,4 +26,24 @@ build/
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db 
+Thumbs.db
+
+# Test and Coverage
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+*.log
+backend/tests/data/
+
+# Cursor
+.cursor/
+
+# Local development
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Test Data
+*.pdf 
