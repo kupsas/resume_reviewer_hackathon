@@ -1,14 +1,18 @@
-
 import React from 'react';
 import { FileText, Check, AlertTriangle, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ResumeHeaderProps {
-  matchScore: number;
+  overallScore: number;
+  jobMatchScore?: number;
   className?: string;
 }
 
-const ResumeHeader: React.FC<ResumeHeaderProps> = ({ matchScore, className }) => {
+const ResumeHeader: React.FC<ResumeHeaderProps> = ({ 
+  overallScore, 
+  jobMatchScore, 
+  className 
+}) => {
   const getScoreColor = (score: number) => {
     if (score >= 80) return "text-success";
     if (score >= 60) return "text-warning";
@@ -53,15 +57,15 @@ const ResumeHeader: React.FC<ResumeHeaderProps> = ({ matchScore, className }) =>
         </div>
         
         <div className={cn(
-          "flex items-center gap-2 p-3 rounded-xl",
-          getScoreBackground(matchScore),
+          "flex items-center gap-4 p-3 rounded-xl",
+          getScoreBackground(overallScore),
           "border transition-all duration-300"
         )}>
           <div className="flex flex-col items-center">
-            <div className="text-3xl font-bold">{matchScore}%</div>
-            <div className={cn("text-sm font-medium flex items-center gap-1", getScoreColor(matchScore))}>
-              {getScoreIcon(matchScore)}
-              <span>{getScoreLabel(matchScore)}</span>
+            <div className="text-3xl font-bold">{Math.round(overallScore)}%</div>
+            <div className={cn("text-sm font-medium flex items-center gap-1", getScoreColor(overallScore))}>
+              {getScoreIcon(overallScore)}
+              <span>{getScoreLabel(overallScore)}</span>
             </div>
           </div>
         </div>

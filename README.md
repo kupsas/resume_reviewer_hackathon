@@ -1,69 +1,60 @@
+# Resume Reviewer UI Components Branch
+
+> ⚠️ **IMPORTANT NOTE**: This branch (`feature/ui-components`) is dedicated to **frontend component development only**. There is no backend implementation in this branch.
+
+## Mock Backend Implementation
+
+Instead of relying on a real backend API, this branch uses a mock service implementation located in `frontend/src/mocks/`. The mock services simulate backend API calls with realistic data and response structures.
+
+### How to use the mock services:
+
+```typescript
+// Import the resume service
+import { resumeService } from '@/mocks';
+
+// Use it like a real API
+async function analyzeResume(file, jobDescription) {
+  try {
+    const result = await resumeService.analyzeResumeFile(file, jobDescription);
+    // Process result...
+  } catch (error) {
+    // Handle errors...
+  }
+}
+```
+
+### Toggle between mock and real backend:
+
+When you're ready to integrate with a real backend, set `USE_MOCKS = false` in `frontend/src/mocks/index.ts`.
+
+## Running the Frontend
+
+This project uses [Vite](https://vitejs.dev/) for frontend development.
+
+### First-time setup:
+
+```bash
+# Install dependencies
+cd frontend
+npm install
+# or if you prefer Bun
+bun install
+```
+
+### Running the development server:
+
+```bash
+cd frontend
+# Use NPX to run Vite directly (this works more reliably)
+npx vite --port 3000
+```
+
+The application will be available at http://localhost:3000/
+
+---
+
 # Welcome to your Lovable project
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/353d97f4-580c-4b82-a78f-994c65e2181e
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/353d97f4-580c-4b82-a78f-994c65e2181e) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/353d97f4-580c-4b82-a78f-994c65e2181e) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)

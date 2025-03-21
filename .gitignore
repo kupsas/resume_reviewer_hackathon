@@ -1,49 +1,24 @@
-# Python
-venv/
-__pycache__/
-**/__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-.env
-
-# Node.js
-node_modules/
-.next/
-.cache/
-dist/
-build/
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Test and Coverage
-.coverage
-coverage.xml
-htmlcov/
-.pytest_cache/
+# Logs
+logs
 *.log
-backend/tests/data/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Cursor
-.cursor/
+node_modules
+dist
+dist-ssr
+*.local
 
-# Local development
-*.env.local
-*.env.development.local
-*.env.test.local
-*.env.production.local
-
-# Test Data
-*.pdf 
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FileText, Upload, Sun, Moon } from 'lucide-react';
@@ -33,18 +34,18 @@ const Navbar = () => {
             )}
           </Button>
           
-          {pathname === '/home' && (
+          {pathname === '/' && (
             <Button asChild>
-              <Link to="/" className="flex items-center gap-2">
+              <Link to="/upload" className="flex items-center gap-2">
                 <Upload className="w-4 h-4" />
                 <span>Upload Resume</span>
               </Link>
             </Button>
           )}
           
-          {pathname === '/' && (
+          {pathname === '/upload' && (
             <Button variant="outline" asChild>
-              <Link to="/home" className="flex items-center gap-2">
+              <Link to="/" className="flex items-center gap-2">
                 <span>View Analysis</span>
               </Link>
             </Button>

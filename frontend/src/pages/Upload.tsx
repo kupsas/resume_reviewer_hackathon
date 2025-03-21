@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { FileText, Upload as UploadIcon, AlertTriangle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
+import { resumeService } from '@/mocks';
 
 const Upload = () => {
   const navigate = useNavigate();
@@ -38,13 +38,16 @@ const Upload = () => {
     
     setIsSubmitting(true);
 
-    // In a real implementation, you would upload the file to your backend here
-    // For demo purposes, let's simulate a file upload and analysis
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      await resumeService.analyzeResumeFile(selectedFile, jobDescription || undefined);
+      
       toast.success('Resume analyzed successfully!');
       navigate('/');
-    }, 2000);
+    } catch (error) {
+      toast.error(`Error analyzing resume: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -141,6 +144,19 @@ const Upload = () => {
                 )}
               </Button>
             </form>
+
+            {/* Temporary Demo Button */}
+            <div className="mt-4 pt-4 border-t text-center">
+              <p className="text-sm text-muted-foreground mb-2">🚧 Temporary Demo Access 🚧</p>
+              <Button 
+                variant="outline"
+                className="gap-2"
+                onClick={() => navigate('/home')}
+              >
+                <FileText className="w-4 h-4" />
+                View Sample Analysis
+              </Button>
+            </div>
           </div>
         </motion.div>
       </div>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import StarAnalysisCard from './StarAnalysisCard';
 import { cn } from '@/lib/utils';
@@ -6,34 +5,43 @@ import { ChevronDown } from 'lucide-react';
 
 interface Point {
   text: string;
-  star: {
+  star?: {
     situation: boolean;
     task: boolean;
     action: boolean;
     result: boolean;
     complete: boolean;
   };
-  metrics: string[];
+  metrics?: string[];
   technical_score: number;
   improvement: string;
 }
 
-interface SectionAnalysisProps {
-  title: string;
+interface Section {
+  type: string;
   points: Point[];
+  analysis: string;
+}
+
+interface SectionAnalysisProps {
+  section: Section;
   className?: string;
 }
 
 const SectionAnalysis: React.FC<SectionAnalysisProps> = ({
-  title,
-  points,
+  section,
   className,
 }) => {
   const [expanded, setExpanded] = useState(true);
+  const { type: title, points } = section;
 
   const getCompletionPercentage = () => {
-    const completePoints = points.filter(point => point.star.complete).length;
-    return Math.round((completePoints / points.length) * 100);
+    // Only calculate STAR completion for points that have a star property
+    const pointsWithStar = points.filter(point => point.star);
+    if (!pointsWithStar.length) return 100; // If no STAR points, show as complete
+    
+    const completePoints = pointsWithStar.filter(point => point.star?.complete).length;
+    return Math.round((completePoints / pointsWithStar.length) * 100);
   };
 
   const completionPercentage = getCompletionPercentage();
@@ -74,7 +82,7 @@ const SectionAnalysis: React.FC<SectionAnalysisProps> = ({
               key={index}
               text={point.text}
               star={point.star}
-              metrics={point.metrics}
+              metrics={point.metrics || []}
               technicalScore={point.technical_score}
               improvement={point.improvement}
             />

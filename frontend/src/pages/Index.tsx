@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -6,13 +5,14 @@ import ResumeHeader from '@/components/ResumeHeader';
 import SectionAnalysis from '@/components/SectionAnalysis';
 import JobMatchSection from '@/components/JobMatchSection';
 import ImprovementSuggestions from '@/components/ImprovementSuggestions';
-import { sampleResumeData } from '@/data/sampleResumeData';
+import { mockResumeData } from '@/mocks';
 import { FileText, Briefcase, LineChart, MousePointerClick, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState<'sections' | 'jobMatch' | 'improvements'>('sections');
   const [loading, setLoading] = useState(true);
+  const resumeData = mockResumeData;
 
   // Simulate loading from API
   useEffect(() => {
@@ -56,131 +56,85 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/30">
-      <ResumeHeader matchScore={sampleResumeData.jobMatchAnalysis.match_score} />
-      
-      {/* Navigation tabs */}
-      <div className="max-w-screen-xl mx-auto px-4 mb-8">
-        <div className="flex flex-wrap gap-2 sm:gap-4 border-b pb-2">
-          <button
-            onClick={() => setActiveTab('sections')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-t-lg font-medium transition-all ${
-              activeTab === 'sections' 
-                ? 'bg-primary text-primary-foreground' 
-                : 'hover:bg-secondary'
-            }`}
-          >
-            <FileText className="h-4 w-4" />
-            <span>Resume Sections</span>
-          </button>
-          <button
-            onClick={() => setActiveTab('jobMatch')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-t-lg font-medium transition-all ${
-              activeTab === 'jobMatch' 
-                ? 'bg-primary text-primary-foreground' 
-                : 'hover:bg-secondary'
-            }`}
-          >
-            <Briefcase className="h-4 w-4" />
-            <span>Job Match</span>
-          </button>
-          <button
-            onClick={() => setActiveTab('improvements')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-t-lg font-medium transition-all ${
-              activeTab === 'improvements' 
-                ? 'bg-primary text-primary-foreground' 
-                : 'hover:bg-secondary'
-            }`}
-          >
-            <LineChart className="h-4 w-4" />
-            <span>Improvements</span>
-          </button>
-        </div>
-      </div>
-      
-      <motion.div 
-        className="max-w-screen-xl mx-auto px-4 pb-16"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {activeTab === 'sections' && (
-          <motion.div className="space-y-8" variants={itemVariants}>
-            {sampleResumeData.resumeAnalysis.sections.map((section, index) => (
-              <SectionAnalysis
-                key={index}
-                title={section.type}
-                points={section.points}
-              />
-            ))}
-          </motion.div>
-        )}
-        
-        {activeTab === 'jobMatch' && (
+      <div className="max-w-screen-xl mx-auto px-4 pt-8 pb-20">
+        <motion.div
+          className="grid grid-cols-1 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Header */}
           <motion.div variants={itemVariants}>
-            <JobMatchSection matchData={sampleResumeData.jobMatchAnalysis} />
-          </motion.div>
-        )}
-        
-        {activeTab === 'improvements' && (
-          <motion.div variants={itemVariants}>
-            <ImprovementSuggestions 
-              improvements={sampleResumeData.jobMatchAnalysis.section_recommendations}
+            <ResumeHeader 
+              overallScore={resumeData.resumeAnalysis.scores.overall * 100} 
+              jobMatchScore={resumeData.jobMatchAnalysis?.match_score ? resumeData.jobMatchAnalysis.match_score * 100 : undefined}
             />
           </motion.div>
-        )}
 
-        <motion.div 
-          variants={itemVariants}
-          className="mt-10 text-center"
-        >
-          <Button asChild className="px-8 py-6">
-            <Link to="/upload" className="inline-flex items-center gap-2 text-lg">
-              <Upload className="w-5 h-5" />
-              Analyze Another Resume
+          {/* Demo Access Button */}
+          <motion.div variants={itemVariants} className="flex justify-center mb-4">
+            <Link to="/upload">
+              <Button className="bg-primary hover:bg-primary/90 text-white">
+                <Upload className="mr-2 h-4 w-4" />
+                Upload Your Resume
+              </Button>
             </Link>
-          </Button>
-        </motion.div>
-      </motion.div>
-      
-      {/* Quick navigation fixed button */}
-      <div className="fixed bottom-6 right-6">
-        <div className="relative group">
-          <button className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-elevation-medium hover:shadow-elevation-high transition-all">
-            <MousePointerClick className="w-5 h-5" />
-          </button>
-          
-          <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block animate-fade-in">
-            <div className="bg-card rounded-lg shadow-elevation-medium p-2 border flex flex-col gap-2 w-48">
-              <button
-                onClick={() => setActiveTab('sections')}
-                className={`flex items-center gap-2 p-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'sections' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'
-                }`}
-              >
-                <FileText className="h-4 w-4" />
-                <span>Resume Sections</span>
-              </button>
-              <button
+          </motion.div>
+
+          {/* Tabs */}
+          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-2 mb-6">
+            <Button
+              variant={activeTab === 'sections' ? 'default' : 'outline'}
+              className="flex items-center gap-2"
+              onClick={() => setActiveTab('sections')}
+            >
+              <FileText className="h-4 w-4" />
+              <span className="hidden sm:inline">Resume Sections</span>
+              <span className="sm:hidden">Sections</span>
+            </Button>
+            
+            {resumeData.jobMatchAnalysis && (
+              <Button
+                variant={activeTab === 'jobMatch' ? 'default' : 'outline'}
+                className="flex items-center gap-2"
                 onClick={() => setActiveTab('jobMatch')}
-                className={`flex items-center gap-2 p-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'jobMatch' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'
-                }`}
               >
                 <Briefcase className="h-4 w-4" />
-                <span>Job Match</span>
-              </button>
-              <button
-                onClick={() => setActiveTab('improvements')}
-                className={`flex items-center gap-2 p-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'improvements' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'
-                }`}
-              >
-                <LineChart className="h-4 w-4" />
-                <span>Improvements</span>
-              </button>
-            </div>
-          </div>
-        </div>
+                <span className="hidden sm:inline">Job Match</span>
+                <span className="sm:hidden">Job</span>
+              </Button>
+            )}
+            
+            <Button
+              variant={activeTab === 'improvements' ? 'default' : 'outline'}
+              className="flex items-center gap-2"
+              onClick={() => setActiveTab('improvements')}
+            >
+              <LineChart className="h-4 w-4" />
+              <span className="hidden sm:inline">Improvement Suggestions</span>
+              <span className="sm:hidden">Improve</span>
+            </Button>
+          </motion.div>
+
+          {/* Tab Content */}
+          <motion.div variants={itemVariants}>
+            {activeTab === 'sections' && (
+              <div className="space-y-6">
+                {resumeData.resumeAnalysis.sections.map((section, index) => (
+                  <SectionAnalysis key={index} section={section} />
+                ))}
+              </div>
+            )}
+            
+            {activeTab === 'jobMatch' && resumeData.jobMatchAnalysis && (
+              <JobMatchSection jobMatchAnalysis={resumeData.jobMatchAnalysis} />
+            )}
+            
+            {activeTab === 'improvements' && (
+              <ImprovementSuggestions recommendations={resumeData.resumeAnalysis.recommendations} />
+            )}
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
