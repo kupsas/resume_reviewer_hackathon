@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { useResumeAnalysis } from '../hooks/useResumeAnalysis';
 import StarAnalysisCard from './StarAnalysisCard';
 import JobMatchSection from './JobMatchSection';
 import { Button } from './ui/button';
 import { Loader2 } from 'lucide-react';
-
 const ResumeAnalysis: React.FC = () => {
-  const { loading, error, analysisResult, analyzeResume } = useResumeAnalysis();
+  // Removed the custom hook since it's not defined
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [analysisResult, setAnalysisResult] = useState(null);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [jobDescription, setJobDescription] = useState('');
 
@@ -22,7 +23,30 @@ const ResumeAnalysis: React.FC = () => {
     if (!resumeFile || !jobDescription) {
       return;
     }
-    await analyzeResume(resumeFile, jobDescription);
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('/api/analyze', {
+        method: 'POST',
+        body: JSON.stringify({
+          jobDescription: jobDescription
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to analyze resume');
+      }
+      
+      const result = await response.json();
+      setAnalysisResult(result);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -30,12 +54,14 @@ const ResumeAnalysis: React.FC = () => {
       {/* Upload Form */}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-2">Upload Resume (PDF)</label>
+          <label htmlFor="resume-upload" className="block text-sm font-medium mb-2">Upload Resume (PDF)</label>
           <input
+            id="resume-upload"
             type="file"
             accept=".pdf"
             onChange={handleFileChange}
             className="w-full border rounded-lg p-2"
+            aria-label="Upload Resume PDF"
           />
         </div>
 
@@ -72,7 +98,7 @@ const ResumeAnalysis: React.FC = () => {
       {analysisResult && (
         <div className="space-y-8">
           {/* Job Match Section */}
-          <JobMatchSection matchData={analysisResult.jobMatch} />
+          <JobMatchSection jobMatchAnalysis={analysisResult.jobMatch} />
 
           {/* Bullet Point Analysis */}
           <div className="space-y-4">
