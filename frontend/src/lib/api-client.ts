@@ -1,16 +1,21 @@
 import { useMutation } from '@tanstack/react-query';
 import { ResumeAnalysisRequest, ResumeAnalysisResponse } from '@/types/resume';
 import { resumeService } from '@/mocks';
+import { config, isDevelopment } from './config';
 
 // API base URL configuration
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
-console.log('API Base URL:', API_BASE_URL); // Debug log
+const API_BASE_URL = config.API_BASE_URL;
+
+// Log only in development mode
+if (isDevelopment()) {
+  console.log('API Base URL:', API_BASE_URL);
+}
 
 // Helper function to handle API errors
 const handleApiError = async (response: Response) => {
   if (!response.ok) {
     const error = await response.json().catch(() => ({ detail: 'An unknown error occurred' }));
-    console.error('API Error:', error); // Debug log
+    console.error('API Error:', error);
     throw new Error(error.detail || 'An error occurred while processing your request');
   }
   return response.json();
@@ -18,8 +23,10 @@ const handleApiError = async (response: Response) => {
 
 // Helper function to normalize API response
 const normalizeResponse = (data: any): ResumeAnalysisResponse => {
-  // Log the response structure for debugging
-  console.log('API Response structure:', JSON.stringify(data, null, 2));
+  // Log the response structure for debugging in development
+  if (isDevelopment()) {
+    console.log('API Response structure:', JSON.stringify(data, null, 2));
+  }
   
   // Ensure the response matches our expected format
   if (!data || typeof data !== 'object') {

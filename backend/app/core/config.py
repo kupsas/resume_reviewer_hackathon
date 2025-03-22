@@ -1,5 +1,6 @@
 """Configuration settings for the application."""
 import os
+import sys
 from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
 
@@ -35,4 +36,28 @@ class Settings(BaseSettings):
         case_sensitive = True
         extra = "allow"  # Allow extra fields in the settings
 
-settings = Settings() 
+    def validate_critical_settings(self):
+        """Validates that critical environment variables are set."""
+        if not self.OPENAI_API_KEY:
+            print("❌ Error: OPENAI_API_KEY environment variable is not set.")
+            print("   This is required for the application to function.")
+            print("   Please set this in your .env file or environment variables.")
+            sys.exit(1)
+        
+        try:
+            origins = self.ALLOWED_ORIGINS.split(",")
+            if not origins or all(not origin.strip() for origin in origins):
+                print("⚠️ Warning: ALLOWED_ORIGINS is empty. CORS may not work correctly.")
+        except Exception:
+            print("⚠️ Warning: ALLOWED_ORIGINS is not properly formatted.")
+            
+        if self.RATE_LIMIT_PER_MINUTE <= 0:
+            print("⚠️ Warning: RATE_LIMIT_PER_MINUTE is set to 0 or less. Rate limiting is disabled.")
+            
+        print("✅ All critical environment variables validated!")
+
+settings = Settings()
+
+# Validate critical settings in non-test environments
+if "pytest" not in sys.modules:
+    settings.validate_critical_settings() 
