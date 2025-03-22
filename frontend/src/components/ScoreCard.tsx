@@ -1,60 +1,52 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 
 interface ScoreCardProps {
   title: string;
   score: number;
-  maxScore?: number;
+  description: string;
   className?: string;
-  description?: string;
 }
 
 const ScoreCard: React.FC<ScoreCardProps> = ({
   title,
   score,
-  maxScore = 100,
+  description,
   className,
-  description
 }) => {
-  const percentage = (score / maxScore) * 100;
-  
-  const getScoreColor = (percentage: number) => {
-    if (percentage >= 80) return "bg-success";
-    if (percentage >= 60) return "bg-warning";
-    return "bg-destructive";
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return "text-green-600";
+    if (score > 75) return "text-amber-500";
+    return "text-red-500";
   };
 
-  const getBgColor = (percentage: number) => {
-    if (percentage >= 80) return "bg-success/5 hover:bg-success/10";
-    if (percentage >= 60) return "bg-warning/5 hover:bg-warning/10";
-    return "bg-destructive/5 hover:bg-destructive/10";
+  const getScoreBackground = (score: number) => {
+    if (score >= 90) return "bg-green-100";
+    if (score > 75) return "bg-amber-100";
+    return "bg-red-100";
+  };
+
+  const getScoreBorder = (score: number) => {
+    if (score >= 90) return "border-green-300";
+    if (score > 75) return "border-amber-300";
+    return "border-red-300";
   };
 
   return (
     <div className={cn(
-      "rounded-xl p-4 border transition-all duration-300",
-      "hover:shadow-elevation-low",
-      getBgColor(percentage),
+      "rounded-xl p-5 border bg-card",
+      getScoreBackground(score),
+      getScoreBorder(score),
       className
     )}>
-      <div className="flex justify-between items-start mb-2">
-        <h3 className="font-medium text-sm text-muted-foreground">{title}</h3>
-        <div className="font-semibold text-lg">
-          {score}
-          {maxScore !== 100 && <span className="text-muted-foreground text-sm">/{maxScore}</span>}
+      <div className="space-y-2">
+        <h4 className="font-medium">{title}</h4>
+        <div className={cn("text-3xl font-bold", getScoreColor(score))}>
+          {score}%
         </div>
-      </div>
-      
-      {description && (
-        <p className="text-sm text-muted-foreground mb-2">{description}</p>
-      )}
-      
-      <div className="progress-bar mt-1 bg-secondary">
-        <div 
-          className={cn("progress-bar-value", getScoreColor(percentage))}
-          style={{ width: `${percentage}%` }}
-        />
+        <p className="text-sm text-muted-foreground">
+          {description}
+        </p>
       </div>
     </div>
   );

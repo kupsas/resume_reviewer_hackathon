@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Check, X } from 'lucide-react';
@@ -97,24 +96,6 @@ const StarAnalysisCard: React.FC<StarAnalysisCardProps> = ({
             </div>
           </div>
         )}
-
-        {/* Technical Score */}
-        <div>
-          <h4 className="text-sm font-medium text-muted-foreground mb-1">Technical Score</h4>
-          <div className="flex items-center gap-2">
-            <div className="progress-bar w-full max-w-[100px]">
-              <div 
-                className={cn(
-                  "progress-bar-value",
-                  technicalScore >= 4 ? "bg-success" : 
-                  technicalScore >= 3 ? "bg-warning" : "bg-destructive"
-                )}
-                style={{ width: `${(technicalScore / 5) * 100}%` }}
-              />
-            </div>
-            <span className="font-semibold">{technicalScore}/5</span>
-          </div>
-        </div>
 
         {/* Improvement */}
         <div>

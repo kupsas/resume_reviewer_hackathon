@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import StarAnalysisCard from './StarAnalysisCard';
 import { cn } from '@/lib/utils';
@@ -6,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 
 interface Point {
   text: string;
-  star: {
+  star?: {
     situation: boolean;
     task: boolean;
     action: boolean;
@@ -31,13 +30,6 @@ const SectionAnalysis: React.FC<SectionAnalysisProps> = ({
 }) => {
   const [expanded, setExpanded] = useState(true);
 
-  const getCompletionPercentage = () => {
-    const completePoints = points.filter(point => point.star.complete).length;
-    return Math.round((completePoints / points.length) * 100);
-  };
-
-  const completionPercentage = getCompletionPercentage();
-
   return (
     <div className={cn("border rounded-xl overflow-hidden bg-card", className)}>
       <div 
@@ -46,19 +38,6 @@ const SectionAnalysis: React.FC<SectionAnalysisProps> = ({
       >
         <div className="flex items-center gap-3">
           <h3 className="font-semibold text-lg">{title}</h3>
-          <div className="flex items-center gap-2">
-            <div className="progress-bar w-24">
-              <div 
-                className={cn(
-                  "progress-bar-value",
-                  completionPercentage >= 80 ? "bg-success" : 
-                  completionPercentage >= 50 ? "bg-warning" : "bg-destructive"
-                )}
-                style={{ width: `${completionPercentage}%` }}
-              />
-            </div>
-            <span className="text-sm font-medium">{completionPercentage}%</span>
-          </div>
         </div>
         
         <ChevronDown className={cn(
@@ -73,7 +52,13 @@ const SectionAnalysis: React.FC<SectionAnalysisProps> = ({
             <StarAnalysisCard
               key={index}
               text={point.text}
-              star={point.star}
+              star={point.star || {
+                situation: false,
+                task: false,
+                action: false,
+                result: false,
+                complete: false
+              }}
               metrics={point.metrics}
               technicalScore={point.technical_score}
               improvement={point.improvement}

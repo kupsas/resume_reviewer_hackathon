@@ -2,7 +2,7 @@ import { MockResumeService, API_ENDPOINTS } from './services/resumeService';
 import { mockResumeData } from './data/resumeData';
 
 // Configuration for using mocks
-const USE_MOCKS = true;
+const USE_MOCKS = false;
 
 /**
  * Resume service that automatically switches between mock and real implementation

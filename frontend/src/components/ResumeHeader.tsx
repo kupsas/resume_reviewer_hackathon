@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FileText, Check, AlertTriangle, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -10,27 +9,33 @@ interface ResumeHeaderProps {
 
 const ResumeHeader: React.FC<ResumeHeaderProps> = ({ matchScore, className }) => {
   const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-success";
-    if (score >= 60) return "text-warning";
-    return "text-destructive";
+    if (score >= 90) return "text-green-600";
+    if (score > 75) return "text-amber-500";
+    return "text-red-500";
   };
 
   const getScoreLabel = (score: number) => {
-    if (score >= 80) return "Excellent Match";
-    if (score >= 60) return "Good Match";
+    if (score >= 90) return "Excellent Match";
+    if (score > 75) return "Good Match";
     return "Needs Improvement";
   };
 
   const getScoreIcon = (score: number) => {
-    if (score >= 80) return <Check className="h-5 w-5 text-success" />;
-    if (score >= 60) return <Info className="h-5 w-5 text-warning" />;
-    return <AlertTriangle className="h-5 w-5 text-destructive" />;
+    if (score >= 90) return <Check className="h-5 w-5 text-green-600" />;
+    if (score > 75) return <Info className="h-5 w-5 text-amber-500" />;
+    return <AlertTriangle className="h-5 w-5 text-red-500" />;
   };
 
   const getScoreBackground = (score: number) => {
-    if (score >= 80) return "bg-success/10";
-    if (score >= 60) return "bg-warning/10";
-    return "bg-destructive/10";
+    if (score >= 90) return "bg-green-100";
+    if (score > 75) return "bg-amber-100";
+    return "bg-red-100";
+  };
+
+  const getScoreBorder = (score: number) => {
+    if (score >= 90) return "border-green-300";
+    if (score > 75) return "border-amber-300";
+    return "border-red-300";
   };
 
   return (
@@ -47,24 +52,29 @@ const ResumeHeader: React.FC<ResumeHeaderProps> = ({ matchScore, className }) =>
           <div>
             <h1 className="text-2xl md:text-3xl font-semibold">Resume Analysis</h1>
             <p className="text-muted-foreground">
-              Your resume has been analyzed for job compatibility
+              {matchScore === 0 
+                ? "Your resume has been analyzed. Add a job description to see match analysis!"
+                : "Your resume has been analyzed for job compatibility"}
             </p>
           </div>
         </div>
         
-        <div className={cn(
-          "flex items-center gap-2 p-3 rounded-xl",
-          getScoreBackground(matchScore),
-          "border transition-all duration-300"
-        )}>
-          <div className="flex flex-col items-center">
-            <div className="text-3xl font-bold">{matchScore}%</div>
-            <div className={cn("text-sm font-medium flex items-center gap-1", getScoreColor(matchScore))}>
-              {getScoreIcon(matchScore)}
-              <span>{getScoreLabel(matchScore)}</span>
+        {matchScore !== null && matchScore > 0 ? (
+          <div className={cn(
+            "flex items-center gap-2 p-3 rounded-xl",
+            getScoreBackground(matchScore),
+            getScoreBorder(matchScore),
+            "border transition-all duration-300"
+          )}>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold">{matchScore}%</div>
+              <div className={cn("text-sm font-medium flex items-center gap-1", getScoreColor(matchScore))}>
+                {getScoreIcon(matchScore)}
+                <span>{getScoreLabel(matchScore)}</span>
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </div>
   );

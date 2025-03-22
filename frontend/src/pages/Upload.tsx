@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -6,12 +5,13 @@ import { Textarea } from '@/components/ui/textarea';
 import { FileText, Upload as UploadIcon, AlertTriangle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
+import { useResumeAnalysis } from '@/hooks/useResumeAnalysis';
 
 const Upload = () => {
   const navigate = useNavigate();
+  const { analyzeResume, loading: isSubmitting } = useResumeAnalysis();
   const [jobDescription, setJobDescription] = useState('');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -36,15 +36,13 @@ const Upload = () => {
       return;
     }
     
-    setIsSubmitting(true);
-
-    // In a real implementation, you would upload the file to your backend here
-    // For demo purposes, let's simulate a file upload and analysis
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast.success('Resume analyzed successfully!');
-      navigate('/');
-    }, 2000);
+    try {
+      await analyzeResume(selectedFile, jobDescription);
+      navigate('/home');
+    } catch (error) {
+      console.error('Failed to analyze resume:', error);
+      // Error toast will be shown by the hook
+    }
   };
 
   return (
