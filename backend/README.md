@@ -45,6 +45,51 @@ cp backend/.env.example backend/.env
 # Edit backend/.env and add your OpenAI API key
 ```
 
+## Environment Variables 🔐
+
+The application requires the following environment variables in your `.env` file:
+
+```bash
+# Required: Your OpenAI API key
+OPENAI_API_KEY=your_openai_key_here
+
+# Optional: OpenAI model to use (default: gpt-4o-2024-08-06)
+OPENAI_MODEL=gpt-4o-2024-08-06
+
+# Optional: Server port (default: 8000)
+PORT=8000
+
+# Optional: Allowed origins for CORS (default: http://localhost:3000)
+ALLOWED_ORIGINS=http://localhost:3000
+
+# Optional: Rate limiting requests per minute (default: 60)
+RATE_LIMIT_PER_MINUTE=60
+
+# Optional: Debug mode (default: true)
+DEBUG=true
+```
+
+### Variable Details:
+
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `OPENAI_API_KEY` | Yes | None | API key for OpenAI services |
+| `OPENAI_MODEL` | No | gpt-4o-2024-08-06 | Model used for analysis |
+| `PORT` | No | 8000 | Port the server runs on |
+| `ALLOWED_ORIGINS` | No | http://localhost:3000 | CORS allowed origins |
+| `RATE_LIMIT_PER_MINUTE` | No | 60 | API rate limit |
+| `DEBUG` | No | true | Enable debug mode |
+
+### Usage in code:
+
+The application uses Pydantic settings to load these variables:
+
+```python
+# From app/core/config.py
+OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-2024-08-06")
+```
+
 ## Running the Server 🏃‍♂️
 
 1. Start the FastAPI server:
