@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -134,7 +133,7 @@ const Index = () => {
           className="mt-10 text-center"
         >
           <Button asChild className="px-8 py-6">
-            <Link to="/upload" className="inline-flex items-center gap-2 text-lg">
+            <Link to="/" className="inline-flex items-center gap-2 text-lg">
               <Upload className="w-5 h-5" />
               Analyze Another Resume
             </Link>
