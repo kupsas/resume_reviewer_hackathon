@@ -121,7 +121,7 @@ const JobMatchSection: React.FC<JobMatchSectionProps> = ({ matchData, className 
         <div className="space-y-4">
           <h4 className="font-medium">Key Requirements</h4>
           
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Met requirements */}
             {keyRequirements.met.length > 0 && (
               <div className="space-y-2">
@@ -129,10 +129,10 @@ const JobMatchSection: React.FC<JobMatchSectionProps> = ({ matchData, className 
                   <Check className="h-4 w-4" />
                   <span>Met Requirements</span>
                 </h5>
-                <div className="space-y-2">
+                <div className="space-y-2 h-[calc(100%-2rem)] overflow-y-auto">
                   {keyRequirements.met.map((req, index) => (
                     <div key={index} className="flex items-start gap-2 bg-success/5 border border-success/10 rounded p-2">
-                      <Check className="h-4 w-4 text-success mt-0.5" />
+                      <Check className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
                       <p className="text-sm">{req}</p>
                     </div>
                   ))}
@@ -147,10 +147,10 @@ const JobMatchSection: React.FC<JobMatchSectionProps> = ({ matchData, className 
                   <Clock className="h-4 w-4" />
                   <span>Partially Met Requirements</span>
                 </h5>
-                <div className="space-y-2">
+                <div className="space-y-2 h-[calc(100%-2rem)] overflow-y-auto">
                   {keyRequirements.partially_met.map((req, index) => (
                     <div key={index} className="flex items-start gap-2 bg-warning/5 border border-warning/10 rounded p-2">
-                      <Clock className="h-4 w-4 text-warning mt-0.5" />
+                      <Clock className="h-4 w-4 text-warning mt-0.5 flex-shrink-0" />
                       <p className="text-sm">{req}</p>
                     </div>
                   ))}
@@ -165,10 +165,10 @@ const JobMatchSection: React.FC<JobMatchSectionProps> = ({ matchData, className 
                   <X className="h-4 w-4" />
                   <span>Not Met Requirements</span>
                 </h5>
-                <div className="space-y-2">
+                <div className="space-y-2 h-[calc(100%-2rem)] overflow-y-auto">
                   {keyRequirements.not_met.map((req, index) => (
                     <div key={index} className="flex items-start gap-2 bg-destructive/5 border border-destructive/10 rounded p-2">
-                      <X className="h-4 w-4 text-destructive mt-0.5" />
+                      <X className="h-4 w-4 text-destructive mt-0.5 flex-shrink-0" />
                       <p className="text-sm">{req}</p>
                     </div>
                   ))}
@@ -180,7 +180,7 @@ const JobMatchSection: React.FC<JobMatchSectionProps> = ({ matchData, className 
             {keyRequirements.met.length === 0 && 
              keyRequirements.partially_met.length === 0 && 
              keyRequirements.not_met.length === 0 && (
-              <div className="flex items-center justify-center py-4">
+              <div className="col-span-3 flex items-center justify-center py-4">
                 <p className="text-sm text-muted-foreground">No key requirements analysis available</p>
               </div>
             )}

@@ -152,13 +152,19 @@ const Index = () => {
         {activeTab === 'sections' && (
           <motion.div className="space-y-8" variants={itemVariants}>
             {sections.length > 0 ? (
-              sections.map((section, index) => (
-                <SectionAnalysis
-                  key={index}
-                  title={section.type}
-                  points={section.points || []}
-                />
-              ))
+              sections.map((section, index) => {
+                // Temporarily hide Education and Skills sections
+                if (section.type === 'Education' || section.type === 'Skills') {
+                  return null;
+                }
+                return (
+                  <SectionAnalysis
+                    key={index}
+                    title={section.type}
+                    points={section.points || []}
+                  />
+                );
+              })
             ) : (
               <div className="flex flex-col items-center justify-center py-12 text-center">
                 <AlertTriangle className="h-12 w-12 text-warning mb-4" />

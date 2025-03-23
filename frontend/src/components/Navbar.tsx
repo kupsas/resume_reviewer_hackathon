@@ -41,14 +41,6 @@ const Navbar = () => {
               </Link>
             </Button>
           )}
-          
-          {pathname === '/' && (
-            <Button variant="outline" asChild>
-              <Link to="/home" className="flex items-center gap-2">
-                <span>View Analysis</span>
-              </Link>
-            </Button>
-          )}
         </div>
       </div>
     </header>

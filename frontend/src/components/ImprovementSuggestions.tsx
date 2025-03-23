@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { ArrowDown, AlertTriangle } from 'lucide-react';
+import { ArrowDown, ArrowRight, AlertTriangle } from 'lucide-react';
 
 interface ImprovementItem {
   original_point: string;
@@ -56,14 +56,15 @@ const ImprovementSuggestions: React.FC<ImprovementSuggestionsProps> = ({
             <div className="space-y-4">
               {experience_projects.map((item, index) => (
                 <div key={index} className="rounded-lg border p-4">
-                  <div className="flex flex-col gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] gap-4 items-center">
                     <div>
                       <h5 className="text-sm font-medium text-muted-foreground mb-1">Original</h5>
                       <p className="text-sm">{item.original_point}</p>
                     </div>
                     
                     <div className="flex items-center justify-center">
-                      <ArrowDown className="h-5 w-5 text-primary" />
+                      <ArrowRight className="h-5 w-5 text-primary hidden md:block" />
+                      <ArrowDown className="h-5 w-5 text-primary md:hidden" />
                     </div>
                     
                     <div>
