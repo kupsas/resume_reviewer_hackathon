@@ -82,6 +82,7 @@ Return analysis in JSON format following the specified schema.""",
 2. Experience relevance
 3. Project complexity match
 4. Missing critical requirements
+5. Overall recommendations for improvement
 Return detailed JSON analysis with specific examples."""
         }
 

@@ -141,26 +141,9 @@ JOB_MATCH_FUNCTIONS = [
                         "not_met": {"type": "array", "items": {"type": "string"}}
                     }
                 },
-                "section_recommendations": {
-                    "type": "object",
-                    "properties": {
-                        "experience_projects": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "original_point": {"type": "string"},
-                                    "improved_version": {"type": "string"}
-                                }
-                            }
-                        },
-                        "education": {"type": "string"},
-                        "skills_certs": {"type": "string"}
-                    }
-                },
                 "recommendations": {"type": "array", "items": {"type": "string"}}
             },
-            "required": ["match_score", "technical_match", "experience_match", "key_requirements", "section_recommendations", "recommendations"]
+            "required": ["match_score", "technical_match", "experience_match", "key_requirements", "recommendations"]
         }
     }
 ]
