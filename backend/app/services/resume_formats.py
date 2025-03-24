@@ -63,7 +63,8 @@ JOB_MATCH_FORMAT = {
         "leadership": {
             "score": "percentage",
             "examples": ["leadership examples"]
-        }
+        },
+        "recommendations": ["general improvement recommendations"]
     }
 }
 

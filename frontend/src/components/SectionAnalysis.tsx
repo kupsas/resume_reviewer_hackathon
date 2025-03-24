@@ -1,34 +1,23 @@
 import React, { useState } from 'react';
-import StarAnalysisCard from './StarAnalysisCard';
-import { cn } from '@/lib/utils';
+import { cn, isEducationPoint } from '@/lib/utils';
+import { ResumePoint, ResumeSection, StandardResumePoint } from '@/types/resume';
 import { ChevronDown } from 'lucide-react';
-
-interface Point {
-  text: string;
-  star?: {
-    situation: boolean;
-    task: boolean;
-    action: boolean;
-    result: boolean;
-    complete: boolean;
-  };
-  metrics: string[];
-  technical_score: number;
-  improvement: string;
-}
+import StarAnalysisCard from './StarAnalysisCard';
+import EducationCard from './EducationCard';
 
 interface SectionAnalysisProps {
   title: string;
-  points: Point[];
+  section: ResumeSection;
   className?: string;
 }
 
 const SectionAnalysis: React.FC<SectionAnalysisProps> = ({
   title,
-  points,
+  section,
   className,
 }) => {
   const [expanded, setExpanded] = useState(true);
+  const isEducationSection = section.type === 'Education';
 
   return (
     <div className={cn("border rounded-xl overflow-hidden bg-card", className)}>
@@ -47,23 +36,40 @@ const SectionAnalysis: React.FC<SectionAnalysisProps> = ({
       </div>
       
       {expanded && (
-        <div className="p-4 pt-0 grid gap-4 grid-cols-1 md:grid-cols-2">
-          {points.map((point, index) => (
-            <StarAnalysisCard
-              key={index}
-              text={point.text}
-              star={point.star || {
-                situation: false,
-                task: false,
-                action: false,
-                result: false,
-                complete: false
-              }}
-              metrics={point.metrics}
-              technicalScore={point.technical_score}
-              improvement={point.improvement}
-            />
-          ))}
+        <div className={cn(
+          "p-4 pt-0 grid gap-4",
+          isEducationSection ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"
+        )}>
+          {section.points.map((point, index) => {
+            // Check if this is an education point
+            if (isEducationSection && isEducationPoint(point)) {
+              return (
+                <EducationCard 
+                  key={index}
+                  education={point}
+                />
+              );
+            } else {
+              // Handle as standard resume point
+              const standardPoint = point as StandardResumePoint;
+              return (
+                <StarAnalysisCard
+                  key={index}
+                  text={standardPoint.text}
+                  star={standardPoint.star || {
+                    situation: false,
+                    task: false,
+                    action: false,
+                    result: false,
+                    complete: false
+                  }}
+                  metrics={standardPoint.metrics}
+                  technicalScore={standardPoint.technical_score}
+                  improvement={standardPoint.improvement || ''}
+                />
+              );
+            }
+          })}
         </div>
       )}
     </div>

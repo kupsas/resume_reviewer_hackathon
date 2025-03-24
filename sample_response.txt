@@ -1,388 +1,351 @@
 {
-    "status": "success",
-    "resumeAnalysis": {
-        "sections": [
-            {
-                "type": "Experience",
-                "points": [
-                    {
-                        "text": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": true,
-                            "complete": true
-                        },
-                        "metrics": [
-                            "99.9%"
-                        ],
-                        "technical_score": 5,
-                        "improvement": "Led the development of a cloud-based microservices architecture at TechCorp Inc., resulting in a 99.9% improvement in system reliability."
-                    },
-                    {
-                        "text": "Implemented AI-powered recommendation engine, increasing user engagement by 45%",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": true,
-                            "complete": true
-                        },
-                        "metrics": [
-                            "45%"
-                        ],
-                        "technical_score": 5,
-                        "improvement": "Implemented an AI-powered recommendation engine at TechCorp Inc., which increased user engagement by 45%."
-                    },
-                    {
-                        "text": "Mentored junior developers and conducted code reviews for team of 8 engineers",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [
-                            "8 engineers"
-                        ],
-                        "technical_score": 3,
-                        "improvement": "Mentored a team of 8 junior developers at TechCorp Inc., conducting code reviews and improving code quality by 30%."
-                    },
-                    {
-                        "text": "Developed and maintained RESTful APIs serving 1M+ daily requests",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": true,
-                            "complete": true
-                        },
-                        "metrics": [
-                            "1M+ daily requests"
-                        ],
-                        "technical_score": 5,
-                        "improvement": "Developed and maintained RESTful APIs at TechCorp Inc., efficiently handling over 1M daily requests."
-                    },
-                    {
-                        "text": "Built responsive web applications using React.js and Node.js",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 4,
-                        "improvement": "Built responsive web applications using React.js and Node.js at StartupXYZ, enhancing user interface speed by 40%."
-                    },
-                    {
-                        "text": "Optimized database queries, reducing response time by 60%",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": true,
-                            "complete": true
-                        },
-                        "metrics": [
-                            "60%"
-                        ],
-                        "technical_score": 5,
-                        "improvement": "Optimized database queries at StartupXYZ, reducing response time by 60%."
-                    },
-                    {
-                        "text": "Implemented CI/CD pipeline using Jenkins and Docker",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 4,
-                        "improvement": "Implemented a CI/CD pipeline using Jenkins and Docker at StartupXYZ, decreasing deployment time by 50%."
-                    },
-                    {
-                        "text": "Collaborated with product team to define technical requirements",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 3,
-                        "improvement": "Collaborated with the product team at StartupXYZ to define technical requirements, leading to a 20% increase in project delivery speed."
-                    }
-                ]
+  "status": "success",
+  "resumeAnalysis": {
+    "sections": [
+      {
+        "type": "Experience",
+        "points": [
+          {
+            "text": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": true,
+              "complete": true
             },
-            {
-                "type": "Education",
-                "points": [
-                    {
-                        "text": "Bachelor of Science in Computer Science University of California, Berkeley | 2015-2019",
-                        "star": {
-                            "situation": false,
-                            "task": false,
-                            "action": false,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 0,
-                        "improvement": "Bachelor of Science in Computer Science from the University of California, Berkeley, graduated in 2019."
-                    },
-                    {
-                        "text": "GPA: 3.8/4.0",
-                        "star": {
-                            "situation": false,
-                            "task": false,
-                            "action": false,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [
-                            "3.8/4.0"
-                        ],
-                        "technical_score": 0,
-                        "improvement": "Graduated with a GPA of 3.8/4.0."
-                    },
-                    {
-                        "text": "Relevant Coursework: Data Structures, Algorithms, Machine Learning, Cloud Computing",
-                        "star": {
-                            "situation": false,
-                            "task": false,
-                            "action": false,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 0,
-                        "improvement": "Completed relevant coursework in Data Structures, Algorithms, Machine Learning, and Cloud Computing."
-                    }
-                ]
+            "metrics": [
+              "99.9% system reliability"
+            ],
+            "technical_score": 5,
+            "improvement": "Led the development of a cloud-based microservices architecture at TechCorp Inc., achieving a 99.9% improvement in system reliability."
+          },
+          {
+            "text": "Implemented AI-powered recommendation engine, increasing user engagement by 45%",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": true,
+              "complete": true
             },
-            {
-                "type": "Skills",
-                "points": [
-                    {
-                        "text": "Programming Languages: - Python, JavaScript, TypeScript, Java - SQL, MongoDB",
-                        "star": {
-                            "situation": false,
-                            "task": false,
-                            "action": false,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 0,
-                        "improvement": "Programming Languages: Python, JavaScript, TypeScript, Java; Databases: SQL, MongoDB."
-                    },
-                    {
-                        "text": "Technologies: - React.js, Node.js, Express.js - Docker, Kubernetes - AWS, GCP - Git, Jenkins",
-                        "star": {
-                            "situation": false,
-                            "task": false,
-                            "action": false,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 0,
-                        "improvement": "Technologies: React.js, Node.js, Express.js; Containerization: Docker, Kubernetes; Cloud: AWS, GCP; Tools: Git, Jenkins."
-                    }
-                ]
+            "metrics": [
+              "45% increase in user engagement"
+            ],
+            "technical_score": 5,
+            "improvement": "Implemented an AI-powered recommendation engine at TechCorp Inc., resulting in a 45% increase in user engagement."
+          },
+          {
+            "text": "Mentored junior developers and conducted code reviews for team of 8 engineers",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": false,
+              "complete": false
             },
-            {
-                "type": "Projects",
-                "points": [
-                    {
-                        "text": "Developed ML model to analyze and score resumes",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 4,
-                        "improvement": "Developed an ML model to analyze and score resumes, achieving a 90% accuracy rate."
-                    },
-                    {
-                        "text": "Implemented using Python, FastAPI, and OpenAI",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 4,
-                        "improvement": "Implemented the resume analyzer using Python, FastAPI, and OpenAI, improving processing speed by 30%."
-                    },
-                    {
-                        "text": "Achieved 90% accuracy in recommendations",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": true,
-                            "complete": true
-                        },
-                        "metrics": [
-                            "90%"
-                        ],
-                        "technical_score": 5,
-                        "improvement": "Achieved 90% accuracy in recommendations for the AI Resume Analyzer project."
-                    },
-                    {
-                        "text": "Built distributed file storage system",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 4,
-                        "improvement": "Built a distributed file storage system, increasing data retrieval speed by 40%."
-                    },
-                    {
-                        "text": "Implemented using Go and AWS services",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": false,
-                            "complete": false
-                        },
-                        "metrics": [],
-                        "technical_score": 4,
-                        "improvement": "Implemented the cloud storage system using Go and AWS services, achieving 99.99% uptime."
-                    },
-                    {
-                        "text": "Handles 10TB+ of data with 99.99% uptime",
-                        "star": {
-                            "situation": true,
-                            "task": true,
-                            "action": true,
-                            "result": true,
-                            "complete": true
-                        },
-                        "metrics": [
-                            "10TB+",
-                            "99.99% uptime"
-                        ],
-                        "technical_score": 5,
-                        "improvement": "The cloud storage system handles over 10TB of data with 99.99% uptime."
-                    }
-                ]
+            "metrics": [
+              "team of 8 engineers"
+            ],
+            "technical_score": 3,
+            "improvement": "Mentored a team of 8 junior developers at TechCorp Inc., conducting code reviews and improving code quality by 30%."
+          },
+          {
+            "text": "Developed and maintained RESTful APIs serving 1M+ daily requests",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": true,
+              "complete": true
+            },
+            "metrics": [
+              "1M+ daily requests"
+            ],
+            "technical_score": 5,
+            "improvement": "Developed and maintained RESTful APIs at TechCorp Inc., efficiently handling over 1M daily requests."
+          },
+          {
+            "text": "Built responsive web applications using React.js and Node.js",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": false,
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 4,
+            "improvement": "Built responsive web applications at StartupXYZ using React.js and Node.js, enhancing user experience and increasing traffic by 20%."
+          },
+          {
+            "text": "Optimized database queries, reducing response time by 60%",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": true,
+              "complete": true
+            },
+            "metrics": [
+              "60% reduction in response time"
+            ],
+            "technical_score": 5,
+            "improvement": "Optimized database queries at StartupXYZ, achieving a 60% reduction in response time."
+          },
+          {
+            "text": "Implemented CI/CD pipeline using Jenkins and Docker",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": false,
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 4,
+            "improvement": "Implemented a CI/CD pipeline at StartupXYZ using Jenkins and Docker, reducing deployment time by 50%."
+          },
+          {
+            "text": "Collaborated with product team to define technical requirements",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": false,
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Collaborated with the product team at StartupXYZ to define technical requirements, leading to a 30% improvement in project delivery time."
+          }
+        ]
+      },
+      {
+        "type": "Projects",
+        "points": [
+          {
+            "text": "Developed ML model to analyze and score resumes",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": false,
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 4,
+            "improvement": "Developed an ML model to analyze and score resumes, achieving a 90% accuracy rate in recommendations."
+          },
+          {
+            "text": "Implemented using Python, FastAPI, and OpenAI",
+            "star": {
+              "situation": false,
+              "task": false,
+              "action": true,
+              "result": false,
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 4,
+            "improvement": "Implemented the resume analysis model using Python, FastAPI, and OpenAI, enhancing processing speed by 30%."
+          },
+          {
+            "text": "Achieved 90% accuracy in recommendations",
+            "star": {
+              "situation": false,
+              "task": false,
+              "action": true,
+              "result": true,
+              "complete": false
+            },
+            "metrics": [
+              "90% accuracy"
+            ],
+            "technical_score": 4,
+            "improvement": "Achieved 90% accuracy in resume recommendations, improving client satisfaction by 20%."
+          },
+          {
+            "text": "Built distributed file storage system",
+            "star": {
+              "situation": true,
+              "task": true,
+              "action": true,
+              "result": false,
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 4,
+            "improvement": "Built a distributed file storage system, increasing data handling capacity by 50%."
+          },
+          {
+            "text": "Implemented using Go and AWS services",
+            "star": {
+              "situation": false,
+              "task": false,
+              "action": true,
+              "result": false,
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 4,
+            "improvement": "Implemented the file storage system using Go and AWS services, achieving 99.99% uptime."
+          },
+          {
+            "text": "Handles 10TB+ of data with 99.99% uptime",
+            "star": {
+              "situation": false,
+              "task": false,
+              "action": true,
+              "result": true,
+              "complete": false
+            },
+            "metrics": [
+              "10TB+ data",
+              "99.99% uptime"
+            ],
+            "technical_score": 5,
+            "improvement": "Handles over 10TB of data with 99.99% uptime, ensuring high availability and reliability."
+          }
+        ]
+      },
+      {
+        "type": "Education",
+        "points": [
+          {
+            "text": "Bachelor of Science in Computer Science University of California, Berkeley | 2015-2019",
+            "subject": "Computer Science",
+            "course": "Bachelor of Science",
+            "school": "University of California, Berkeley",
+            "subject_course_school_reputation": {
+              "domestic_score": 9,
+              "domestic_score_rationale": "UC Berkeley is renowned for its strong computer science program in the U.S.",
+              "international_score": 8,
+              "international_score_rationale": "UC Berkeley is globally recognized for its excellence in computer science education."
             }
+          }
         ]
-    },
-    "tokenUsage": {
-        "total_tokens": 4523,
-        "prompt_tokens": 2407,
-        "completion_tokens": 2116,
-        "total_cost": 0.08755
-    },
-    "jobMatchAnalysis": {
-        "match_score": 0,
-        "technical_match": {
-            "matched_skills": [
-                "Python",
-                "JavaScript",
-                "RESTful APIs",
-                "SQL",
-                "Git",
-                "AWS",
-                "Docker"
-            ],
-            "missing_skills": [
-                "Django",
-                "Flask",
-                "FastAPI",
-                "Azure",
-                "Next.js"
-            ],
-            "skill_coverage_score": 80
-        },
-        "experience_match": {
-            "required_years": 3,
-            "actual_years": 5,
-            "experience_score": 100
-        },
-        "key_requirements": {
-            "met": [
-                "3+ years of experience in software development",
-                "Proficiency in Python, JavaScript, or similar languages",
-                "Strong understanding of RESTful APIs",
-                "Experience with SQL and NoSQL databases",
-                "Version control with Git",
-                "Bachelor's degree in Computer Science or related field",
-                "Experience with cloud platforms (AWS, GCP, or Azure)",
-                "Knowledge of microservices architecture",
-                "Experience with machine learning or AI technologies"
-            ],
-            "partially_met": [
-                "Experience with web frameworks (Django, Flask, or FastAPI)",
-                "Understanding of CI/CD practices"
-            ],
-            "not_met": [
-                "Experience with React/Next.js"
-            ]
-        },
-        "section_recommendations": {
-            "experience_projects": [
-                {
-                    "original_point": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
-                    "improved_version": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%, aligning with the company's focus on scalable applications."
-                },
-                {
-                    "original_point": "Implemented AI-powered recommendation engine, increasing user engagement by 45%",
-                    "improved_version": "Implemented AI-powered recommendation engine using Python, increasing user engagement by 45%, showcasing experience with machine learning technologies."
-                },
-                {
-                    "original_point": "Mentored junior developers and conducted code reviews for team of 8 engineers",
-                    "improved_version": "Mentored junior developers and conducted code reviews for team of 8 engineers, enhancing team collaboration and technical discussions."
-                },
-                {
-                    "original_point": "Developed and maintained RESTful APIs serving 1M+ daily requests",
-                    "improved_version": "Developed and maintained RESTful APIs serving 1M+ daily requests, demonstrating strong understanding of RESTful API design."
-                },
-                {
-                    "original_point": "Built responsive web applications using React.js and Node.js",
-                    "improved_version": "Built responsive web applications using React.js and Node.js, contributing to the development of scalable applications."
-                },
-                {
-                    "original_point": "Optimized database queries, reducing response time by 60%",
-                    "improved_version": "Optimized SQL and NoSQL database queries, reducing response time by 60%, highlighting database management skills."
-                },
-                {
-                    "original_point": "Implemented CI/CD pipeline using Jenkins and Docker",
-                    "improved_version": "Implemented CI/CD pipeline using Jenkins and Docker, aligning with the company's CI/CD practices."
-                },
-                {
-                    "original_point": "Collaborated with product team to define technical requirements",
-                    "improved_version": "Collaborated with product team to define technical requirements, ensuring alignment with cross-functional team collaboration."
-                }
-            ],
-            "education": "Highlight coursework in Machine Learning and Cloud Computing to emphasize alignment with job requirements in AI and cloud platforms.",
-            "skills_certs": "Emphasize skills in Python, JavaScript, and cloud platforms (AWS, GCP) to align with job requirements, and consider adding Django, Flask, or FastAPI to cover missing skills."
-        },
-        "recommendations": [
-            "Consider gaining experience with Django, Flask, or FastAPI to fully meet web framework requirements.",
-            "Explore learning Next.js to meet the 'Nice to Have' requirement for React/Next.js.",
-            "Highlight experience with CI/CD practices more explicitly in the resume.",
-            "Consider contributing to open-source projects to enhance the resume's appeal."
+      },
+      {
+        "type": "Skills",
+        "points": [
+          {
+            "text": "Programming Languages: - Python, JavaScript, TypeScript, Java - SQL, MongoDB Technologies: - React.js, Node.js, Express.js - Docker, Kubernetes - AWS, GCP - Git, Jenkins",
+            "subject": "",
+            "course": "",
+            "school": "",
+            "subject_course_school_reputation": {
+              "domestic_score": 0,
+              "domestic_score_rationale": "",
+              "international_score": 0,
+              "international_score_rationale": ""
+            }
+          }
         ]
-    }
+      },
+      {
+        "type": "Certifications",
+        "points": [
+          {
+            "text": "AWS Certified Solutions Architect",
+            "subject": "",
+            "course": "",
+            "school": "",
+            "subject_course_school_reputation": {
+              "domestic_score": 0,
+              "domestic_score_rationale": "",
+              "international_score": 0,
+              "international_score_rationale": ""
+            }
+          },
+          {
+            "text": "Google Cloud Professional Developer",
+            "subject": "",
+            "course": "",
+            "school": "",
+            "subject_course_school_reputation": {
+              "domestic_score": 0,
+              "domestic_score_rationale": "",
+              "international_score": 0,
+              "international_score_rationale": ""
+            }
+          },
+          {
+            "text": "Docker Certified Associate",
+            "subject": "",
+            "course": "",
+            "school": "",
+            "subject_course_school_reputation": {
+              "domestic_score": 0,
+              "domestic_score_rationale": "",
+              "international_score": 0,
+              "international_score_rationale": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "tokenUsage": {
+    "total_tokens": 3602,
+    "prompt_tokens": 1914,
+    "completion_tokens": 1688,
+    "total_cost": 0.06978000000000001
+  },
+  "jobMatchAnalysis": {
+    "match_score": 90,
+    "technical_match": {
+      "matched_skills": [
+        "Python",
+        "JavaScript",
+        "RESTful APIs",
+        "SQL",
+        "NoSQL",
+        "Git",
+        "AWS",
+        "GCP",
+        "Docker",
+        "Kubernetes"
+      ],
+      "missing_skills": [
+        "Django",
+        "Flask",
+        "Azure",
+        "Next.js"
+      ],
+      "skill_coverage_score": 85
+    },
+    "experience_match": {
+      "required_years": 3,
+      "actual_years": 5,
+      "experience_score": 100
+    },
+    "key_requirements": {
+      "met": [
+        "3+ years of experience in software development",
+        "Proficiency in Python, JavaScript",
+        "Experience with SQL and NoSQL databases",
+        "Version control with Git",
+        "Bachelor's degree in Computer Science",
+        "Experience with cloud platforms (AWS, GCP)",
+        "Knowledge of microservices architecture",
+        "Understanding of CI/CD practices"
+      ],
+      "partially_met": [
+        "Experience with web frameworks (Django, Flask, or FastAPI)",
+        "Experience with machine learning or AI technologies"
+      ],
+      "not_met": [
+        "Experience with React/Next.js",
+        "Contributions to open-source projects"
+      ]
+    },
+    "recommendations": [
+      "Highlight experience with FastAPI in the projects section to better align with the job's web framework requirement.",
+      "Emphasize any experience or contributions to open-source projects to meet the 'Nice to Have' criteria.",
+      "Include more details on problem-solving abilities and communication skills in the summary or experience sections.",
+      "Mention any experience with Azure if applicable, to cover all cloud platform requirements.",
+      "Consider adding a project or experience related to React/Next.js to meet the 'Nice to Have' criteria."
+    ]
+  }
 }

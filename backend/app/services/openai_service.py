@@ -26,37 +26,77 @@ RESUME_ANALYSIS_FUNCTIONS = [
                             "points": {
                                 "type": "array",
                                 "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "text": {"type": "string", "description": "Original bullet point text"},
-                                        "star": {
+                                    "oneOf": [
+                                        {
                                             "type": "object",
                                             "properties": {
-                                                "situation": {"type": "boolean"},
-                                                "task": {"type": "boolean"},
-                                                "action": {"type": "boolean"},
-                                                "result": {"type": "boolean"},
-                                                "complete": {"type": "boolean"}
+                                                "text": {"type": "string", "description": "Full text of the point"},
+                                                "star": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "situation": {"type": "boolean", "description": "Whether situation is present"},
+                                                        "task": {"type": "boolean", "description": "Whether task is present"},
+                                                        "action": {"type": "boolean", "description": "Whether action is present"},
+                                                        "result": {"type": "boolean", "description": "Whether result is present"},
+                                                        "complete": {"type": "boolean", "description": "Whether all STAR components are present"}
+                                                    },
+                                                    "required": ["situation", "task", "action", "result", "complete"]
+                                                },
+                                                "metrics": {
+                                                    "type": "array",
+                                                    "items": {"type": "string"},
+                                                    "description": "Identified metrics and achievements"
+                                                },
+                                                "technical_score": {
+                                                    "type": "number",
+                                                    "description": "Technical depth score (0-5)",
+                                                    "minimum": 0,
+                                                    "maximum": 5
+                                                },
+                                                "improvement": {
+                                                    "type": "string",
+                                                    "description": "Suggested updated resume point following STAR format and with metrics"
+                                                }
                                             },
-                                            "required": ["situation", "task", "action", "result", "complete"]
+                                            "required": ["text", "star", "metrics", "technical_score", "improvement"]
                                         },
-                                        "metrics": {
-                                            "type": "array",
-                                            "items": {"type": "string"},
-                                            "description": "List of metrics found in the point"
-                                        },
-                                        "technical_score": {
-                                            "type": "number",
-                                            "minimum": 0,
-                                            "maximum": 5,
-                                            "description": "Technical depth score (0-5)"
-                                        },
-                                        "improvement": {
-                                            "type": "string",
-                                            "description": "Suggested updated resume point following STAR format and with metrics"
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "text": {"type": "string", "description": "Full text of the education entry"},
+                                                "subject": {"type": "string", "description": "Subject/field of study"},
+                                                "course": {"type": "string", "description": "Degree/course name"},
+                                                "school": {"type": "string", "description": "Institution name"},
+                                                "subject_course_school_reputation": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "domestic_score": {
+                                                            "type": "number",
+                                                            "description": "Domestic reputation score (0-10)",
+                                                            "minimum": 0,
+                                                            "maximum": 10
+                                                        },
+                                                        "domestic_score_rationale": {
+                                                            "type": "string",
+                                                            "description": "Explanation for domestic reputation score"
+                                                        },
+                                                        "international_score": {
+                                                            "type": "number",
+                                                            "description": "International reputation score (0-10)",
+                                                            "minimum": 0,
+                                                            "maximum": 10
+                                                        },
+                                                        "international_score_rationale": {
+                                                            "type": "string",
+                                                            "description": "Explanation for international reputation score"
+                                                        }
+                                                    },
+                                                    "required": ["domestic_score", "domestic_score_rationale", "international_score", "international_score_rationale"]
+                                                }
+                                            },
+                                            "required": ["text", "subject", "course", "school", "subject_course_school_reputation"]
                                         }
-                                    },
-                                    "required": ["text", "star", "metrics", "technical_score", "improvement"]
+                                    ]
                                 }
                             }
                         },
@@ -101,26 +141,9 @@ JOB_MATCH_FUNCTIONS = [
                         "not_met": {"type": "array", "items": {"type": "string"}}
                     }
                 },
-                "section_recommendations": {
-                    "type": "object",
-                    "properties": {
-                        "experience_projects": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "original_point": {"type": "string"},
-                                    "improved_version": {"type": "string"}
-                                }
-                            }
-                        },
-                        "education": {"type": "string"},
-                        "skills_certs": {"type": "string"}
-                    }
-                },
                 "recommendations": {"type": "array", "items": {"type": "string"}}
             },
-            "required": ["match_score", "technical_match", "experience_match", "key_requirements", "section_recommendations", "recommendations"]
+            "required": ["match_score", "technical_match", "experience_match", "key_requirements", "recommendations"]
         }
     }
 ]
@@ -286,4 +309,73 @@ For each section in the resume:
                     "completion_tokens": 0,
                     "total_cost": 0
                 }
-            } 
+            }
+
+    @tenacity.retry(
+        stop=tenacity.stop_after_attempt(3),
+        wait=tenacity.wait_exponential(multiplier=1, min=4, max=10),
+        retry=tenacity.retry_if_exception_type(Exception),
+        before_sleep=lambda retry_state: logger.warning(f"Retrying OpenAI API call after error: {retry_state.outcome.exception()}")
+    )
+    async def analyze_section(self, section_type: str, text: str) -> Dict[str, Any]:
+        """
+        Analyze a specific section of a resume.
+        
+        Args:
+            section_type: Type of section (Education, Experience, etc.)
+            text: The text content of the section
+            
+        Returns:
+            Dict containing analysis results and token usage
+        """
+        try:
+            # Create section-specific system prompt
+            system_prompt = """You are an expert resume analyzer. Analyze the following section of the resume."""
+            
+            if section_type == "Education":
+                system_prompt += """
+                For each education entry:
+                1. Extract school name, degree, and graduation date
+                2. Identify subject/field of study
+                3. List relevant coursework and achievements
+                4. Provide reputation scores (0-10) for both domestic and international recognition
+                5. Include detailed rationales for the reputation scores"""
+            
+            response = await self.client.chat.completions.create(
+                model="gpt-4o-2024-08-06",
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": text}
+                ],
+                functions=RESUME_ANALYSIS_FUNCTIONS,
+                function_call={"name": "analyze_resume_section"},
+                temperature=0
+            )
+            
+            # Parse the function call response
+            function_response = json.loads(response.choices[0].message.function_call.arguments)
+            
+            # Extract the relevant section
+            section = next(
+                (s for s in function_response["sections"] if s["type"] == section_type),
+                {"type": section_type, "points": []}
+            )
+            
+            return {
+                "status": "success",
+                "content": section,
+                "token_usage": {
+                    "total_tokens": response.usage.total_tokens,
+                    "prompt_tokens": response.usage.prompt_tokens,
+                    "completion_tokens": response.usage.completion_tokens,
+                    "total_cost": (
+                        response.usage.prompt_tokens * settings.COST_PER_INPUT_TOKEN +
+                        response.usage.completion_tokens * settings.COST_PER_OUTPUT_TOKEN
+                    )
+                }
+            }
+            
+        except Exception as e:
+            logger.error(f"Error in analyze_section: {str(e)}", exc_info=True)
+            # Let tenacity handle the retry
+            raise e 

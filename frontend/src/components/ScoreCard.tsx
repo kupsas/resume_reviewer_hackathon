@@ -15,21 +15,21 @@ const ScoreCard: React.FC<ScoreCardProps> = ({
   className,
 }) => {
   const getScoreColor = (score: number) => {
-    if (score >= 90) return "text-green-600";
-    if (score > 75) return "text-amber-500";
-    return "text-red-500";
+    if (score >= 90) return "text-green-600 dark:text-green-400";
+    if (score > 75) return "text-amber-500 dark:text-amber-400";
+    return "text-red-500 dark:text-red-400";
   };
 
   const getScoreBackground = (score: number) => {
-    if (score >= 90) return "bg-green-100";
-    if (score > 75) return "bg-amber-100";
-    return "bg-red-100";
+    if (score >= 90) return "bg-green-100 dark:bg-green-950";
+    if (score > 75) return "bg-amber-100 dark:bg-amber-950";
+    return "bg-red-100 dark:bg-red-950";
   };
 
   const getScoreBorder = (score: number) => {
-    if (score >= 90) return "border-green-300";
-    if (score > 75) return "border-amber-300";
-    return "border-red-300";
+    if (score >= 90) return "border-green-300 dark:border-green-800";
+    if (score > 75) return "border-amber-300 dark:border-amber-800";
+    return "border-red-300 dark:border-red-800";
   };
 
   return (
@@ -40,7 +40,7 @@ const ScoreCard: React.FC<ScoreCardProps> = ({
       className
     )}>
       <div className="space-y-2">
-        <h4 className="font-medium">{title}</h4>
+        <h4 className="font-medium text-foreground">{title}</h4>
         <div className={cn("text-3xl font-bold", getScoreColor(score))}>
           {score}%
         </div>

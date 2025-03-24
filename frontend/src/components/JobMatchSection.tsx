@@ -42,9 +42,9 @@ const JobMatchSection: React.FC<JobMatchSectionProps> = ({ matchData, className 
         <h3 className="font-semibold text-lg">Job Match Analysis</h3>
       </div>
       
-      <div className="p-5 space-y-6">
+      <div className="p-5 space-y-8">
         {/* Score cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <ScoreCard 
             title="Overall Match" 
             score={matchScore}
@@ -57,124 +57,136 @@ const JobMatchSection: React.FC<JobMatchSectionProps> = ({ matchData, className 
           />
         </div>
         
-        {/* Experience Match Section */}
-        <div className="space-y-4">
-          <h4 className="font-medium">Experience Match</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border rounded-lg p-4 space-y-2">
-              <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-primary" />
-                <span className="font-medium">Required Years: {experienceMatch.required_years}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="h-5 w-5 text-success" />
-                <span className="font-medium">Your Experience: {experienceMatch.actual_years} years</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Skills section */}
-        <div className="space-y-4">
-          <h4 className="font-medium">Skills Analysis</h4>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <h5 className="text-sm font-medium text-muted-foreground flex items-center gap-1">
-                <Check className="h-4 w-4 text-success" />
-                <span>Matched Skills</span>
-              </h5>
-              {technicalMatch.matched_skills.length > 0 ? (
-                <div className="flex flex-wrap gap-2">
-                  {technicalMatch.matched_skills.map((skill, index) => (
-                    <span key={index} className="chip bg-success/10 text-success border border-success/20">
-                      {skill}
-                    </span>
-                  ))}
+        {/* Experience Match and Skills Analysis sections */}
+        <div className="mb-12">  {/* Increased margin bottom for better separation */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Experience Match Section */}
+            <div className="lg:col-span-1">
+              <h4 className="font-medium mb-4">Experience Match</h4>
+              <div className="bg-card border rounded-lg p-6">  {/* Increased padding */}
+                <div className="space-y-4">  {/* Increased spacing between items */}
+                  <div className="flex items-center gap-3">
+                    <Clock className="h-5 w-5 text-primary" />
+                    <span className="font-medium">Required Years: {experienceMatch.required_years}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Award className="h-5 w-5 text-success" />
+                    <span className="font-medium">Your Experience: {experienceMatch.actual_years} years</span>
+                  </div>
                 </div>
-              ) : (
-                <p className="text-sm text-muted-foreground">No matched skills found</p>
-              )}
+              </div>
             </div>
             
-            <div className="space-y-2">
-              <h5 className="text-sm font-medium text-muted-foreground flex items-center gap-1">
-                <X className="h-4 w-4 text-destructive" />
-                <span>Missing Skills</span>
-              </h5>
-              {technicalMatch.missing_skills.length > 0 ? (
-                <div className="flex flex-wrap gap-2">
-                  {technicalMatch.missing_skills.map((skill, index) => (
-                    <span key={index} className="chip bg-destructive/10 text-destructive border border-destructive/20">
-                      {skill}
-                    </span>
-                  ))}
+            {/* Skills section */}
+            <div className="lg:col-span-2">
+              <h4 className="font-medium mb-4">Skills Analysis</h4>
+              <div className="bg-card border rounded-lg p-6">  {/* Increased padding */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <h5 className="text-sm font-medium text-muted-foreground flex items-center gap-1">
+                      <Check className="h-4 w-4 text-success" />
+                      <span>Matched Skills</span>
+                    </h5>
+                    {technicalMatch.matched_skills.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {technicalMatch.matched_skills.map((skill, index) => (
+                          <span key={index} className="chip bg-success/10 text-success border border-success/20">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-muted-foreground">No matched skills found</p>
+                    )}
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <h5 className="text-sm font-medium text-muted-foreground flex items-center gap-1">
+                      <X className="h-4 w-4 text-destructive" />
+                      <span>Missing Skills</span>
+                    </h5>
+                    {technicalMatch.missing_skills.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {technicalMatch.missing_skills.map((skill, index) => (
+                          <span key={index} className="chip bg-destructive/10 text-destructive border border-destructive/20">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-muted-foreground">No missing skills found</p>
+                    )}
+                  </div>
                 </div>
-              ) : (
-                <p className="text-sm text-muted-foreground">No missing skills found</p>
-              )}
+              </div>
             </div>
           </div>
         </div>
         
         {/* Requirements section */}
-        <div className="space-y-4">
-          <h4 className="font-medium">Key Requirements</h4>
+        <div>
+          <h4 className="font-medium mb-6">Key Requirements</h4>  {/* Increased bottom margin */}
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">  {/* Increased gap */}
             {/* Met requirements */}
-            {keyRequirements.met.length > 0 && (
-              <div className="space-y-2">
-                <h5 className="text-sm font-medium text-success flex items-center gap-1">
-                  <Check className="h-4 w-4" />
-                  <span>Met Requirements</span>
-                </h5>
-                <div className="space-y-2 h-[calc(100%-2rem)] overflow-y-auto">
+            <div className="bg-card border rounded-lg p-6">  {/* Made into a card */}
+              <h5 className="text-sm font-medium text-success flex items-center gap-2 mb-4">
+                <Check className="h-5 w-5" />
+                <span>Met Requirements</span>
+              </h5>
+              {keyRequirements.met.length > 0 ? (
+                <div className="space-y-3">  {/* Increased spacing between items */}
                   {keyRequirements.met.map((req, index) => (
-                    <div key={index} className="flex items-start gap-2 bg-success/5 border border-success/10 rounded p-2">
+                    <div key={index} className="flex items-start gap-2 bg-success/5 border border-success/10 rounded-lg p-3">
                       <Check className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
                       <p className="text-sm">{req}</p>
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
+              ) : (
+                <p className="text-sm text-muted-foreground">No met requirements found</p>
+              )}
+            </div>
             
             {/* Partially met requirements */}
-            {keyRequirements.partially_met.length > 0 && (
-              <div className="space-y-2">
-                <h5 className="text-sm font-medium text-warning flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
-                  <span>Partially Met Requirements</span>
-                </h5>
-                <div className="space-y-2 h-[calc(100%-2rem)] overflow-y-auto">
+            <div className="bg-card border rounded-lg p-6">  {/* Made into a card */}
+              <h5 className="text-sm font-medium text-warning flex items-center gap-2 mb-4">
+                <Clock className="h-5 w-5" />
+                <span>Partially Met Requirements</span>
+              </h5>
+              {keyRequirements.partially_met.length > 0 ? (
+                <div className="space-y-3">  {/* Increased spacing between items */}
                   {keyRequirements.partially_met.map((req, index) => (
-                    <div key={index} className="flex items-start gap-2 bg-warning/5 border border-warning/10 rounded p-2">
+                    <div key={index} className="flex items-start gap-2 bg-warning/5 border border-warning/10 rounded-lg p-3">
                       <Clock className="h-4 w-4 text-warning mt-0.5 flex-shrink-0" />
                       <p className="text-sm">{req}</p>
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
+              ) : (
+                <p className="text-sm text-muted-foreground">No partially met requirements found</p>
+              )}
+            </div>
             
             {/* Not met requirements */}
-            {keyRequirements.not_met.length > 0 && (
-              <div className="space-y-2">
-                <h5 className="text-sm font-medium text-destructive flex items-center gap-1">
-                  <X className="h-4 w-4" />
-                  <span>Not Met Requirements</span>
-                </h5>
-                <div className="space-y-2 h-[calc(100%-2rem)] overflow-y-auto">
+            <div className="bg-card border rounded-lg p-6">  {/* Made into a card */}
+              <h5 className="text-sm font-medium text-destructive flex items-center gap-2 mb-4">
+                <X className="h-5 w-5" />
+                <span>Not Met Requirements</span>
+              </h5>
+              {keyRequirements.not_met.length > 0 ? (
+                <div className="space-y-3">  {/* Increased spacing between items */}
                   {keyRequirements.not_met.map((req, index) => (
-                    <div key={index} className="flex items-start gap-2 bg-destructive/5 border border-destructive/10 rounded p-2">
+                    <div key={index} className="flex items-start gap-2 bg-destructive/5 border border-destructive/10 rounded-lg p-3">
                       <X className="h-4 w-4 text-destructive mt-0.5 flex-shrink-0" />
                       <p className="text-sm">{req}</p>
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
+              ) : (
+                <p className="text-sm text-muted-foreground">No unmet requirements found</p>
+              )}
+            </div>
             
             {/* Show message if no requirements are found */}
             {keyRequirements.met.length === 0 && 
