@@ -34,9 +34,9 @@ const EducationCard: React.FC<EducationCardProps> = ({
       "hover:shadow-elevation-medium",
       className
     )}>
-      <div className="flex gap-6 items-stretch w-full min-h-[200px]">
+      <div className="flex flex-col lg:flex-row gap-6 items-stretch w-full min-h-[200px]">
         {/* Main Education Info and Details */}
-        <div className="w-1/3 flex flex-col">
+        <div className="w-full lg:w-1/3 flex flex-col">
           {/* Education Title */}
           <div>
             <h3 className="text-lg font-semibold">{education.course} in {education.subject}</h3>
@@ -53,7 +53,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
         </div>
 
         {/* Reputation Cards */}
-        <div className="flex gap-6 w-2/3 items-end">
+        <div className="flex flex-col sm:flex-row gap-6 w-full lg:w-2/3 items-end">
           {/* Domestic Reputation Card */}
           <div className={cn(
             "flex-1 p-4 rounded-lg border",
