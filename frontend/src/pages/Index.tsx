@@ -11,6 +11,13 @@ import { Button } from '../components/ui/button';
 import { useAnalysisStore } from '@/lib/store';
 import { toast } from 'sonner';
 
+const hasImprovements = (improvements: any) => {
+  if (!improvements) return false;
+  
+  const { experience_projects = [], education = '', skills_certs = '' } = improvements;
+  return experience_projects.length > 0 || education.trim().length > 0 || skills_certs.trim().length > 0;
+};
+
 const Index = () => {
   const navigate = useNavigate();
   const analysisResult = useAnalysisStore(state => state.analysisResult);
@@ -129,17 +136,19 @@ const Index = () => {
               <span>Job Match</span>
             </button>
           )}
-          <button
-            onClick={() => setActiveTab('improvements')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-t-lg font-medium transition-all ${
-              activeTab === 'improvements' 
-                ? 'bg-primary text-primary-foreground' 
-                : 'hover:bg-secondary'
-            }`}
-          >
-            <LineChart className="h-4 w-4" />
-            <span>Improvements</span>
-          </button>
+          {analysisResult.jobMatchAnalysis?.section_recommendations && hasImprovements(analysisResult.jobMatchAnalysis.section_recommendations) && (
+            <button
+              onClick={() => setActiveTab('improvements')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-t-lg font-medium transition-all ${
+                activeTab === 'improvements' 
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'hover:bg-secondary'
+              }`}
+            >
+              <LineChart className="h-4 w-4" />
+              <span>Improvements</span>
+            </button>
+          )}
         </div>
       </div>
       
@@ -234,15 +243,17 @@ const Index = () => {
                   <span>Job Match</span>
                 </button>
               )}
-              <button
-                onClick={() => setActiveTab('improvements')}
-                className={`flex items-center gap-2 p-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'improvements' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'
-                }`}
-              >
-                <LineChart className="h-4 w-4" />
-                <span>Improvements</span>
-              </button>
+              {analysisResult.jobMatchAnalysis?.section_recommendations && hasImprovements(analysisResult.jobMatchAnalysis.section_recommendations) && (
+                <button
+                  onClick={() => setActiveTab('improvements')}
+                  className={`flex items-center gap-2 p-2 rounded-md text-sm font-medium transition-all ${
+                    activeTab === 'improvements' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'
+                  }`}
+                >
+                  <LineChart className="h-4 w-4" />
+                  <span>Improvements</span>
+                </button>
+              )}
             </div>
           </div>
         </div>

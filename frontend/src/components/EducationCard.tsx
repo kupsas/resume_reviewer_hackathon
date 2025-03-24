@@ -9,9 +9,9 @@ interface EducationCardProps {
 
 // Helper function to get RAG status color
 const getRAGColor = (score: number): string => {
-  if (score >= 9) return "bg-success/5 border-success/20";
-  if (score >= 6) return "bg-warning/5 border-warning/20";
-  return "bg-destructive/5 border-destructive/20";
+  if (score >= 9) return "bg-success/5 dark:bg-success/20 border-success/20 dark:border-success/30";
+  if (score >= 6) return "bg-warning/5 dark:bg-warning/20 border-warning/20 dark:border-warning/30";
+  return "bg-destructive/5 dark:bg-destructive/20 border-destructive/20 dark:border-destructive/30";
 };
 
 const EducationCard: React.FC<EducationCardProps> = ({
@@ -23,9 +23,9 @@ const EducationCard: React.FC<EducationCardProps> = ({
 
   // Helper function to get progress bar color based on score
   const getProgressBarColor = (score: number): string => {
-    if (score >= 9) return "bg-success";
-    if (score >= 6 && score < 9) return "bg-warning";
-    return "bg-muted-foreground/20";
+    if (score >= 9) return "bg-success dark:bg-success/80";
+    if (score >= 6 && score < 9) return "bg-warning dark:bg-warning/80";
+    return "bg-muted-foreground/20 dark:bg-muted-foreground/40";
   };
 
   return (
@@ -39,13 +39,13 @@ const EducationCard: React.FC<EducationCardProps> = ({
         <div className="w-full lg:w-1/3 flex flex-col">
           {/* Education Title */}
           <div>
-            <h3 className="text-lg font-semibold">{education.course} in {education.subject}</h3>
+            <h3 className="text-lg font-semibold text-foreground">{education.course} in {education.subject}</h3>
             <p className="text-base font-medium text-muted-foreground">{education.school}</p>
           </div>
           
           {/* Details Section */}
           <div className="mt-4 border rounded-lg p-4 flex-grow">
-            <h4 className="text-sm font-medium mb-2">Details</h4>
+            <h4 className="text-sm font-medium mb-2 text-foreground">Details</h4>
             <p className="text-sm text-muted-foreground">
               {education.text}
             </p>
@@ -61,17 +61,17 @@ const EducationCard: React.FC<EducationCardProps> = ({
           )}>
             <div className="space-y-3">
               <div className="flex flex-col items-center text-center">
-                <span className="text-sm font-bold">
+                <span className="text-sm font-bold text-foreground">
                   Domestic Reputation
                 </span>
                 <span className={cn(
                   "text-2xl font-bold mt-2",
-                  domesticScore >= 9 ? "text-success" : 
-                  domesticScore >= 6 ? "text-warning" : 
-                  "text-destructive"
+                  domesticScore >= 9 ? "text-success dark:text-success/80" : 
+                  domesticScore >= 6 ? "text-warning dark:text-warning/80" : 
+                  "text-destructive dark:text-destructive/80"
                 )}>{domesticScore}/10</span>
               </div>
-              <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+              <div className="h-2 w-full bg-muted dark:bg-muted/40 rounded-full overflow-hidden">
                 <div 
                   className={cn(
                     "h-full rounded-full transition-all duration-500",
@@ -93,17 +93,17 @@ const EducationCard: React.FC<EducationCardProps> = ({
           )}>
             <div className="space-y-3">
               <div className="flex flex-col items-center text-center">
-                <span className="text-sm font-bold">
+                <span className="text-sm font-bold text-foreground">
                   International Reputation
                 </span>
                 <span className={cn(
                   "text-2xl font-bold mt-2",
-                  internationalScore >= 9 ? "text-success" : 
-                  internationalScore >= 6 ? "text-warning" : 
-                  "text-destructive"
+                  internationalScore >= 9 ? "text-success dark:text-success/80" : 
+                  internationalScore >= 6 ? "text-warning dark:text-warning/80" : 
+                  "text-destructive dark:text-destructive/80"
                 )}>{internationalScore}/10</span>
               </div>
-              <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+              <div className="h-2 w-full bg-muted dark:bg-muted/40 rounded-full overflow-hidden">
                 <div 
                   className={cn(
                     "h-full rounded-full transition-all duration-500",
@@ -123,7 +123,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
       {/* Improvement suggestion if available */}
       {education.improvement && (
         <div className="mt-4">
-          <p className="text-sm py-2 px-3 bg-primary/5 rounded-lg border border-primary/10">
+          <p className="text-sm py-2 px-3 bg-primary/5 dark:bg-primary/20 rounded-lg border border-primary/10 dark:border-primary/30">
             {education.improvement}
           </p>
         </div>

@@ -9,9 +9,9 @@ interface ResumeHeaderProps {
 
 const ResumeHeader: React.FC<ResumeHeaderProps> = ({ matchScore, className }) => {
   const getScoreColor = (score: number) => {
-    if (score >= 90) return "text-green-600";
-    if (score > 75) return "text-amber-500";
-    return "text-red-500";
+    if (score >= 90) return "text-green-600 dark:text-green-400";
+    if (score > 75) return "text-amber-500 dark:text-amber-400";
+    return "text-red-500 dark:text-red-400";
   };
 
   const getScoreLabel = (score: number) => {
@@ -21,21 +21,21 @@ const ResumeHeader: React.FC<ResumeHeaderProps> = ({ matchScore, className }) =>
   };
 
   const getScoreIcon = (score: number) => {
-    if (score >= 90) return <Check className="h-5 w-5 text-green-600" />;
-    if (score > 75) return <Info className="h-5 w-5 text-amber-500" />;
-    return <AlertTriangle className="h-5 w-5 text-red-500" />;
+    if (score >= 90) return <Check className="h-5 w-5 text-green-600 dark:text-green-400" />;
+    if (score > 75) return <Info className="h-5 w-5 text-amber-500 dark:text-amber-400" />;
+    return <AlertTriangle className="h-5 w-5 text-red-500 dark:text-red-400" />;
   };
 
   const getScoreBackground = (score: number) => {
-    if (score >= 90) return "bg-green-100";
-    if (score > 75) return "bg-amber-100";
-    return "bg-red-100";
+    if (score >= 90) return "bg-green-100 dark:bg-green-950";
+    if (score > 75) return "bg-amber-100 dark:bg-amber-950";
+    return "bg-red-100 dark:bg-red-950";
   };
 
   const getScoreBorder = (score: number) => {
-    if (score >= 90) return "border-green-300";
-    if (score > 75) return "border-amber-300";
-    return "border-red-300";
+    if (score >= 90) return "border-green-300 dark:border-green-800";
+    if (score > 75) return "border-amber-300 dark:border-amber-800";
+    return "border-red-300 dark:border-red-800";
   };
 
   return (
@@ -50,7 +50,7 @@ const ResumeHeader: React.FC<ResumeHeaderProps> = ({ matchScore, className }) =>
             <FileText className="w-6 h-6 text-primary" />
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-semibold">Resume Analysis</h1>
+            <h1 className="text-2xl md:text-3xl font-semibold text-foreground">Resume Analysis</h1>
             <p className="text-muted-foreground">
               {matchScore === 0 
                 ? "Your resume has been analyzed. Add a job description to see match analysis!"
@@ -67,7 +67,7 @@ const ResumeHeader: React.FC<ResumeHeaderProps> = ({ matchScore, className }) =>
             "border transition-all duration-300"
           )}>
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold">{matchScore}%</div>
+              <div className={cn("text-3xl font-bold text-foreground")}>{matchScore}%</div>
               <div className={cn("text-sm font-medium flex items-center gap-1", getScoreColor(matchScore))}>
                 {getScoreIcon(matchScore)}
                 <span>{getScoreLabel(matchScore)}</span>
