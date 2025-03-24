@@ -52,6 +52,31 @@ Analyze each bullet point for:
 4. Individual vs team contributions
 Return detailed analysis in JSON format.""",
 
+            "education": """You are an expert resume analyzer. Analyze the provided education section and return a JSON response.
+
+For Education section:
+- Extract and analyze:
+  * Subject: The specific field of study (e.g., Computer Science, Business Administration)
+  * Course: The type of degree or qualification (e.g., Bachelor of Science, MBA)
+  * School: The educational institution name
+- Evaluate institution reputation:
+  * Domestic score (1-10) based on:
+    - National rankings and academic excellence
+    - Research output and impact
+    - Industry connections and partnerships
+    - Program-specific reputation
+    - Alumni network strength
+  * International score (1-10) based on:
+    - Global university rankings
+    - International research collaborations
+    - Global recognition and partnerships
+    - International student/faculty diversity
+    - Cross-border academic programs
+  * Provide detailed rationale for each score
+- Include any additional details like GPA, relevant coursework, or achievements
+
+Return analysis in JSON format following the specified schema.""",
+
             "job_match": """Expert technical recruiter analyzing resume-job fit. Focus on:
 1. Technical skills alignment
 2. Experience relevance
@@ -179,18 +204,41 @@ Return detailed JSON analysis with specific examples."""
 
     async def _analyze_education(self, content: str) -> Dict[str, Any]:
         """Analyze education section with specialized focus."""
-        response = await self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": self.system_messages["analysis"]},
-                {"role": "user", "content": content}
-            ],
-            response_format={"type": "json_object"},
-            temperature=0
-        )
-        
-        self._update_token_usage(response)
-        return json.loads(response.choices[0].message.content)
+        try:
+            response = await self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": self.system_messages["education"]},
+                    {"role": "user", "content": f"Analyze this education section:\n{content}"}
+                ],
+                functions=RESUME_ANALYSIS_FUNCTIONS,
+                function_call={"name": "analyze_resume_section"},
+                temperature=0
+            )
+            
+            # Parse the function call response
+            analysis_result = json.loads(response.choices[0].message.function_call.arguments)
+            
+            # Update token usage
+            self._update_token_usage(response)
+            
+            # Validate the response using our new schema
+            from app.services.resume_analyzer.utils.validation import validate_section_response
+            validated_result = validate_section_response({
+                "type": "Education",
+                "text": content,
+                **analysis_result["sections"][0]  # Extract the first section's data
+            })
+            
+            return validated_result
+            
+        except Exception as e:
+            logger.error(f"Error in _analyze_education: {str(e)}", exc_info=True)
+            return {
+                "type": "Education",
+                "text": content,
+                "error": str(e)
+            }
 
     async def _analyze_general_section(self, content: str, section_type: str) -> Dict[str, Any]:
         """Analyze non-education sections focusing on STAR format and metrics."""
@@ -271,25 +319,39 @@ Requirements: {json.dumps(requirements, indent=2)}"""
         star_complete = 0
         metrics_count = 0
         technical_score_sum = 0
+        education_score_sum = 0
+        education_count = 0
 
         for section in sections:
-            for point in section["points"]:
-                total_points += 1
-                if point["star"]["complete"]:
-                    star_complete += 1
-                metrics_count += len(point["metrics"])
-                technical_score_sum += point["technical_score"]
+            if section["type"] == "Education":
+                # Handle education sections
+                if "subject_course_school_reputation" in section:
+                    rep = section["subject_course_school_reputation"]
+                    # Calculate education score as average of domestic and international scores
+                    education_score = (rep["domestic_score"] + rep["international_score"]) / 2
+                    education_score_sum += education_score
+                    education_count += 1
+            else:
+                # Handle regular sections
+                for point in section.get("points", []):
+                    total_points += 1
+                    if point.get("star", {}).get("complete", False):
+                        star_complete += 1
+                    metrics_count += len(point.get("metrics", []))
+                    technical_score_sum += point.get("technical_score", 0)
 
         # Calculate average scores
         star_score = (star_complete / total_points) * 5 if total_points > 0 else 0
         metrics_score = min(5, metrics_count / total_points * 2.5) if total_points > 0 else 0
         technical_score = technical_score_sum / total_points if total_points > 0 else 0
+        education_score = education_score_sum / education_count if education_count > 0 else 0
 
         return {
             "star_format": round(star_score, 2),
             "metrics_usage": round(metrics_score, 2),
             "technical_depth": round(technical_score, 2),
-            "overall": round((star_score + metrics_score + technical_score) / 3, 2)
+            "education_quality": round(education_score, 2),
+            "overall": round((star_score + metrics_score + technical_score + education_score) / 4, 2)
         }
 
     def _generate_recommendations(self, analysis_results: List[Dict[str, Any]]) -> List[Dict[str, str]]:
@@ -300,15 +362,28 @@ Requirements: {json.dumps(requirements, indent=2)}"""
         star_missing = []
         metrics_missing = []
         technical_weak = []
+        education_weak = []
         
         for result in analysis_results:
-            for point in result.get("points", []):
-                if not point.get("star", {}).get("complete", False):
-                    star_missing.append(point["text"])
-                if not point.get("metrics", []):
-                    metrics_missing.append(point["text"])
-                if float(point.get("technical_score", 0)) < 3:
-                    technical_weak.append(point["text"])
+            if result["type"] == "Education":
+                # Analyze education quality
+                if "subject_course_school_reputation" in result:
+                    rep = result["subject_course_school_reputation"]
+                    avg_score = (rep["domestic_score"] + rep["international_score"]) / 2
+                    if avg_score < 7:
+                        education_weak.append({
+                            "school": result.get("school", "Unknown Institution"),
+                            "score": round(avg_score, 1)
+                        })
+            else:
+                # Analyze regular sections
+                for point in result.get("points", []):
+                    if not point.get("star", {}).get("complete", False):
+                        star_missing.append(point["text"])
+                    if not point.get("metrics", []):
+                        metrics_missing.append(point["text"])
+                    if float(point.get("technical_score", 0)) < 3:
+                        technical_weak.append(point["text"])
         
         # Generate recommendations
         if star_missing:
@@ -333,6 +408,14 @@ Requirements: {json.dumps(requirements, indent=2)}"""
                 "area": "Technical Depth",
                 "action": "Enhance technical details in project descriptions",
                 "examples": technical_weak[:2]
+            })
+        
+        if education_weak:
+            recommendations.append({
+                "priority": "medium",
+                "area": "Education Quality",
+                "action": "Consider pursuing additional certifications or advanced degrees to strengthen your academic profile",
+                "examples": [f"{edu['school']} (Current Score: {edu['score']}/10)" for edu in education_weak[:2]]
             })
         
         return recommendations

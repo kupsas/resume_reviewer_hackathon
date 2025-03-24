@@ -34,12 +34,56 @@ class AnalysisPoint(BaseModel):
     technical_score: float = Field(..., ge=0, le=5, description="Technical complexity score")
     improvement_suggestions: List[str] = Field(default_factory=list, description="Suggested improvements")
 
+class EducationReputation(BaseModel):
+    """Model for education institution reputation scores."""
+    domestic_score: int = Field(..., ge=0, le=10, description="Domestic reputation score (0-10)")
+    domestic_score_rationale: str = Field(..., min_length=1, description="Explanation for domestic reputation score")
+    international_score: int = Field(..., ge=0, le=10, description="International reputation score (0-10)")
+    international_score_rationale: str = Field(..., min_length=1, description="Explanation for international reputation score")
+
+class EducationPoint(BaseModel):
+    """Model for validating education section points."""
+    text: str = Field(..., description="Full text of the education entry")
+    subject: str = Field(..., description="Subject/field of study")
+    course: str = Field(..., description="Degree/course name")
+    school: str = Field(..., description="Institution name")
+    subject_course_school_reputation: EducationReputation = Field(..., description="Reputation scores and rationales")
+
+class EducationAnalysis(BaseModel):
+    """Model for validating education section analysis."""
+    type: str = Field("Education", description="Section type")
+    text: str = Field(..., description="Original education text")
+    subject: str = Field(..., description="Field of study")
+    course: str = Field(..., description="Type of degree/qualification")
+    school: str = Field(..., description="Educational institution")
+    subject_course_school_reputation: EducationReputation = Field(..., description="Institution reputation analysis")
+
 class SectionAnalysis(BaseModel):
     """Model for validating section analysis results."""
     type: str = Field(..., description="Section type")
-    points: List[AnalysisPoint] = Field(..., description="Analysis points")
+    points: Optional[List[AnalysisPoint]] = Field(None, description="Analysis points for non-education sections")
     summary: str = Field(..., description="Section summary")
     improvement_areas: List[str] = Field(default_factory=list, description="Areas for improvement")
+    # Education-specific fields
+    text: Optional[str] = Field(None, description="Original education text")
+    subject: Optional[str] = Field(None, description="Field of study")
+    course: Optional[str] = Field(None, description="Type of degree/qualification")
+    school: Optional[str] = Field(None, description="Educational institution")
+    subject_course_school_reputation: Optional[EducationReputation] = Field(None, description="Institution reputation analysis")
+
+    @validator('points')
+    def validate_points(cls, v: Optional[List[AnalysisPoint]], values: Dict) -> Optional[List[AnalysisPoint]]:
+        """Validate that points are present for non-education sections."""
+        if values.get('type') != 'Education' and not v:
+            raise ValueError("Points are required for non-education sections")
+        return v
+
+    @validator('text', 'subject', 'course', 'school', 'subject_course_school_reputation')
+    def validate_education_fields(cls, v: Any, values: Dict) -> Any:
+        """Validate that education fields are present for education sections."""
+        if values.get('type') == 'Education' and not v:
+            raise ValueError("Education fields are required for education sections")
+        return v
 
 class JobMatchAnalysis(BaseModel):
     """Model for validating job match analysis results."""
