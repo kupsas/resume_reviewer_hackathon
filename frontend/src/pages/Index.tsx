@@ -4,24 +4,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import ResumeHeader from '../components/ResumeHeader';
 import SectionAnalysis from '../components/SectionAnalysis';
 import JobMatchSection from '../components/JobMatchSection';
-import ImprovementSuggestions from '../components/ImprovementSuggestions';
 import { HealthCheck } from '../components/HealthCheck';
-import { FileText, Briefcase, LineChart, MousePointerClick, Upload, AlertTriangle } from 'lucide-react';
+import { FileText, Briefcase, MousePointerClick, Upload, AlertTriangle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { useAnalysisStore } from '@/lib/store';
 import { toast } from 'sonner';
 
-const hasImprovements = (improvements: any) => {
-  if (!improvements) return false;
-  
-  const { experience_projects = [], education = '', skills_certs = '' } = improvements;
-  return experience_projects.length > 0 || education.trim().length > 0 || skills_certs.trim().length > 0;
-};
-
 const Index = () => {
   const navigate = useNavigate();
   const analysisResult = useAnalysisStore(state => state.analysisResult);
-  const [activeTab, setActiveTab] = useState<'sections' | 'jobMatch' | 'improvements'>('sections');
+  const [activeTab, setActiveTab] = useState<'sections' | 'jobMatch'>('sections');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -77,28 +69,8 @@ const Index = () => {
     );
   }
 
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary/30">
-        <div className="flex flex-col items-center space-y-4 max-w-md text-center">
-          <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
-            <AlertTriangle className="h-6 w-6 text-destructive" />
-          </div>
-          <h2 className="text-xl font-medium">Oops! Something went wrong</h2>
-          <p className="text-muted-foreground">{error}</p>
-          <Button asChild className="mt-4">
-            <Link to="/">Try Again</Link>
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
-  // Match score from jobMatchAnalysis or default to 0
+  const sections = analysisResult.resumeAnalysis.sections;
   const matchScore = analysisResult.jobMatchAnalysis?.match_score ?? 0;
-
-  // Make sure sections exist before rendering
-  const sections = analysisResult.resumeAnalysis?.sections || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/30">
@@ -134,19 +106,6 @@ const Index = () => {
             >
               <Briefcase className="h-4 w-4" />
               <span>Job Match</span>
-            </button>
-          )}
-          {analysisResult.jobMatchAnalysis?.section_recommendations && hasImprovements(analysisResult.jobMatchAnalysis.section_recommendations) && (
-            <button
-              onClick={() => setActiveTab('improvements')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-t-lg font-medium transition-all ${
-                activeTab === 'improvements' 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'hover:bg-secondary'
-              }`}
-            >
-              <LineChart className="h-4 w-4" />
-              <span>Improvements</span>
             </button>
           )}
         </div>
@@ -187,14 +146,6 @@ const Index = () => {
         {activeTab === 'jobMatch' && analysisResult.jobMatchAnalysis && (
           <motion.div variants={itemVariants}>
             <JobMatchSection matchData={analysisResult.jobMatchAnalysis} />
-          </motion.div>
-        )}
-        
-        {activeTab === 'improvements' && analysisResult.jobMatchAnalysis?.section_recommendations && (
-          <motion.div variants={itemVariants}>
-            <ImprovementSuggestions 
-              improvements={analysisResult.jobMatchAnalysis.section_recommendations}
-            />
           </motion.div>
         )}
 
@@ -241,17 +192,6 @@ const Index = () => {
                 >
                   <Briefcase className="h-4 w-4" />
                   <span>Job Match</span>
-                </button>
-              )}
-              {analysisResult.jobMatchAnalysis?.section_recommendations && hasImprovements(analysisResult.jobMatchAnalysis.section_recommendations) && (
-                <button
-                  onClick={() => setActiveTab('improvements')}
-                  className={`flex items-center gap-2 p-2 rounded-md text-sm font-medium transition-all ${
-                    activeTab === 'improvements' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'
-                  }`}
-                >
-                  <LineChart className="h-4 w-4" />
-                  <span>Improvements</span>
                 </button>
               )}
             </div>
