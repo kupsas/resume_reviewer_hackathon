@@ -5,8 +5,32 @@ export interface ResumeAnalysisRequest {
 }
 
 // Response Types
-export interface ResumePoint {
+
+// New interfaces for education points
+export interface EducationReputation {
+    domestic_score: number;
+    domestic_score_rationale: string;
+    international_score: number;
+    international_score_rationale: string;
+}
+
+export interface EducationPoint {
     text: string;
+    subject: string;
+    course: string;
+    school: string;
+    subject_course_school_reputation: EducationReputation;
+    improvement?: string; // Optional for backward compatibility
+}
+
+// Base interface for common properties
+export interface BaseResumePoint {
+    text: string;
+    improvement: string;
+}
+
+// Standard resume point (for experience/projects)
+export interface StandardResumePoint extends BaseResumePoint {
     star: {
         situation: boolean;
         task: boolean;
@@ -16,8 +40,10 @@ export interface ResumePoint {
     };
     metrics: string[];
     technical_score: number;
-    improvement: string;
 }
+
+// Discriminated union type for all resume points
+export type ResumePoint = StandardResumePoint | EducationPoint;
 
 export interface ResumeSection {
     type: string;

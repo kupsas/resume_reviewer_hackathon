@@ -153,15 +153,15 @@ const Index = () => {
           <motion.div className="space-y-8" variants={itemVariants}>
             {sections.length > 0 ? (
               sections.map((section, index) => {
-                // Temporarily hide Education and Skills sections
-                if (section.type === 'Education' || section.type === 'Skills') {
+                // Hide only Skills and Certifications sections
+                if (section.type === 'Skills' || section.type === 'Certifications') {
                   return null;
                 }
                 return (
                   <SectionAnalysis
                     key={index}
                     title={section.type}
-                    points={section.points || []}
+                    section={section}
                   />
                 );
               })

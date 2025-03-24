@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import StarAnalysisCard from './StarAnalysisCard';
 import JobMatchSection from './JobMatchSection';
+import SectionAnalysis from './SectionAnalysis';
 import { Button } from './ui/button';
 import { Loader2, Upload, FileText } from 'lucide-react';
 import { useResumeAnalysis } from '@/hooks/useResumeAnalysis';
@@ -140,19 +140,11 @@ const ResumeAnalysis: React.FC = () => {
           <div className="space-y-8">
             <h3 className="font-semibold text-lg">Resume Analysis</h3>
             {analysisResult.resumeAnalysis.sections.map((section, sectionIndex) => (
-              <div key={sectionIndex} className="space-y-4">
-                <h4 className="font-medium text-md text-muted-foreground">{section.type}</h4>
-                {section.points.map((point, pointIndex) => (
-                  <StarAnalysisCard
-                    key={`${sectionIndex}-${pointIndex}`}
-                    text={point.text}
-                    star={point.star}
-                    metrics={point.metrics}
-                    technicalScore={point.technical_score}
-                    improvement={point.improvement}
-                  />
-                ))}
-              </div>
+              <SectionAnalysis
+                key={sectionIndex}
+                title={section.type}
+                section={section}
+              />
             ))}
           </div>
         </div>
