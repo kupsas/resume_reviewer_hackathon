@@ -34,14 +34,13 @@ RESUME_ANALYSIS_FUNCTIONS = [
                                                 "star": {
                                                     "type": "object",
                                                     "properties": {
-                                                        "complete": {"type": "boolean", "description": "Whether STAR format is complete"},
-                                                        "missing": {
-                                                            "type": "array",
-                                                            "items": {"type": "string"},
-                                                            "description": "Missing STAR components"
-                                                        }
+                                                        "situation": {"type": "boolean", "description": "Whether situation is present"},
+                                                        "task": {"type": "boolean", "description": "Whether task is present"},
+                                                        "action": {"type": "boolean", "description": "Whether action is present"},
+                                                        "result": {"type": "boolean", "description": "Whether result is present"},
+                                                        "complete": {"type": "boolean", "description": "Whether all STAR components are present"}
                                                     },
-                                                    "required": ["complete", "missing"]
+                                                    "required": ["situation", "task", "action", "result", "complete"]
                                                 },
                                                 "metrics": {
                                                     "type": "array",
