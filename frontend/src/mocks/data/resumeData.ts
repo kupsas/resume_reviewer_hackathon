@@ -171,48 +171,46 @@ export const mockResumeData = {
         "type": "Education",
         "points": [
           {
-            "text": "Bachelor of Science in Computer Science University of California, Berkeley | 2015-2019",
-            "star": {
-              "situation": false,
-              "task": false,
-              "action": false,
-              "result": false,
-              "complete": false
+            "text": "Bachelor of Science in Computer Science University of California, Berkeley | 2015-2019 - GPA: 3.8/4.0 - Relevant Coursework: Data Structures, Algorithms, Machine Learning, Cloud Computing",
+            "subject": "Computer Science",
+            "course": "Bachelor of Science",
+            "school": "University of California, Berkeley",
+            "subject_course_school_reputation": {
+              "domestic_score": 9,
+              "domestic_score_rationale": "UC Berkeley is renowned for its strong computer science program in the U.S.",
+              "international_score": 8,
+              "international_score_rationale": "UC Berkeley is globally recognized for its excellence in computer science education."
             },
-            "metrics": [],
-            "technical_score": 0,
-            "improvement": "Bachelor of Science in Computer Science from the University of California, Berkeley, graduated in 2019."
+            "improvement": "Consider highlighting specific projects completed during your coursework."
           },
           {
-            "text": "GPA: 3.8/4.0",
-            "star": {
-              "situation": false,
-              "task": false,
-              "action": false,
-              "result": false,
-              "complete": false
+            "text": "Master of Science in Artificial Intelligence Stanford University | 2019-2021 - GPA: 3.9/4.0 - Specialization: Deep Learning, Natural Language Processing",
+            "subject": "Artificial Intelligence",
+            "course": "Master of Science",
+            "school": "Stanford University",
+            "subject_course_school_reputation": {
+              "domestic_score": 10,
+              "domestic_score_rationale": "Stanford's AI program is consistently ranked #1 in the U.S.",
+              "international_score": 10,
+              "international_score_rationale": "Stanford is globally recognized as a leader in AI research and education."
             },
-            "metrics": [
-              "3.8/4.0"
-            ],
-            "technical_score": 0,
-            "improvement": "Graduated with a GPA of 3.8/4.0."
+            "improvement": "Consider adding specific research projects or publications from your master's program."
           },
           {
-            "text": "Relevant Coursework: Data Structures, Algorithms, Machine Learning, Cloud Computing",
-            "star": {
-              "situation": false,
-              "task": false,
-              "action": false,
-              "result": false,
-              "complete": false
+            "text": "Online Certification in Cloud Computing AWS Certified Solutions Architect | 2020 - Score: 950/1000",
+            "subject": "Cloud Computing",
+            "course": "AWS Certified Solutions Architect",
+            "school": "Amazon Web Services",
+            "subject_course_school_reputation": {
+              "domestic_score": 8,
+              "domestic_score_rationale": "AWS certifications are highly valued in the U.S. tech industry.",
+              "international_score": 9,
+              "international_score_rationale": "AWS is the leading cloud provider globally, making their certifications highly recognized."
             },
-            "metrics": [],
-            "technical_score": 0,
-            "improvement": "Completed relevant coursework in Data Structures, Algorithms, Machine Learning, and Cloud Computing."
+            "improvement": "Consider adding more specific cloud projects or implementations you've worked on."
           }
         ],
-        "analysis": "Your education section is clear and concise. Consider adding relevant coursework or academic achievements to strengthen this section."
+        "analysis": "Your education section demonstrates a strong academic background with a clear progression from undergraduate to graduate studies. The addition of relevant certifications shows your commitment to continuous learning. Consider adding more details about specific projects and achievements to make this section even stronger."
       }
     ],
     "scores": {
