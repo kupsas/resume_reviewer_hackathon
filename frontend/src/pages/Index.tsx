@@ -72,6 +72,19 @@ const Index = () => {
   const sections = analysisResult.resumeAnalysis.sections;
   const matchScore = analysisResult.jobMatchAnalysis?.match_score ?? 0;
 
+  // Function to sort sections in the desired order
+  const sortSections = (sections: any[]) => {
+    const order = ['Experience', 'Education', 'Projects'];
+    return [...sections].sort((a, b) => {
+      const indexA = order.indexOf(a.type);
+      const indexB = order.indexOf(b.type);
+      // If section type is not in our order array, put it at the end
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+      return indexA - indexB;
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/30">
       <ResumeHeader matchScore={matchScore} />
@@ -120,7 +133,7 @@ const Index = () => {
         {activeTab === 'sections' && (
           <motion.div className="space-y-8" variants={itemVariants}>
             {sections.length > 0 ? (
-              sections.map((section, index) => {
+              sortSections(sections).map((section, index) => {
                 // Temporarily hide Skills section
                 if (section.type === 'Skills') {
                   return null;
