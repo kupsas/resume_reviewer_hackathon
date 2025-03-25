@@ -17,6 +17,7 @@ from .resume_formats import (
     JOB_MATCH_FORMAT,
     INTEGRATED_IMPROVEMENTS_FORMAT
 )
+from .openai_service import OpenAIService
 
 load_dotenv()
 
@@ -30,6 +31,9 @@ class ResumeAnalyzer:
         """Initialize the ResumeAnalyzer with OpenAI client and configurations."""
         # Initialize OpenAI client
         self.client = openai_client or AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+        
+        # Create OpenAI service instance
+        self.openai_service = OpenAIService(client=self.client)
         
         # Model configuration - using standard OpenAI models
         self.model = settings.OPENAI_MODEL  # Use model from settings
@@ -126,30 +130,25 @@ Return detailed JSON analysis with specific examples."""
                 if not job_description.strip():
                     raise ValueError("Job description cannot be empty")
                     
-                job_match_response = await self.client.chat.completions.create(
-                    model=self.model,
-                    messages=[
-                        {"role": "system", "content": self.system_messages["job_match"]},
-                        {"role": "user", "content": f"Resume:\n{resume_text}\n\nJob Description:\n{job_description}"}
-                    ],
-                    functions=JOB_MATCH_FUNCTIONS,
-                    function_call={"name": "analyze_job_match"}
-                )
-                
-                job_match_result = json.loads(job_match_response.choices[0].message.function_call.arguments)
-                self._update_token_usage(job_match_response)
+                # Use the OpenAI service's analyze_job_match method
+                job_match_result = await self.openai_service.analyze_job_match(resume_text, job_description)
 
             # Prepare final response
             result = {
                 "status": "success",
-                "resumeAnalysis": {
-                    "sections": analysis_result["sections"]
-                },
+                "resumeAnalysis": analysis_result,
                 "tokenUsage": self.token_usage.copy()
             }
 
             if job_match_result:
-                result["jobMatchAnalysis"] = job_match_result
+                if job_match_result["status"] == "error":
+                    logger.error(f"Job match analysis failed: {job_match_result.get('message')}")
+                    result["jobMatchAnalysis"] = job_match_result
+                else:
+                    # Update token usage
+                    self._update_token_usage(job_match_result["token_usage"])
+                    # Add job match analysis with camelCase
+                    result["jobMatchAnalysis"] = job_match_result["content"]
 
             return result
 
