@@ -17,6 +17,7 @@ from .resume_formats import (
     JOB_MATCH_FORMAT,
     INTEGRATED_IMPROVEMENTS_FORMAT
 )
+from .openai_service import OpenAIService
 
 load_dotenv()
 
@@ -30,6 +31,9 @@ class ResumeAnalyzer:
         """Initialize the ResumeAnalyzer with OpenAI client and configurations."""
         # Initialize OpenAI client
         self.client = openai_client or AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+        
+        # Create OpenAI service instance
+        self.openai_service = OpenAIService(client=self.client)
         
         # Model configuration - using standard OpenAI models
         self.model = settings.OPENAI_MODEL  # Use model from settings
@@ -46,11 +50,14 @@ class ResumeAnalyzer:
         self.system_messages = {
             "analysis": """You are an expert resume analyzer with deep experience in technical recruitment and career coaching. 
 Analyze each bullet point for:
-1. STAR Format components
+1. STAR Format components with STRICT criteria - do not assume anything is implied unless it is extremely obvious:
+   * Situation (S): Should clearly describe the context or scenario with minimal ambiguity. Should answer the questions "What was the challenge you faced?" or "WHY did you perform the action?". If either of these criteria is met, mention clearly. If not, mention which is not met.
+   * Action (A): Should describe specific actions taken with concrete methodology. Should answer the questions "What did you do to face the challenge?" or "WHAT did you do to achieve the result?". If either of these criteria is met, mention clearly. If not, mention which is not met.  
+   * Result (R): Should clearly indicate the outcome with quantifiable metrics and numbers. Should answer the questions "What metric did you move by doing the task?" or "What was the indicator of your success in the action / in the situation?". If either of these criteria is met, mention clearly. If not, mention which is not met.
 2. Metrics and quantifiable achievements
 3. Technical depth and complexity
 4. Individual vs team contributions
-Return detailed analysis in JSON format.""",
+Return detailed analysis in JSON format with rationale for each assessment.""",
 
             "education": """You are an expert resume analyzer. Analyze the provided education section and return a JSON response.
 
@@ -126,30 +133,25 @@ Return detailed JSON analysis with specific examples."""
                 if not job_description.strip():
                     raise ValueError("Job description cannot be empty")
                     
-                job_match_response = await self.client.chat.completions.create(
-                    model=self.model,
-                    messages=[
-                        {"role": "system", "content": self.system_messages["job_match"]},
-                        {"role": "user", "content": f"Resume:\n{resume_text}\n\nJob Description:\n{job_description}"}
-                    ],
-                    functions=JOB_MATCH_FUNCTIONS,
-                    function_call={"name": "analyze_job_match"}
-                )
-                
-                job_match_result = json.loads(job_match_response.choices[0].message.function_call.arguments)
-                self._update_token_usage(job_match_response)
+                # Use the OpenAI service's analyze_job_match method
+                job_match_result = await self.openai_service.analyze_job_match(resume_text, job_description)
 
             # Prepare final response
             result = {
                 "status": "success",
-                "resumeAnalysis": {
-                    "sections": analysis_result["sections"]
-                },
+                "resumeAnalysis": analysis_result,
                 "tokenUsage": self.token_usage.copy()
             }
 
             if job_match_result:
-                result["jobMatchAnalysis"] = job_match_result
+                if job_match_result["status"] == "error":
+                    logger.error(f"Job match analysis failed: {job_match_result.get('message')}")
+                    result["jobMatchAnalysis"] = job_match_result
+                else:
+                    # Update token usage
+                    self._update_token_usage(job_match_result["token_usage"])
+                    # Add job match analysis with camelCase
+                    result["jobMatchAnalysis"] = job_match_result["content"]
 
             return result
 
@@ -374,13 +376,22 @@ Requirements: {json.dumps(requirements, indent=2)}"""
                     if avg_score < 7:
                         education_weak.append({
                             "school": result.get("school", "Unknown Institution"),
-                            "score": round(avg_score, 1)
+                            "score": round(avg_score, 1),
+                            "rationale": f"Domestic: {rep['domestic_score_rationale']}, International: {rep['international_score_rationale']}"
                         })
             else:
                 # Analyze regular sections
                 for point in result.get("points", []):
-                    if not point.get("star", {}).get("complete", False):
-                        star_missing.append(point["text"])
+                    star = point.get("star", {})
+                    if not star.get("complete", False):
+                        star_missing.append({
+                            "text": point["text"],
+                            "rationale": {
+                                "situation": star.get("situation_rationale", ""),
+                                "action": star.get("action_rationale", ""),
+                                "result": star.get("result_rationale", "")
+                            }
+                        })
                     if not point.get("metrics", []):
                         metrics_missing.append(point["text"])
                     if float(point.get("technical_score", 0)) < 3:
@@ -392,7 +403,8 @@ Requirements: {json.dumps(requirements, indent=2)}"""
                 "priority": "high",
                 "area": "STAR Format",
                 "action": "Add missing STAR components to key achievements",
-                "examples": star_missing[:2]  # Show first 2 examples
+                "examples": star_missing[:2],  # Show first 2 examples with rationales
+                "rationale": "Missing STAR components identified with detailed explanations"
             })
         
         if metrics_missing:
@@ -416,7 +428,7 @@ Requirements: {json.dumps(requirements, indent=2)}"""
                 "priority": "medium",
                 "area": "Education Quality",
                 "action": "Consider pursuing additional certifications or advanced degrees to strengthen your academic profile",
-                "examples": [f"{edu['school']} (Current Score: {edu['score']}/10)" for edu in education_weak[:2]]
+                "examples": [f"{edu['school']} (Current Score: {edu['score']}/10, Rationale: {edu['rationale']})" for edu in education_weak[:2]]
             })
         
         return recommendations

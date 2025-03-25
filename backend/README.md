@@ -36,7 +36,7 @@ source venv/bin/activate  # On Unix/macOS
 
 3. Install dependencies:
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 4. Set up environment variables:
@@ -106,7 +106,7 @@ The server will start at `http://127.0.0.1:8000`
 2. Run the test script:
 ```bash
 cd backend
-python test_actual_resume.py
+python3 test_actual_resume.py
 ```
 
 The test script will:

@@ -113,9 +113,10 @@ async def test_resume_analysis():
                                 print(f"    STAR Format: {'✅' if star.get('complete') else '❌'}")
                                 if not star.get("complete"):
                                     print("    Missing STAR components:")
-                                    for component in ["situation", "task", "action", "result"]:
+                                    for component in ["situation", "action", "result"]:
                                         if not star.get(component):
                                             print(f"      - {component.title()}")
+                                            print(f"        Rationale: {star.get(f'{component}_rationale', 'No rationale provided')}")
                             if "metrics" in point and point["metrics"]:
                                 print(f"    📊 Metrics found: {', '.join(point['metrics'])}")
                             if "technical_score" in point:

@@ -3,349 +3,372 @@
   "resumeAnalysis": {
     "sections": [
       {
-        "type": "Experience",
-        "points": [
-          {
-            "text": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": true,
-              "complete": true
-            },
-            "metrics": [
-              "99.9% system reliability"
-            ],
-            "technical_score": 5,
-            "improvement": "Led the development of a cloud-based microservices architecture at TechCorp Inc., achieving a 99.9% improvement in system reliability."
-          },
-          {
-            "text": "Implemented AI-powered recommendation engine, increasing user engagement by 45%",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": true,
-              "complete": true
-            },
-            "metrics": [
-              "45% increase in user engagement"
-            ],
-            "technical_score": 5,
-            "improvement": "Implemented an AI-powered recommendation engine at TechCorp Inc., resulting in a 45% increase in user engagement."
-          },
-          {
-            "text": "Mentored junior developers and conducted code reviews for team of 8 engineers",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": false,
-              "complete": false
-            },
-            "metrics": [
-              "team of 8 engineers"
-            ],
-            "technical_score": 3,
-            "improvement": "Mentored a team of 8 junior developers at TechCorp Inc., conducting code reviews and improving code quality by 30%."
-          },
-          {
-            "text": "Developed and maintained RESTful APIs serving 1M+ daily requests",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": true,
-              "complete": true
-            },
-            "metrics": [
-              "1M+ daily requests"
-            ],
-            "technical_score": 5,
-            "improvement": "Developed and maintained RESTful APIs at TechCorp Inc., efficiently handling over 1M daily requests."
-          },
-          {
-            "text": "Built responsive web applications using React.js and Node.js",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": false,
-              "complete": false
-            },
-            "metrics": [],
-            "technical_score": 4,
-            "improvement": "Built responsive web applications at StartupXYZ using React.js and Node.js, enhancing user experience and increasing traffic by 20%."
-          },
-          {
-            "text": "Optimized database queries, reducing response time by 60%",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": true,
-              "complete": true
-            },
-            "metrics": [
-              "60% reduction in response time"
-            ],
-            "technical_score": 5,
-            "improvement": "Optimized database queries at StartupXYZ, achieving a 60% reduction in response time."
-          },
-          {
-            "text": "Implemented CI/CD pipeline using Jenkins and Docker",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": false,
-              "complete": false
-            },
-            "metrics": [],
-            "technical_score": 4,
-            "improvement": "Implemented a CI/CD pipeline at StartupXYZ using Jenkins and Docker, reducing deployment time by 50%."
-          },
-          {
-            "text": "Collaborated with product team to define technical requirements",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": false,
-              "complete": false
-            },
-            "metrics": [],
-            "technical_score": 3,
-            "improvement": "Collaborated with the product team at StartupXYZ to define technical requirements, leading to a 30% improvement in project delivery time."
-          }
-        ]
-      },
-      {
-        "type": "Projects",
-        "points": [
-          {
-            "text": "Developed ML model to analyze and score resumes",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": false,
-              "complete": false
-            },
-            "metrics": [],
-            "technical_score": 4,
-            "improvement": "Developed an ML model to analyze and score resumes, achieving a 90% accuracy rate in recommendations."
-          },
-          {
-            "text": "Implemented using Python, FastAPI, and OpenAI",
-            "star": {
-              "situation": false,
-              "task": false,
-              "action": true,
-              "result": false,
-              "complete": false
-            },
-            "metrics": [],
-            "technical_score": 4,
-            "improvement": "Implemented the resume analysis model using Python, FastAPI, and OpenAI, enhancing processing speed by 30%."
-          },
-          {
-            "text": "Achieved 90% accuracy in recommendations",
-            "star": {
-              "situation": false,
-              "task": false,
-              "action": true,
-              "result": true,
-              "complete": false
-            },
-            "metrics": [
-              "90% accuracy"
-            ],
-            "technical_score": 4,
-            "improvement": "Achieved 90% accuracy in resume recommendations, improving client satisfaction by 20%."
-          },
-          {
-            "text": "Built distributed file storage system",
-            "star": {
-              "situation": true,
-              "task": true,
-              "action": true,
-              "result": false,
-              "complete": false
-            },
-            "metrics": [],
-            "technical_score": 4,
-            "improvement": "Built a distributed file storage system, increasing data handling capacity by 50%."
-          },
-          {
-            "text": "Implemented using Go and AWS services",
-            "star": {
-              "situation": false,
-              "task": false,
-              "action": true,
-              "result": false,
-              "complete": false
-            },
-            "metrics": [],
-            "technical_score": 4,
-            "improvement": "Implemented the file storage system using Go and AWS services, achieving 99.99% uptime."
-          },
-          {
-            "text": "Handles 10TB+ of data with 99.99% uptime",
-            "star": {
-              "situation": false,
-              "task": false,
-              "action": true,
-              "result": true,
-              "complete": false
-            },
-            "metrics": [
-              "10TB+ data",
-              "99.99% uptime"
-            ],
-            "technical_score": 5,
-            "improvement": "Handles over 10TB of data with 99.99% uptime, ensuring high availability and reliability."
-          }
-        ]
-      },
-      {
         "type": "Education",
         "points": [
           {
-            "text": "Bachelor of Science in Computer Science University of California, Berkeley | 2015-2019",
-            "subject": "Computer Science",
-            "course": "Bachelor of Science",
-            "school": "University of California, Berkeley",
+            "text": "Schulich School of Business, York University Toronto, ON Master of Business Administration: Strategy and Entrepreneurship (GPA 6. 5/9) 2022 - 23 \u2022 Director of Operations at Schulich Ventures Club \u2013 responsible for Stakeholder relationship initiatives \u2022 Strategy & Implementation Lead - Podcast for Schulich\u2019s Graduate Business Council.",
+            "subject": "Strategy and Entrepreneurship",
+            "course": "Master of Business Administration",
+            "school": "Schulich School of Business, York University",
             "subject_course_school_reputation": {
               "domestic_score": 9,
-              "domestic_score_rationale": "UC Berkeley is renowned for its strong computer science program in the U.S.",
+              "domestic_score_rationale": "Schulich School of Business is one of the top business schools in Canada, known for its strong programs in strategy and entrepreneurship.",
               "international_score": 8,
-              "international_score_rationale": "UC Berkeley is globally recognized for its excellence in computer science education."
+              "international_score_rationale": "Schulich has a good international reputation, often ranked among the top global business schools, though not at the very top tier."
+            }
+          },
+          {
+            "text": "GITAM Institute of Technology, GITAM University India Bachelor of Technology: Mechanical Engineering (GPA 7.71/10) 2011 - 2015 \u2022 Leadership: Head of Public Relations for TEDx chapter at the university - managed promotions and outreach events. \u2022 President of Music club - raised sponsorships worth $60k & achieved an event footfall of (~15k) across two days.",
+            "subject": "Mechanical Engineering",
+            "course": "Bachelor of Technology",
+            "school": "GITAM Institute of Technology, GITAM University",
+            "subject_course_school_reputation": {
+              "domestic_score": 7,
+              "domestic_score_rationale": "GITAM University is a well-regarded institution in India, particularly in engineering, though not among the top IITs.",
+              "international_score": 5,
+              "international_score_rationale": "GITAM University has limited international recognition compared to global engineering schools."
             }
           }
         ]
       },
       {
-        "type": "Skills",
+        "type": "Experience",
         "points": [
           {
-            "text": "Programming Languages: - Python, JavaScript, TypeScript, Java - SQL, MongoDB Technologies: - React.js, Node.js, Express.js - Docker, Kubernetes - AWS, GCP - Git, Jenkins",
-            "subject": "",
-            "course": "",
-            "school": "",
-            "subject_course_school_reputation": {
-              "domestic_score": 0,
-              "domestic_score_rationale": "",
-              "international_score": 0,
-              "international_score_rationale": ""
-            }
-          }
-        ]
-      },
-      {
-        "type": "Certifications",
-        "points": [
-          {
-            "text": "AWS Certified Solutions Architect",
-            "subject": "",
-            "course": "",
-            "school": "",
-            "subject_course_school_reputation": {
-              "domestic_score": 0,
-              "domestic_score_rationale": "",
-              "international_score": 0,
-              "international_score_rationale": ""
-            }
+            "text": "City of Markham \u2013 Markham Economic Development Dec 2023 \u2013 Present Working towards building and supporting the Innovation and Entrepreneurship ecosystem in Markham, Greater Toronto Area Senior Business Development Officer \u2022 Supporting the Entrepreneurship and Innovation partners in The City to develop their programming and engagement across multiple avenues in Canada, notably Collision, StartupFest, CIX, HardTech Summit and DiscoveryX.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The context of supporting entrepreneurship and innovation partners in Markham is clearly stated.",
+              "action": true,
+              "action_rationale": "The action of developing programming and engagement across multiple avenues is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of these efforts.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Developed and executed programming and engagement strategies for entrepreneurship partners in Markham, leading to increased participation in events such as Collision and StartupFest."
           },
           {
-            "text": "Google Cloud Professional Developer",
-            "subject": "",
-            "course": "",
-            "school": "",
-            "subject_course_school_reputation": {
-              "domestic_score": 0,
-              "domestic_score_rationale": "",
-              "international_score": 0,
-              "international_score_rationale": ""
-            }
+            "text": "\u2022 Attracting, retaining and growing investments in Markham \u2013 thus facilitating job growth and economic activity. Developed the planning and initial legwork of engagement at Hannover Messe 2025, an FDI Mission.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation of attracting and retaining investments in Markham is clear.",
+              "action": true,
+              "action_rationale": "The action of developing planning and initial legwork for Hannover Messe 2025 is described.",
+              "result": false,
+              "result_rationale": "No specific results or metrics are provided to show the impact of these actions.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Planned and initiated engagement strategies for Hannover Messe 2025, aiming to attract significant FDI and boost local economic activity."
           },
           {
-            "text": "Docker Certified Associate",
-            "subject": "",
-            "course": "",
-            "school": "",
-            "subject_course_school_reputation": {
-              "domestic_score": 0,
-              "domestic_score_rationale": "",
-              "international_score": 0,
-              "international_score_rationale": ""
-            }
+            "text": "\u2022 Created customer Analysis and Demographic reports for the Markham Economic Development website, enabling the Markham Business community to make better marketing and product placement decisions.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need for customer analysis and demographic reports is clear.",
+              "action": true,
+              "action_rationale": "The action of creating these reports is specified.",
+              "result": true,
+              "result_rationale": "The result of enabling better marketing and product placement decisions is mentioned, though not quantified.",
+              "complete": true
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Developed comprehensive customer analysis and demographic reports, enhancing marketing strategies and product placement decisions for the Markham business community."
+          },
+          {
+            "text": "Schulich Startups March 2022 \u2013 Dec 2023 \u2013 Present Schulich Startups is the Venture and Entrepreneurship office of The Schulich School of Business. Lead \u2013 Alumni Ambassador Program (Volunteer role) Dec 2023 - Present \u2022 Building The Schulich Startups incubator from the alumni side \u2013 bringing in mentors, sponsors and partners from the wider ecosystem into the community to fully support the community\u2019s portfolio of startups and primary stakeholders.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The context of building the Schulich Startups incubator is clear.",
+              "action": true,
+              "action_rationale": "The action of bringing in mentors, sponsors, and partners is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of these efforts.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Facilitated the growth of Schulich Startups incubator by integrating mentors and sponsors, enhancing support for startups and stakeholders."
+          },
+          {
+            "text": "Program Manager April 2023 \u2013 Dec 2023 \u2022 Strategizing and facilitated the launch and operations of Schulich Venture Academy - a Certificate Masterclass course for executives in the Venture ecosystem.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need to launch and operate the Schulich Venture Academy is clear.",
+              "action": true,
+              "action_rationale": "The action of strategizing and facilitating the launch is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of the launch.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Led the strategic launch of Schulich Venture Academy, establishing a Certificate Masterclass for executives in the venture ecosystem."
+          },
+          {
+            "text": "\u2022 Managing the India - Canada cross country entrepreneurship and venture capital bootcamp initiative - Together 4.0.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The context of managing a cross-country bootcamp initiative is clear.",
+              "action": true,
+              "action_rationale": "The action of managing the initiative is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of the initiative.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Coordinated the India-Canada Together 4.0 bootcamp, fostering cross-country entrepreneurship and venture capital collaboration."
+          },
+          {
+            "text": "Event Producer March 2022 - April 2023 \u2022 Ideated, strategized and implemented 6 community events, with stakeholders involving Venture Capitalists, Incubators, Startup founders and Ecosystem builders in the Venture Space.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need to organize community events in the venture space is clear.",
+              "action": true,
+              "action_rationale": "The actions of ideating, strategizing, and implementing events are specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of these events.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Organized and executed 6 strategic community events, engaging venture capitalists, incubators, and startup founders to enhance ecosystem collaboration."
+          },
+          {
+            "text": "Renew Venture Capital January 2023 \u2013 April 2023 Renew VC is an early stage VC firm investing into impact founders, women and historically excluded founders. Venture Analyst \u2022 Strategizing fundraising for Fund 1 across US, Canada and Europe. Facilitated conversations with various classes of LPs.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need for fundraising for Fund 1 is clear.",
+              "action": true,
+              "action_rationale": "The action of strategizing fundraising and facilitating conversations is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of these efforts.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Developed fundraising strategies for Fund 1, engaging with diverse LPs across US, Canada, and Europe to secure investments."
+          },
+          {
+            "text": "\u2022 Built the first funnel of outreach to various kinds of LPs based on the metrics of AUM, check sizes and frequency of commits.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need to build an outreach funnel is clear.",
+              "action": true,
+              "action_rationale": "The action of building the outreach funnel is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of the outreach funnel.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Constructed an outreach funnel targeting LPs, utilizing metrics such as AUM, check sizes, and commit frequency to optimize engagement."
+          },
+          {
+            "text": "Canadian Tire Corporation September 2022 \u2013 April 2023 Canadian Retail company operates in the sectors of automotive, hardware, sports, leisure and housewares. Program Delivery Intern \u2022 Managing efficient workflow and stakeholder management in Ideation to Shelf phase pertaining to 33 owned brands under CTC",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The context of managing workflow and stakeholder management is clear.",
+              "action": true,
+              "action_rationale": "The action of managing workflow and stakeholder management is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of these efforts.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Streamlined workflow and stakeholder management for 33 owned brands at Canadian Tire, enhancing the Ideation to Shelf process."
+          },
+          {
+            "text": "\u2022 Solving bottlenecks & operational issues by creating 3 simple and effective frameworks for the bottom-up and lateral hierarchies.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need to solve bottlenecks and operational issues is clear.",
+              "action": true,
+              "action_rationale": "The action of creating frameworks is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of these frameworks.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Developed 3 frameworks to address bottlenecks and operational issues, improving efficiency across bottom-up and lateral hierarchies."
+          },
+          {
+            "text": "Feast at Trucks April 2017 \u2013 Nov 2021 The first ever and largest aggregator of food trucks across three major cities in India Director & Co-Founder \u2022 Led the operational strategy group for implementing online & offline stakeholder connect initiatives across 14 regions, increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The context of leading operational strategy for a food truck aggregator is clear.",
+              "action": true,
+              "action_rationale": "The actions of implementing stakeholder initiatives and monetizing revenue models are specified.",
+              "result": true,
+              "result_rationale": "The result of increasing engagement footfall by 15x is quantified.",
+              "complete": true
+            },
+            "metrics": [
+              "15x increase in engagement footfall"
+            ],
+            "technical_score": 4,
+            "improvement": "Executed stakeholder initiatives and monetized revenue models, achieving a 15x increase in engagement footfall across 14 regions."
+          },
+          {
+            "text": "\u2022 Generated $2 mn revenue by launching and operationalizing the first-ever aggregator company of food trucks within India",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation of launching a food truck aggregator is clear.",
+              "action": true,
+              "action_rationale": "The action of launching and operationalizing the company is specified.",
+              "result": true,
+              "result_rationale": "The result of generating $2 million in revenue is quantified.",
+              "complete": true
+            },
+            "metrics": [
+              "$2 million revenue"
+            ],
+            "technical_score": 4,
+            "improvement": "Launched and operationalized India's first food truck aggregator, generating $2 million in revenue."
+          },
+          {
+            "text": "\u2022 Enabled the creation of a full-fledged food truck ecosystem across three major cities in India \u2013 Hyderabad, Pune and Vizag.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need to create a food truck ecosystem is clear.",
+              "action": true,
+              "action_rationale": "The action of enabling the creation of the ecosystem is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of the ecosystem creation.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 4,
+            "improvement": "Facilitated the development of a comprehensive food truck ecosystem in Hyderabad, Pune, and Vizag, enhancing local culinary diversity."
+          },
+          {
+            "text": "\u2022 Led corpus fund raising /commits of over $100k in key meetings with India\u2019s leading Angel investors and sponsors.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need for fundraising is clear.",
+              "action": true,
+              "action_rationale": "The action of leading fundraising efforts is specified.",
+              "result": true,
+              "result_rationale": "The result of raising over $100k is quantified.",
+              "complete": true
+            },
+            "metrics": [
+              "$100k raised"
+            ],
+            "technical_score": 4,
+            "improvement": "Secured over $100k in funding through strategic meetings with leading Angel investors and sponsors."
+          },
+          {
+            "text": "Caarya Ventures June 2015 \u2013 February 2017 Venture Studio that builds an ecosystem of Indian start-ups and that prepares them for an organic growth through significant investments Co-founder and Project Lead - Bead Music \u2022 Pioneered the creation and execution of the first of its kind long beach music festival \u2013 \u2018Salt: Fest of the East\u2019 \u2013 in Vizag; Collaborated with Department of Tourism in Andhra Pradesh to eliminate critical constraints to the Operational logistics",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The context of creating a music festival is clear.",
+              "action": true,
+              "action_rationale": "The actions of creating and executing the festival are specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of the festival.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Led the creation and execution of 'Salt: Fest of the East' music festival, collaborating with the Department of Tourism to overcome logistical challenges."
+          },
+          {
+            "text": "\u2022 Handled $0.9 MN budget to implement online & offline marketing strategies for putting the musical fest on country\u2019s map",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need to market the music festival is clear.",
+              "action": true,
+              "action_rationale": "The action of handling a budget for marketing strategies is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of the marketing strategies.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Managed a $0.9 million budget to execute marketing strategies, elevating the music festival's national profile."
+          },
+          {
+            "text": "\u2022 Set-up key partnerships with 16 diverse and independent music bands from across the country.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The need to set up partnerships is clear.",
+              "action": true,
+              "action_rationale": "The action of setting up partnerships is specified.",
+              "result": false,
+              "result_rationale": "No specific outcomes or metrics are provided to indicate the success of these partnerships.",
+              "complete": false
+            },
+            "metrics": [],
+            "technical_score": 3,
+            "improvement": "Established partnerships with 16 independent music bands, enhancing the festival's diversity and appeal."
           }
         ]
       }
     ]
   },
   "tokenUsage": {
-    "total_tokens": 3602,
-    "prompt_tokens": 1914,
-    "completion_tokens": 1688,
-    "total_cost": 0.06978000000000001
+    "total_tokens": 7390,
+    "prompt_tokens": 3908,
+    "completion_tokens": 3482,
+    "total_cost": 0.14354
   },
   "jobMatchAnalysis": {
-    "match_score": 90,
+    "match_score": 78.0,
     "technical_match": {
       "matched_skills": [
-        "Python",
-        "JavaScript",
-        "RESTful APIs",
-        "SQL",
-        "NoSQL",
-        "Git",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes"
+        "Client Counseling",
+        "Communication",
+        "Critical Thinking",
+        "Customer Relationship Management (CRM)",
+        "Decision Making",
+        "Group Problem Solving",
+        "Long Term Planning",
+        "Results-Oriented"
       ],
       "missing_skills": [
-        "Django",
-        "Flask",
-        "Azure",
-        "Next.js"
+        "Organizational Change Management",
+        "Solutions Development",
+        "Experience with data visualization and design tools (ie. Tableau)"
       ],
-      "skill_coverage_score": 85
+      "skill_coverage_score": 80.0
     },
     "experience_match": {
-      "required_years": 3,
-      "actual_years": 5,
-      "experience_score": 100
+      "required_years": 2,
+      "actual_years": 8,
+      "experience_score": 90.0
     },
     "key_requirements": {
       "met": [
-        "3+ years of experience in software development",
-        "Proficiency in Python, JavaScript",
-        "Experience with SQL and NoSQL databases",
-        "Version control with Git",
-        "Bachelor's degree in Computer Science",
-        "Experience with cloud platforms (AWS, GCP)",
-        "Knowledge of microservices architecture",
-        "Understanding of CI/CD practices"
+        "Undergraduate degree, preferably in commerce or business administration",
+        "2+ years of experience in a role within the technology sector, ideally in venture capital, private equity, management consulting, or as an operator at a startup",
+        "Interested in building a strong foundation and unique skill set for a longer-term career in venture capital and/or corporate strategy",
+        "High degree of maturity, integrity and curiosity",
+        "Strong research, problem solving, and analytical skills",
+        "Strong proficiency in Excel as well as PowerPoint",
+        "Willingness to work across the organization in support of ad hoc projects as required",
+        "Comfortable working through ambiguity"
       ],
       "partially_met": [
-        "Experience with web frameworks (Django, Flask, or FastAPI)",
-        "Experience with machine learning or AI technologies"
+        "Experience working within a small team and building out initiatives from the ground up"
       ],
       "not_met": [
-        "Experience with React/Next.js",
-        "Contributions to open-source projects"
+        "Experience with data visualization and design tools (ie. Tableau)"
       ]
     },
     "recommendations": [
-      "Highlight experience with FastAPI in the projects section to better align with the job's web framework requirement.",
-      "Emphasize any experience or contributions to open-source projects to meet the 'Nice to Have' criteria.",
-      "Include more details on problem-solving abilities and communication skills in the summary or experience sections.",
-      "Mention any experience with Azure if applicable, to cover all cloud platform requirements.",
-      "Consider adding a project or experience related to React/Next.js to meet the 'Nice to Have' criteria."
+      "Gain experience with data visualization tools like Tableau to meet the 'nice-to-have' requirements.",
+      "Highlight any experience related to 'Organizational Change Management' and 'Solutions Development' if applicable.",
+      "Emphasize any specific achievements in venture capital or private equity to strengthen the application.",
+      "Consider obtaining certifications or additional training in data analysis and visualization to enhance technical skills.",
+      "Ensure the resume clearly outlines the impact and results of past roles, particularly in venture capital and strategy."
     ]
   }
 }

@@ -35,12 +35,14 @@ RESUME_ANALYSIS_FUNCTIONS = [
                                                     "type": "object",
                                                     "properties": {
                                                         "situation": {"type": "boolean", "description": "Whether situation is present"},
-                                                        "task": {"type": "boolean", "description": "Whether task is present"},
+                                                        "situation_rationale": {"type": "string", "description": "Explanation for situation assessment"},
                                                         "action": {"type": "boolean", "description": "Whether action is present"},
+                                                        "action_rationale": {"type": "string", "description": "Explanation for action assessment"},
                                                         "result": {"type": "boolean", "description": "Whether result is present"},
+                                                        "result_rationale": {"type": "string", "description": "Explanation for result assessment"},
                                                         "complete": {"type": "boolean", "description": "Whether all STAR components are present"}
                                                     },
-                                                    "required": ["situation", "task", "action", "result", "complete"]
+                                                    "required": ["situation", "situation_rationale", "action", "action_rationale", "result", "result_rationale", "complete"]
                                                 },
                                                 "metrics": {
                                                     "type": "array",
@@ -156,11 +158,7 @@ class OpenAIService:
         if client:
             self.client = client
         else:
-            self.client = AsyncOpenAI(
-                api_key=settings.OPENAI_API_KEY,
-                max_retries=3,
-                timeout=60.0
-            )
+            self.client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
 
     @tenacity.retry(
         stop=tenacity.stop_after_attempt(3),
@@ -188,9 +186,13 @@ class OpenAIService:
 
 1. For Experience and Projects sections:
    - Extract each bullet point
-   - Analyze STAR format (Situation, Task, Action, Result)
+   - Analyze STAR format with STRICT criteria - do not assume anything is implied unless it is extremely obvious:
+     * Situation (S): Should clearly describe the context or scenario with minimal ambiguity. Should answer the questions "What was the challenge you faced?" or "WHY did you perform the action?". If either of these criteria is met, mention clearly. If not, mention which is not met.
+     * Action (A): Should describe specific actions taken with concrete methodology. Should answer the questions "What did you do to face the challenge?" or "WHAT did you do to achieve the result?". If either of these criteria is met, mention clearly. If not, mention which is not met.  
+     * Result (R): Should clearly indicate the outcome with quantifiable metrics and numbers. Should answer the questions "What metric did you move by doing the task?" or "What was the indicator of your success in the action / in the situation?". If either of these criteria is met, mention clearly. If not, mention which is not met.
+   - Mark components as present only with clear evidence. 
    - Identify metrics and quantifiable achievements
-   - Provide a one-sentence suggestion for improvement following STAR format with metrics
+   - Provide detailed rationale for each STAR component assessment
 
 2. For Education section:
    - Extract school name, degree, graduation date
@@ -257,22 +259,33 @@ class OpenAIService:
                 messages=[
                     {
                         "role": "system",
-                        "content": """You are an expert at matching resumes to job descriptions.
-For each section in the resume:
+                        "content": """You are an expert at matching resumes to job descriptions. Analyze the match and provide a detailed response following this structure:
 
-1. For Experience and Projects sections:
-   - Analyze each point's relevance to the job
-   - Provide a one-sentence suggestion to better align with job requirements
-   - Follow STAR format and include metrics where possible
+1. Overall Match Score (0-100):
+   - Consider skills alignment, experience relevance, and qualifications match
+   - Provide a numerical score where 100 means perfect match
 
-2. For Education section:
-   - Analyze how coursework aligns with job requirements
-   - Provide one-sentence recommendation on how to better present coursework to match the job
-   - Provide one-sentence recommendation on how to better present projects to match the job
-   - Provide one-sentence recommendation on how to better present co-curriculars to match the job
+2. Technical Skills Match:
+   - List all skills mentioned in job description that match the resume
+   - List all required/preferred skills from job that are missing in resume
+   - Calculate a skill coverage score (0-100) based on matched vs required skills
 
-3. For Skills/Certifications section:
-   - Provide one-sentence recommendation on how to better present skills and certifications to match the job"""
+3. Experience Match:
+   - Extract required years of experience from job description
+   - Calculate actual relevant years from resume
+   - Provide experience match score (0-100) based on both quantity and relevance
+
+4. Key Requirements Analysis:
+   - List skill requirements that are fully met
+   - List skill requirements that are partially met
+   - List skill requirements that are not met at all
+
+5. Specific Recommendations:
+   - Provide actionable suggestions to better align with job requirements
+   - Focus on addressing gaps in skills and experience
+   - Suggest ways to better present existing qualifications (including skills, experience, and education)
+
+Your response MUST include all these components in the specified format."""
                     },
                     {"role": "user", "content": f"Resume:\n{resume_text}\n\nJob Description:\n{job_description}"}
                 ],

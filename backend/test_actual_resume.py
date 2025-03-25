@@ -8,6 +8,9 @@ import time
 import re
 import textwrap
 
+# Get the absolute path to the backend directory
+BACKEND_DIR = Path(__file__).parent.absolute()
+
 def clean_text(text: str) -> str:
     """Clean text by removing extra whitespace and normalizing line breaks."""
     # Replace multiple spaces and newlines with a single space
@@ -40,9 +43,9 @@ def read_text_file(file_path: str) -> str:
 
 async def test_resume_analysis():
     """Test resume analysis with an actual resume and job description."""
-    # File paths
-    resume_path = "tests/data/resumes/sample_resume.pdf"
-    job_desc_path = "tests/data/job_descriptions/sample_job.txt"
+    # File paths - using absolute paths from backend directory
+    resume_path = BACKEND_DIR / "tests" / "data" / "resumes" / "Resume - Vinod Krishna .pdf"
+    job_desc_path = BACKEND_DIR / "tests" / "data" / "job_descriptions" / "sample_job_Vinod_1.txt"
     
     try:
         # Start timing
@@ -50,11 +53,11 @@ async def test_resume_analysis():
         
         # Read resume content
         print(f"\n📄 Reading resume from: {resume_path}")
-        resume_text = read_pdf_content(resume_path)
+        resume_text = read_pdf_content(str(resume_path))
         
         # Read job description
         print(f"\n📋 Reading job description from: {job_desc_path}")
-        job_description = read_text_file(job_desc_path)
+        job_description = read_text_file(str(job_desc_path))
         
         print("\n📝 Files loaded successfully!")
         print("\n--- First 500 characters of resume ---")
@@ -92,6 +95,47 @@ async def test_resume_analysis():
         
         print("\n=== Resume Analysis Results ===\n")
         
+        # Print job match analysis if available
+        if "jobMatchAnalysis" in result:
+            job_match = result["jobMatchAnalysis"]
+            print(f"\n🎯 Job Match Score: {job_match['match_score']:.1f}/100")
+            
+            # Print technical match
+            if "technical_match" in job_match:
+                tech_match = job_match["technical_match"]
+                print("\n💻 Technical Skills Match:")
+                print(f"  • Matched Skills: {', '.join(tech_match['matched_skills'])}")
+                print(f"  • Missing Skills: {', '.join(tech_match['missing_skills'])}")
+                print(f"  • Coverage Score: {tech_match['skill_coverage_score']:.1f}/100")
+            
+            # Print experience match
+            if "experience_match" in job_match:
+                exp_match = job_match["experience_match"]
+                print("\n⏳ Experience Match:")
+                print(f"  • Required Years: {exp_match['required_years']}")
+                print(f"  • Actual Years: {exp_match['actual_years']}")
+                print(f"  • Experience Score: {exp_match['experience_score']:.1f}/100")
+            
+            # Print key requirements
+            if "key_requirements" in job_match:
+                key_reqs = job_match["key_requirements"]
+                print("\n✅ Key Requirements:")
+                print("  • Met Requirements:")
+                for req in key_reqs["met"]:
+                    print(f"    - {req}")
+                print("\n  • Partially Met Requirements:")
+                for req in key_reqs["partially_met"]:
+                    print(f"    - {req}")
+                print("\n  • Not Met Requirements:")
+                for req in key_reqs["not_met"]:
+                    print(f"    - {req}")
+            
+            # Print recommendations
+            if "recommendations" in job_match:
+                print("\n💡 Recommendations:")
+                for i, rec in enumerate(job_match["recommendations"], 1):
+                    print(f"  {i}. {format_text_block(rec, width=75)}")
+        
         # Print resume analysis
         if "resumeAnalysis" in result:
             analysis = result["resumeAnalysis"]
@@ -113,9 +157,10 @@ async def test_resume_analysis():
                                 print(f"    STAR Format: {'✅' if star.get('complete') else '❌'}")
                                 if not star.get("complete"):
                                     print("    Missing STAR components:")
-                                    for component in ["situation", "task", "action", "result"]:
+                                    for component in ["situation", "action", "result"]:
                                         if not star.get(component):
                                             print(f"      - {component.title()}")
+                                            print(f"        Rationale: {star.get(f'{component}_rationale', 'No rationale provided')}")
                             if "metrics" in point and point["metrics"]:
                                 print(f"    📊 Metrics found: {', '.join(point['metrics'])}")
                             if "technical_score" in point:
@@ -129,12 +174,6 @@ async def test_resume_analysis():
                 print(f"  • Metrics Usage: {scores['metrics_usage']:.1f}/5.0")
                 print(f"  • Technical Depth: {scores['technical_depth']:.1f}/5.0")
                 print(f"  • Overall Score: {scores['overall']:.1f}/5.0")
-            
-            # Print recommendations
-            if "recommendations" in analysis:
-                print("\n💡 Recommendations:")
-                for i, rec in enumerate(analysis["recommendations"], 1):
-                    print(f"  {i}. {format_text_block(rec, width=75)}")
             
             # Print job-specific recommendations if available
             if "job_specific_recommendations" in analysis:

@@ -89,22 +89,12 @@ const Upload = () => {
 
                 <div className="border-2 border-dashed border-input rounded-lg p-4 transition-colors hover:border-primary/50 focus-within:border-primary">
                   <div className="flex flex-col items-center justify-center gap-2 text-center">
-                    <UploadIcon className="w-8 h-8 text-muted-foreground" />
-                    <p className="text-sm text-muted-foreground">
-                      Drag and drop your resume file here or click to browse
-                    </p>
-                    
-                    <div className="mt-2 flex items-center gap-2">
-                      <label 
-                        htmlFor="file-upload" 
-                        className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium cursor-pointer"
-                      >
-                        Choose file
-                      </label>
-                      <span className="text-sm text-muted-foreground">
-                        {selectedFile ? selectedFile.name : 'No file chosen'}
-                      </span>
-                    </div>
+                    <label 
+                      htmlFor="file-upload" 
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium cursor-pointer"
+                    >
+                      Choose file
+                    </label>
                     
                     <input
                       id="file-upload"
@@ -113,6 +103,12 @@ const Upload = () => {
                       accept=".pdf,.docx"
                       onChange={handleFileChange}
                     />
+                    
+                    {selectedFile && (
+                      <span className="text-sm text-muted-foreground">
+                        {selectedFile.name}
+                      </span>
+                    )}
                   </div>
                 </div>
                 
