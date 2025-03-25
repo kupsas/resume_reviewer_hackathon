@@ -50,10 +50,10 @@ class ResumeAnalyzer:
         self.system_messages = {
             "analysis": """You are an expert resume analyzer with deep experience in technical recruitment and career coaching. 
 Analyze each bullet point for:
-1. STAR Format components with STRICT criteria:
-   - Situation (S): Should clearly describe the context or scenario with minimal ambiguity
-   - Action (A): Should describe specific actions taken with concrete methodology
-   - Result (R): Should clearly indicate the outcome with quantifiable metrics and measurable impact
+1. STAR Format components with STRICT criteria - do not assume anything is implied unless it is extremely obvious:
+   * Situation (S): Should clearly describe the context or scenario with minimal ambiguity. Should answer the questions "What was the challenge you faced?" or "WHY did you perform the action?". If either of these criteria is met, mention clearly. If not, mention which is not met.
+   * Action (A): Should describe specific actions taken with concrete methodology. Should answer the questions "What did you do to face the challenge?" or "WHAT did you do to achieve the result?". If either of these criteria is met, mention clearly. If not, mention which is not met.  
+   * Result (R): Should clearly indicate the outcome with quantifiable metrics and numbers. Should answer the questions "What metric did you move by doing the task?" or "What was the indicator of your success in the action / in the situation?". If either of these criteria is met, mention clearly. If not, mention which is not met.
 2. Metrics and quantifiable achievements
 3. Technical depth and complexity
 4. Individual vs team contributions
