@@ -186,11 +186,11 @@ class OpenAIService:
 
 1. For Experience and Projects sections:
    - Extract each bullet point
-   - Analyze STAR format with STRICT criteria:
-     * Situation (S): Should clearly describe the context or scenario with minimal ambiguity
-     * Action (A): Should describe specific actions taken with concrete methodology
-     * Result (R): Should clearly indicate the outcome with quantifiable metrics and measurable impact
-   - Mark components as present only with clear evidence - minimal inference allowed
+   - Analyze STAR format with STRICT criteria - do not assume anything is implied unless it is extremely obvious:
+     * Situation (S): Should clearly describe the context or scenario with minimal ambiguity. Should answer the questions "What was the challenge you faced?" or "WHY did you perform the action?". If either of these criteria is met, mention clearly. If not, mention which is not met.
+     * Action (A): Should describe specific actions taken with concrete methodology. Should answer the questions "What did you do to face the challenge?" or "WHAT did you do to achieve the result?". If either of these criteria is met, mention clearly. If not, mention which is not met.  
+     * Result (R): Should clearly indicate the outcome with quantifiable metrics and numbers. Should answer the questions "What metric did you move by doing the task?" or "What was the indicator of your success in the action / in the situation?". If either of these criteria is met, mention clearly. If not, mention which is not met.
+   - Mark components as present only with clear evidence. 
    - Identify metrics and quantifiable achievements
    - Provide detailed rationale for each STAR component assessment
 
