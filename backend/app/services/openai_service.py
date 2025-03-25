@@ -257,22 +257,33 @@ class OpenAIService:
                 messages=[
                     {
                         "role": "system",
-                        "content": """You are an expert at matching resumes to job descriptions.
-For each section in the resume:
+                        "content": """You are an expert at matching resumes to job descriptions. Analyze the match and provide a detailed response following this structure:
 
-1. For Experience and Projects sections:
-   - Analyze each point's relevance to the job
-   - Provide a one-sentence suggestion to better align with job requirements
-   - Follow STAR format and include metrics where possible
+1. Overall Match Score (0-100):
+   - Consider skills alignment, experience relevance, and qualifications match
+   - Provide a numerical score where 100 means perfect match
 
-2. For Education section:
-   - Analyze how coursework aligns with job requirements
-   - Provide one-sentence recommendation on how to better present coursework to match the job
-   - Provide one-sentence recommendation on how to better present projects to match the job
-   - Provide one-sentence recommendation on how to better present co-curriculars to match the job
+2. Technical Skills Match:
+   - List all skills mentioned in job description that match the resume
+   - List all required/preferred skills from job that are missing in resume
+   - Calculate a skill coverage score (0-100) based on matched vs required skills
 
-3. For Skills/Certifications section:
-   - Provide one-sentence recommendation on how to better present skills and certifications to match the job"""
+3. Experience Match:
+   - Extract required years of experience from job description
+   - Calculate actual relevant years from resume
+   - Provide experience match score (0-100) based on both quantity and relevance
+
+4. Key Requirements Analysis:
+   - List skill requirements that are fully met
+   - List skill requirements that are partially met
+   - List skill requirements that are not met at all
+
+5. Specific Recommendations:
+   - Provide actionable suggestions to better align with job requirements
+   - Focus on addressing gaps in skills and experience
+   - Suggest ways to better present existing qualifications (including skills, experience, and education)
+
+Your response MUST include all these components in the specified format."""
                     },
                     {"role": "user", "content": f"Resume:\n{resume_text}\n\nJob Description:\n{job_description}"}
                 ],

@@ -11,13 +11,11 @@ requests==2.31.0
 typing-extensions==4.12.2
 aiohttp==3.9.3  # For async HTTP requests
 tiktoken==0.6.0  # For token counting
-httpx>=0.24.1  # Required for OpenAI client
+httpx==0.24.1  # Required for OpenAI client
 tenacity>=8.2.3  # For retry logic
-httpx==0.27.2
 
 # Testing dependencies
 pytest==8.0.2
-#httpx==0.28.1  # Required for TestClient
 pytest-asyncio==0.23.5
 reportlab==4.1.0  # For creating test PDFs
 
