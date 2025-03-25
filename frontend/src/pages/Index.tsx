@@ -95,11 +95,11 @@ const Index = () => {
       </div>
       
       {/* Navigation tabs */}
-      <div className="max-w-screen-xl mx-auto px-4 mb-8">
-        <div className="flex flex-wrap gap-2 sm:gap-4 border-b pb-2">
+      <div className="max-w-screen-xl mx-auto px-4 mb-4 sm:mb-8">
+        <div className="flex flex-wrap gap-1 sm:gap-4 border-b pb-2">
           <button
             onClick={() => setActiveTab('sections')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-t-lg font-medium transition-all ${
+            className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 rounded-t-lg font-medium text-sm sm:text-base transition-all ${
               activeTab === 'sections' 
                 ? 'bg-primary text-primary-foreground' 
                 : 'hover:bg-secondary'
@@ -111,7 +111,7 @@ const Index = () => {
           {analysisResult.jobMatchAnalysis && (
             <button
               onClick={() => setActiveTab('jobMatch')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-t-lg font-medium transition-all ${
+              className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 rounded-t-lg font-medium text-sm sm:text-base transition-all ${
                 activeTab === 'jobMatch' 
                   ? 'bg-primary text-primary-foreground' 
                   : 'hover:bg-secondary'
@@ -125,13 +125,13 @@ const Index = () => {
       </div>
       
       <motion.div 
-        className="max-w-screen-xl mx-auto px-4 pb-16"
+        className="max-w-screen-xl mx-auto px-4 pb-16 sm:pb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {activeTab === 'sections' && (
-          <motion.div className="space-y-8" variants={itemVariants}>
+          <motion.div className="space-y-6 sm:space-y-8" variants={itemVariants}>
             {sections.length > 0 ? (
               sortSections(sections).map((section, index) => {
                 // Temporarily hide Skills section
@@ -147,10 +147,10 @@ const Index = () => {
                 );
               })
             ) : (
-              <div className="flex flex-col items-center justify-center py-12 text-center">
-                <AlertTriangle className="h-12 w-12 text-warning mb-4" />
-                <h3 className="text-xl font-medium mb-2">No resume sections found</h3>
-                <p className="text-muted-foreground">It seems like there are no sections in the analysis result.</p>
+              <div className="flex flex-col items-center justify-center py-8 sm:py-12 text-center">
+                <AlertTriangle className="h-10 w-10 sm:h-12 sm:w-12 text-warning mb-3 sm:mb-4" />
+                <h3 className="text-lg sm:text-xl font-medium mb-2">No resume sections found</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">It seems like there are no sections in the analysis result.</p>
               </div>
             )}
           </motion.div>
@@ -164,11 +164,11 @@ const Index = () => {
 
         <motion.div 
           variants={itemVariants}
-          className="mt-10 text-center"
+          className="mt-8 sm:mt-10 text-center"
         >
-          <Button asChild className="px-8 py-6">
-            <Link to="/" className="inline-flex items-center gap-2 text-lg">
-              <Upload className="w-5 h-5" />
+          <Button asChild className="px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg">
+            <Link to="/" className="inline-flex items-center gap-2">
+              <Upload className="w-4 h-4 sm:w-5 sm:h-5" />
               Analyze Another Resume
             </Link>
           </Button>
@@ -176,17 +176,17 @@ const Index = () => {
       </motion.div>
       
       {/* Quick navigation fixed button */}
-      <div className="fixed bottom-6 right-6">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6">
         <div className="relative group">
           <button 
-            className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-elevation-medium hover:shadow-elevation-high transition-all"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-elevation-medium hover:shadow-elevation-high transition-all"
             aria-label="Quick navigation"
           >
-            <MousePointerClick className="w-5 h-5" />
+            <MousePointerClick className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
           
           <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block animate-fade-in">
-            <div className="bg-card rounded-lg shadow-elevation-medium p-2 border flex flex-col gap-2 w-48">
+            <div className="bg-card rounded-lg shadow-elevation-medium p-2 border flex flex-col gap-2 w-40 sm:w-48">
               <button
                 onClick={() => setActiveTab('sections')}
                 className={`flex items-center gap-2 p-2 rounded-md text-sm font-medium transition-all ${
