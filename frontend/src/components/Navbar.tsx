@@ -10,33 +10,33 @@ const Navbar = () => {
 
   return (
     <header className="border-b bg-gradient-to-r from-background to-secondary/30">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center">
-            <FileText className="w-5 h-5" />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center">
+            <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
-          <span className="font-bold text-xl">Resume Analyzer</span>
+          <span className="font-bold text-lg sm:text-xl">Resume Analyzer</span>
         </Link>
         
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Button
             variant="outline"
             size="icon"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="rounded-full"
+            className="rounded-full h-8 w-8 sm:h-10 sm:w-10"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? (
-              <Sun className="h-5 w-5" />
+              <Sun className="h-4 w-4 sm:h-5 sm:w-5" />
             ) : (
-              <Moon className="h-5 w-5" />
+              <Moon className="h-4 w-4 sm:h-5 sm:w-5" />
             )}
           </Button>
           
           {pathname === '/home' && (
-            <Button asChild>
-              <Link to="/" className="flex items-center gap-2">
-                <Upload className="w-4 h-4" />
+            <Button asChild className="h-8 sm:h-10 text-sm sm:text-base">
+              <Link to="/" className="flex items-center gap-1 sm:gap-2">
+                <Upload className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>Upload Resume</span>
               </Link>
             </Button>
