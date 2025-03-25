@@ -1,0 +1,524 @@
+{
+  "results": [
+    {
+      "prompt_name": "very_strict",
+      "prompt_description": "Very Strict",
+      "analysis": {
+        "points": [
+          {
+            "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The bullet point does not explicitly describe a situation or context with clear situational keywords.",
+              "action": true,
+              "action_rationale": "The action is clearly stated as 'Drive the roadmap for expenses, bills, and invoicing across 4 countries'.",
+              "result": false,
+              "result_rationale": "The bullet point does not explicitly state a quantifiable outcome or result.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The bullet point does not explicitly describe a situation or context with clear situational keywords.",
+              "action": true,
+              "action_rationale": "The action is clearly stated as 'Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads'.",
+              "result": true,
+              "result_rationale": "The result is clearly stated as 'Delivered a deserving promotion'.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The bullet point does not explicitly describe a situation or context with clear situational keywords.",
+              "action": true,
+              "action_rationale": "The action is clearly stated as 'Led development of cloud-based microservices architecture'.",
+              "result": true,
+              "result_rationale": "The result is clearly stated as 'improving system reliability by 99.9%'.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Implemented CI/CD pipeline using Jenkins and Docker",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The bullet point does not explicitly describe a situation or context with clear situational keywords.",
+              "action": true,
+              "action_rationale": "The action is clearly stated as 'Implemented CI/CD pipeline using Jenkins and Docker'.",
+              "result": false,
+              "result_rationale": "The bullet point does not explicitly state a quantifiable outcome or result.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Created customer Analysis and Demographic reports for the Markham Economic Development website, enabling the Markham Business community to make better marketing and product placement decisions.",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The bullet point does not explicitly describe a situation or context with clear situational keywords.",
+              "action": true,
+              "action_rationale": "The action is clearly stated as 'Created customer Analysis and Demographic reports for the Markham Economic Development website'.",
+              "result": true,
+              "result_rationale": "The result is clearly stated as 'enabling the Markham Business community to make better marketing and product placement decisions'.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Led the operational strategy group for implementing online & offline stakeholder connect initiatives across 14 regions, increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years.",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The bullet point does not explicitly describe a situation or context with clear situational keywords.",
+              "action": true,
+              "action_rationale": "The action is clearly stated as 'Led the operational strategy group for implementing online & offline stakeholder connect initiatives across 14 regions'.",
+              "result": true,
+              "result_rationale": "The result is clearly stated as 'increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years'.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Increased the MAU by 4x over two quarters by optimizing key product flows in user onboarding & retention in collaboration with Growth Teams.",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The bullet point does not explicitly describe a situation or context with clear situational keywords.",
+              "action": true,
+              "action_rationale": "The action is clearly stated as 'optimizing key product flows in user onboarding & retention in collaboration with Growth Teams'.",
+              "result": true,
+              "result_rationale": "The result is clearly stated as 'Increased the MAU by 4x over two quarters'.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Provided strategic insights to teams across Tide (onboarding + subscriptions + platform experience) to design roadmap + features.",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The bullet point does not explicitly describe a situation or context with clear situational keywords.",
+              "action": true,
+              "action_rationale": "The action is clearly stated as 'Provided strategic insights to teams across Tide (onboarding + subscriptions + platform experience) to design roadmap + features'.",
+              "result": false,
+              "result_rationale": "The bullet point does not explicitly state a quantifiable outcome or result.",
+              "complete": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "prompt_name": "strict",
+      "prompt_description": "Strict",
+      "analysis": {
+        "points": [
+          {
+            "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is clearly described as owning a \u00a375M ARR Portfolio and being responsible for expenses, bills, and invoicing across 4 countries.",
+              "action": true,
+              "action_rationale": "The action taken is driving the roadmap for the mentioned responsibilities.",
+              "result": false,
+              "result_rationale": "The result is implied as delivering revenue goals, but there are no quantifiable metrics or measurable impact provided.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is clearly described as being in a Product & Engineering Leadership role, leading quarterly OKRs & execution, and managing a team.",
+              "action": true,
+              "action_rationale": "The action taken is leading the OKRs and execution, and managing a team.",
+              "result": true,
+              "result_rationale": "The result is clearly indicated as receiving a deserving promotion.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is clearly described as being in charge of the development of a cloud-based microservices architecture.",
+              "action": true,
+              "action_rationale": "The action taken is leading the development of the architecture.",
+              "result": true,
+              "result_rationale": "The result is clearly indicated with a quantifiable metric - system reliability improved by 99.9%.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Implemented CI/CD pipeline using Jenkins and Docker",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The situation is not clearly described. It's not clear why the CI/CD pipeline needed to be implemented.",
+              "action": true,
+              "action_rationale": "The action taken is clearly described as implementing a CI/CD pipeline using Jenkins and Docker.",
+              "result": false,
+              "result_rationale": "The result is not mentioned. There are no quantifiable metrics or measurable impact provided.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Created customer Analysis and Demographic reports for the Markham Economic Development website, enabling the Markham Business community to make better marketing and product placement decisions.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is clearly described as needing to provide customer Analysis and Demographic reports for the Markham Economic Development website.",
+              "action": true,
+              "action_rationale": "The action taken is clearly described as creating the required reports.",
+              "result": true,
+              "result_rationale": "The result is clearly indicated as enabling the Markham Business community to make better marketing and product placement decisions. However, the impact is not quantifiable.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Led the operational strategy group for implementing online & offline stakeholder connect initiatives across 14 regions, increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is clearly described as leading an operational strategy group for implementing stakeholder connect initiatives across 14 regions.",
+              "action": true,
+              "action_rationale": "The action taken is clearly described as implementing the initiatives.",
+              "result": true,
+              "result_rationale": "The result is clearly indicated with quantifiable metrics - engagement footfall increased by 15x and 3 revenue models were monetized in 4 years.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Increased the MAU by 4x over two quarters by optimizing key product flows in user onboarding & retention in collaboration with Growth Teams.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is clearly described as needing to increase the MAU.",
+              "action": true,
+              "action_rationale": "The action taken is clearly described as optimizing key product flows in user onboarding & retention in collaboration with Growth Teams.",
+              "result": true,
+              "result_rationale": "The result is clearly indicated with a quantifiable metric - MAU increased by 4x over two quarters.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Provided strategic insights to teams across Tide (onboarding + subscriptions + platform experience) to design roadmap + features.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is clearly described as needing to provide strategic insights to teams across Tide for designing roadmap and features.",
+              "action": true,
+              "action_rationale": "The action taken is clearly described as providing the required strategic insights.",
+              "result": false,
+              "result_rationale": "The result is not mentioned. There are no quantifiable metrics or measurable impact provided.",
+              "complete": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "prompt_name": "balanced",
+      "prompt_description": "Balanced",
+      "analysis": {
+        "points": [
+          {
+            "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is clearly defined as owning a \u00a375M ARR Portfolio and being responsible for expenses, bills, and invoicing across 4 countries.",
+              "action": true,
+              "action_rationale": "The action taken is driving the roadmap for the mentioned responsibilities.",
+              "result": true,
+              "result_rationale": "The result is implied as delivering revenue goals, although specific metrics are not provided.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is described as being in a Product & Engineering Leadership role, leading quarterly OKRs & execution, and managing a team.",
+              "action": true,
+              "action_rationale": "The action is leading the OKRs and managing the team.",
+              "result": true,
+              "result_rationale": "The result is achieving a promotion, which implies successful performance.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is described as being in charge of the development of a cloud-based microservices architecture.",
+              "action": true,
+              "action_rationale": "The action is leading the development of the architecture.",
+              "result": true,
+              "result_rationale": "The result is a significant improvement in system reliability, quantified as 99.9%.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Implemented CI/CD pipeline using Jenkins and Docker",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The situation is not explicitly stated, it's assumed that there was a need for a CI/CD pipeline.",
+              "action": true,
+              "action_rationale": "The action is implementing the CI/CD pipeline using specific tools.",
+              "result": false,
+              "result_rationale": "The result is not stated, there are no measurable outcomes or metrics provided.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Created customer Analysis and Demographic reports for the Markham Economic Development website, enabling the Markham Business community to make better marketing and product placement decisions.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is described as a need for customer analysis and demographic reports for the Markham Economic Development website.",
+              "action": true,
+              "action_rationale": "The action is creating the required reports.",
+              "result": true,
+              "result_rationale": "The result is enabling the business community to make better decisions, although specific metrics are not provided.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Led the operational strategy group for implementing online & offline stakeholder connect initiatives across 14 regions, increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is described as leading an operational strategy group for implementing stakeholder connect initiatives across multiple regions.",
+              "action": true,
+              "action_rationale": "The action is leading the implementation of the initiatives.",
+              "result": true,
+              "result_rationale": "The result is a significant increase in engagement and monetization of revenue models, with specific metrics provided.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Increased the MAU by 4x over two quarters by optimizing key product flows in user onboarding & retention in collaboration with Growth Teams.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is described as a need to increase the MAU.",
+              "action": true,
+              "action_rationale": "The action is optimizing key product flows in user onboarding & retention, in collaboration with Growth Teams.",
+              "result": true,
+              "result_rationale": "The result is a significant increase in MAU, quantified as 4x over two quarters.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Provided strategic insights to teams across Tide (onboarding + subscriptions + platform experience) to design roadmap + features.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is described as a need to provide strategic insights to various teams at Tide.",
+              "action": true,
+              "action_rationale": "The action is providing the required insights.",
+              "result": false,
+              "result_rationale": "The result is not stated, there are no measurable outcomes or metrics provided.",
+              "complete": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "prompt_name": "lenient",
+      "prompt_description": "Lenient",
+      "analysis": {
+        "points": [
+          {
+            "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the responsibility of owning a \u00a375M ARR Portfolio and driving the roadmap for expenses, bills, and invoicing across 4 countries.",
+              "action": true,
+              "action_rationale": "The action is driving the roadmap for expenses, bills, and invoicing across 4 countries.",
+              "result": true,
+              "result_rationale": "The result is implied as delivering revenue goals.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the role of Product & Engineering Leadership, managing multiple teams and individuals.",
+              "action": true,
+              "action_rationale": "The action is leading quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst.",
+              "result": true,
+              "result_rationale": "The result is the delivery of a deserving promotion.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need for a more reliable system architecture.",
+              "action": true,
+              "action_rationale": "The action is leading the development of a cloud-based microservices architecture.",
+              "result": true,
+              "result_rationale": "The result is improving system reliability by 99.9%.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Implemented CI/CD pipeline using Jenkins and Docker",
+            "star": {
+              "situation": false,
+              "situation_rationale": "The situation is not explicitly stated or implied in this bullet point.",
+              "action": true,
+              "action_rationale": "The action is implementing a CI/CD pipeline using Jenkins and Docker.",
+              "result": false,
+              "result_rationale": "The result is not explicitly stated or implied in this bullet point.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Created customer Analysis and Demographic reports for the Markham Economic Development website, enabling the Markham Business community to make better marketing and product placement decisions.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need for customer analysis and demographic reports for the Markham Economic Development website.",
+              "action": true,
+              "action_rationale": "The action is creating customer analysis and demographic reports.",
+              "result": true,
+              "result_rationale": "The result is enabling the Markham Business community to make better marketing and product placement decisions.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Led the operational strategy group for implementing online & offline stakeholder connect initiatives across 14 regions, increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need for implementing online & offline stakeholder connect initiatives across 14 regions.",
+              "action": true,
+              "action_rationale": "The action is leading the operational strategy group for implementing these initiatives.",
+              "result": true,
+              "result_rationale": "The result is increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Increased the MAU by 4x over two quarters by optimizing key product flows in user onboarding & retention in collaboration with Growth Teams.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need to increase the MAU.",
+              "action": true,
+              "action_rationale": "The action is optimizing key product flows in user onboarding & retention in collaboration with Growth Teams.",
+              "result": true,
+              "result_rationale": "The result is increasing the MAU by 4x over two quarters.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Provided strategic insights to teams across Tide (onboarding + subscriptions + platform experience) to design roadmap + features.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need to provide strategic insights to teams across Tide.",
+              "action": true,
+              "action_rationale": "The action is providing strategic insights to these teams.",
+              "result": false,
+              "result_rationale": "The result is not explicitly stated or implied in this bullet point.",
+              "complete": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "prompt_name": "very_lenient",
+      "prompt_description": "Very Lenient",
+      "analysis": {
+        "points": [
+          {
+            "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the responsibility of owning a \u00a375M ARR Portfolio and driving the roadmap for expenses, bills, and invoicing across 4 countries.",
+              "action": true,
+              "action_rationale": "The action is driving the roadmap for expenses, bills, and invoicing across 4 countries.",
+              "result": true,
+              "result_rationale": "The result is implied as delivering revenue goals.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the role of Product & Engineering Leadership, leading quarterly OKRs & execution, and managing a team.",
+              "action": true,
+              "action_rationale": "The action is leading quarterly OKRs & execution, and managing 3 PMs, a designer, and an analyst.",
+              "result": true,
+              "result_rationale": "The result is the delivery of a deserving promotion.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Led development of cloud-based microservices architecture, improving system reliability by 99.9%",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need for a cloud-based microservices architecture.",
+              "action": true,
+              "action_rationale": "The action is leading the development of a cloud-based microservices architecture.",
+              "result": true,
+              "result_rationale": "The result is improving system reliability by 99.9%.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Implemented CI/CD pipeline using Jenkins and Docker",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need for a CI/CD pipeline.",
+              "action": true,
+              "action_rationale": "The action is implementing a CI/CD pipeline using Jenkins and Docker.",
+              "result": false,
+              "result_rationale": "There is no explicit result mentioned in this point.",
+              "complete": false
+            }
+          },
+          {
+            "text": "Created customer Analysis and Demographic reports for the Markham Economic Development website, enabling the Markham Business community to make better marketing and product placement decisions.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need for customer Analysis and Demographic reports for the Markham Economic Development website.",
+              "action": true,
+              "action_rationale": "The action is creating customer Analysis and Demographic reports.",
+              "result": true,
+              "result_rationale": "The result is enabling the Markham Business community to make better marketing and product placement decisions.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Led the operational strategy group for implementing online & offline stakeholder connect initiatives across 14 regions, increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need for implementing online & offline stakeholder connect initiatives across 14 regions.",
+              "action": true,
+              "action_rationale": "The action is leading the operational strategy group for implementing these initiatives.",
+              "result": true,
+              "result_rationale": "The result is increasing engagement footfall by 15x and monetizing 3 impactful revenue models in 4 years.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Increased the MAU by 4x over two quarters by optimizing key product flows in user onboarding & retention in collaboration with Growth Teams.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need to increase the MAU.",
+              "action": true,
+              "action_rationale": "The action is optimizing key product flows in user onboarding & retention in collaboration with Growth Teams.",
+              "result": true,
+              "result_rationale": "The result is increasing the MAU by 4x over two quarters.",
+              "complete": true
+            }
+          },
+          {
+            "text": "Provided strategic insights to teams across Tide (onboarding + subscriptions + platform experience) to design roadmap + features.",
+            "star": {
+              "situation": true,
+              "situation_rationale": "The situation is implied as the need to provide strategic insights to teams across Tide.",
+              "action": true,
+              "action_rationale": "The action is providing strategic insights to these teams.",
+              "result": false,
+              "result_rationale": "There is no explicit result mentioned in this point.",
+              "complete": false
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

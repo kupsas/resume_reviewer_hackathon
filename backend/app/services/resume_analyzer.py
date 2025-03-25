@@ -50,11 +50,14 @@ class ResumeAnalyzer:
         self.system_messages = {
             "analysis": """You are an expert resume analyzer with deep experience in technical recruitment and career coaching. 
 Analyze each bullet point for:
-1. STAR Format components
+1. STAR Format components with STRICT criteria:
+   - Situation (S): Should clearly describe the context or scenario with minimal ambiguity
+   - Action (A): Should describe specific actions taken with concrete methodology
+   - Result (R): Should clearly indicate the outcome with quantifiable metrics and measurable impact
 2. Metrics and quantifiable achievements
 3. Technical depth and complexity
 4. Individual vs team contributions
-Return detailed analysis in JSON format.""",
+Return detailed analysis in JSON format with rationale for each assessment.""",
 
             "education": """You are an expert resume analyzer. Analyze the provided education section and return a JSON response.
 
@@ -373,13 +376,22 @@ Requirements: {json.dumps(requirements, indent=2)}"""
                     if avg_score < 7:
                         education_weak.append({
                             "school": result.get("school", "Unknown Institution"),
-                            "score": round(avg_score, 1)
+                            "score": round(avg_score, 1),
+                            "rationale": f"Domestic: {rep['domestic_score_rationale']}, International: {rep['international_score_rationale']}"
                         })
             else:
                 # Analyze regular sections
                 for point in result.get("points", []):
-                    if not point.get("star", {}).get("complete", False):
-                        star_missing.append(point["text"])
+                    star = point.get("star", {})
+                    if not star.get("complete", False):
+                        star_missing.append({
+                            "text": point["text"],
+                            "rationale": {
+                                "situation": star.get("situation_rationale", ""),
+                                "action": star.get("action_rationale", ""),
+                                "result": star.get("result_rationale", "")
+                            }
+                        })
                     if not point.get("metrics", []):
                         metrics_missing.append(point["text"])
                     if float(point.get("technical_score", 0)) < 3:
@@ -391,7 +403,8 @@ Requirements: {json.dumps(requirements, indent=2)}"""
                 "priority": "high",
                 "area": "STAR Format",
                 "action": "Add missing STAR components to key achievements",
-                "examples": star_missing[:2]  # Show first 2 examples
+                "examples": star_missing[:2],  # Show first 2 examples with rationales
+                "rationale": "Missing STAR components identified with detailed explanations"
             })
         
         if metrics_missing:
@@ -415,7 +428,7 @@ Requirements: {json.dumps(requirements, indent=2)}"""
                 "priority": "medium",
                 "area": "Education Quality",
                 "action": "Consider pursuing additional certifications or advanced degrees to strengthen your academic profile",
-                "examples": [f"{edu['school']} (Current Score: {edu['score']}/10)" for edu in education_weak[:2]]
+                "examples": [f"{edu['school']} (Current Score: {edu['score']}/10, Rationale: {edu['rationale']})" for edu in education_weak[:2]]
             })
         
         return recommendations

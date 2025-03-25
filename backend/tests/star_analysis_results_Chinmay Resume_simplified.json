@@ -1,0 +1,126 @@
+{
+  "simplified_analysis": {
+    "experience_points": [
+      {
+        "text": "Own £75M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+        "analyses": {
+          "very_strict": {
+            "situation": false,
+            "situation_rationale": "The point does not explicitly describe the context with clear situational keywords like 'when', 'during', or 'while'.",
+            "task": false,
+            "task_rationale": "The point does not clearly state the specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+            "action": true,
+            "action_rationale": "The action is present as it describes 'Drive the roadmap' which is a specific step taken.",
+            "result": true,
+            "result_rationale": "The result is present as it mentions 'delivering revenue goals' and '£75M ARR Portfolio', which are quantifiable outcomes.",
+            "complete": false
+          },
+          "strict": {
+            "situation": true,
+            "situation_rationale": "The context is managing a £75M ARR portfolio across 4 countries.",
+            "task": true,
+            "task_rationale": "The task is to drive the roadmap for expenses, bills, and invoicing.",
+            "action": true,
+            "action_rationale": "The action involves driving the roadmap, which implies strategic planning and execution.",
+            "result": true,
+            "result_rationale": "The result is delivering revenue goals, which is a measurable outcome.",
+            "complete": true
+          },
+          "balanced": {
+            "situation": true,
+            "situation_rationale": "The context is provided by mentioning the £75M ARR portfolio and the focus on expenses, bills, and invoicing across 4 countries.",
+            "task": true,
+            "task_rationale": "The task is to drive the roadmap for expenses, bills, and invoicing, with a focus on delivering revenue goals.",
+            "action": true,
+            "action_rationale": "The action involves driving the roadmap, which implies strategic planning and execution.",
+            "result": true,
+            "result_rationale": "The result is implied by the mention of delivering revenue goals, indicating successful achievement.",
+            "complete": true
+          },
+          "lenient": {
+            "situation": true,
+            "situation_rationale": "The situation is implied as managing a significant portfolio in a fintech company.",
+            "task": true,
+            "task_rationale": "The task of driving the roadmap for expenses, bills, and invoicing is clear.",
+            "action": true,
+            "action_rationale": "The action of driving the roadmap is explicitly mentioned.",
+            "result": true,
+            "result_rationale": "The result of delivering revenue goals is implied.",
+            "complete": true
+          },
+          "very_lenient": {
+            "situation": true,
+            "situation_rationale": "The context of managing a £75M ARR portfolio across 4 countries is provided.",
+            "task": true,
+            "task_rationale": "The task of driving the roadmap for expenses, bills, and invoicing is implied.",
+            "action": true,
+            "action_rationale": "The action of driving the roadmap is explicitly mentioned.",
+            "result": true,
+            "result_rationale": "The result of delivering revenue goals is stated.",
+            "complete": true
+          }
+        }
+      },
+      {
+        "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+        "analyses": {
+          "very_strict": {
+            "situation": false,
+            "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+            "task": false,
+            "task_rationale": "The point does not clearly state the specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+            "action": true,
+            "action_rationale": "The action is present as it describes 'Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst'.",
+            "result": true,
+            "result_rationale": "The result is present as it mentions 'Delivered a deserving promotion', which implies a positive outcome.",
+            "complete": false
+          },
+          "strict": {
+            "situation": true,
+            "situation_rationale": "The context involves leading product and engineering teams.",
+            "task": true,
+            "task_rationale": "The task is to lead quarterly OKRs and execution.",
+            "action": true,
+            "action_rationale": "The action is managing teams and leading OKRs execution.",
+            "result": true,
+            "result_rationale": "The result is a promotion, indicating successful leadership.",
+            "complete": true
+          },
+          "balanced": {
+            "situation": true,
+            "situation_rationale": "The situation involves leading product and engineering efforts, with a focus on quarterly OKRs and execution.",
+            "task": true,
+            "task_rationale": "The task is to lead quarterly OKRs and manage a team of PMs, a designer, and an analyst.",
+            "action": true,
+            "action_rationale": "The action includes managing teams and leading product leadership across engineering squads.",
+            "result": true,
+            "result_rationale": "The result is indicated by the mention of delivering a deserving promotion, suggesting successful leadership.",
+            "complete": true
+          },
+          "lenient": {
+            "situation": true,
+            "situation_rationale": "The situation involves leading product and engineering teams in a fintech setting.",
+            "task": true,
+            "task_rationale": "The task of leading OKRs and execution is clear.",
+            "action": true,
+            "action_rationale": "The action of managing teams and leading OKRs is explicitly mentioned.",
+            "result": true,
+            "result_rationale": "The result of a promotion is mentioned, indicating success.",
+            "complete": true
+          },
+          "very_lenient": {
+            "situation": true,
+            "situation_rationale": "The context of leading product and engineering teams is provided.",
+            "task": true,
+            "task_rationale": "The task of leading quarterly OKRs and execution is implied.",
+            "action": true,
+            "action_rationale": "The action of managing teams and leading OKRs is explicitly mentioned.",
+            "result": true,
+            "result_rationale": "The result of delivering a promotion is stated.",
+            "complete": true
+          }
+        }
+      }
+    ]
+  }
+} 

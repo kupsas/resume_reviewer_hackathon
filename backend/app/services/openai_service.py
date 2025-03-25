@@ -35,12 +35,14 @@ RESUME_ANALYSIS_FUNCTIONS = [
                                                     "type": "object",
                                                     "properties": {
                                                         "situation": {"type": "boolean", "description": "Whether situation is present"},
-                                                        "task": {"type": "boolean", "description": "Whether task is present"},
+                                                        "situation_rationale": {"type": "string", "description": "Explanation for situation assessment"},
                                                         "action": {"type": "boolean", "description": "Whether action is present"},
+                                                        "action_rationale": {"type": "string", "description": "Explanation for action assessment"},
                                                         "result": {"type": "boolean", "description": "Whether result is present"},
+                                                        "result_rationale": {"type": "string", "description": "Explanation for result assessment"},
                                                         "complete": {"type": "boolean", "description": "Whether all STAR components are present"}
                                                     },
-                                                    "required": ["situation", "task", "action", "result", "complete"]
+                                                    "required": ["situation", "situation_rationale", "action", "action_rationale", "result", "result_rationale", "complete"]
                                                 },
                                                 "metrics": {
                                                     "type": "array",
@@ -184,9 +186,13 @@ class OpenAIService:
 
 1. For Experience and Projects sections:
    - Extract each bullet point
-   - Analyze STAR format (Situation, Task, Action, Result)
+   - Analyze STAR format with STRICT criteria:
+     * Situation (S): Should clearly describe the context or scenario with minimal ambiguity
+     * Action (A): Should describe specific actions taken with concrete methodology
+     * Result (R): Should clearly indicate the outcome with quantifiable metrics and measurable impact
+   - Mark components as present only with clear evidence - minimal inference allowed
    - Identify metrics and quantifiable achievements
-   - Provide a one-sentence suggestion for improvement following STAR format with metrics
+   - Provide detailed rationale for each STAR component assessment
 
 2. For Education section:
    - Extract school name, degree, graduation date

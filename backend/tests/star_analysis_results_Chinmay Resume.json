@@ -1,0 +1,3204 @@
+[
+  {
+    "prompt_name": "very_strict",
+    "prompt_description": "Very Strict",
+    "analysis": {
+      "sections": [
+        {
+          "type": "Experience",
+          "points": [
+            {
+              "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Drive the roadmap' which is a specific step taken.",
+                "result": true,
+                "result_rationale": "The result is present as it mentions 'delivering revenue goals' and '\u00a375M ARR Portfolio', which are quantifiable outcomes.",
+                "complete": false
+              },
+              "metrics": [
+                "\u00a375M ARR"
+              ],
+              "technical_score": 3
+            },
+            {
+              "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst'.",
+                "result": true,
+                "result_rationale": "The result is present as it mentions 'Delivered a deserving promotion', which implies a positive outcome.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Cross-Functional Leadership: Drive OKR delivery, new product launch and revenue goals \u2013 working with commercial, marketing, analytics, onboarding, risk, compliance, GDPR, legal, and product squads.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Drive OKR delivery, new product launch and revenue goals'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Discovery & New Market Expansion: Led discovery projects with PM, UR, analyst, corp dev teams to launch new products & countries - Invoicing for Germany, Bill Payments for India, and Pay-Links for the UK.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Led discovery projects with PM, UR, analyst, corp dev teams'.",
+                "result": true,
+                "result_rationale": "The result is present as it mentions 'launch new products & countries', which is a quantifiable outcome.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Product & Revenue Strategy: Led cross-functional collaboration across product, commercial, marketing, finance, and analytics to align on monetization, growth, and GTM strategies.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Led cross-functional collaboration'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Scaling Data-Driven Decision Making: Trained and mentored speedboat analytics teams to drive forecasting, risk assessment, and revenue modeling, embedding data fluency across squads.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Trained and mentored speedboat analytics teams'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Analytics & Revenue Impact (IC Role): Led analytics for Invoices, Expenses, and Bills, driving product usage, retention, and revenue forecasting, while connecting product initiatives to revenue goals.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Led analytics for Invoices, Expenses, and Bills'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Data-Driven Roadmap Framework: Built & institutionalized a metrics-led product planning framework, now integral to 15+ product squads.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Built & institutionalized a metrics-led product planning framework'.",
+                "result": true,
+                "result_rationale": "The result is present as it mentions 'now integral to 15+ product squads', which is a quantifiable outcome.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Team Leadership & Expansion: Hired & onboarded analysts, expanding analytics coverage to Payments, Acceptance, Credit (Flex), Partner Credit, and Member Engagement\u2014covering all revenue speedboats.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Hired & onboarded analysts'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Impact & Decision Support: Enabled PMs with data-driven insights for strategic planning and prioritization.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Enabled PMs with data-driven insights'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Discovery and Experimentation: Worked across the b2b and b2c product stack, a long list of \u201cbacklog, employing advanced discovery techniques and hypothesis-driven development to refine product offerings.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Worked across the b2b and b2c product stack'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Customer Insights: Acted as the voice of the customer, synthesizing insights from diverse qual & quant sources to shape strategic decisions.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Acted as the voice of the customer'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Optimized Experiences: Led initiatives to streamline user journeys from onboarding to purchase, driving engagement and retention.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Led initiatives to streamline user journeys'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Data-Driven Leadership: Established robust success metrics, ensuring alignment with company-wide KPIs.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Established robust success metrics'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Designed and launched the Park & Shop feature, seamlessly integrating Shopholix\u2019s shopping solutions with Park+ parking offering for users.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Designed and launched the Park & Shop feature'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with engineering, design, sales teams to implement scalable solutions, resulting in significant revenue growth - 12m ARR.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Partnered with engineering, design, sales teams'.",
+                "result": true,
+                "result_rationale": "The result is present as it mentions 'resulting in significant revenue growth - 12m ARR', which is a quantifiable outcome.",
+                "complete": false
+              },
+              "metrics": [
+                "12m ARR"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Worked with sales team to ensure the partner product works seamlessly across merchant, mall, and parking lot operators.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Worked with sales team'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led merchant product strategy, creating tools for retailers to enhance customer engagement and transaction efficiency.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Led merchant product strategy'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Oversaw the end-to-end development of merchant platforms, ensuring alignment with market needs.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Oversaw the end-to-end development'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Spearheaded platform enhancements - scalability and data integration.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Spearheaded platform enhancements'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Developed dashboards - insights to merchants for better decisions.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Developed dashboards'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with stakeholders to align product roadmaps with company goals, ensuring measurable outcomes.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Collaborated with stakeholders'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led development and iteration of Shopholix\u2019s in-store payments app, focusing on simplifying transaction workflows for retailers and end-users.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Led development and iteration'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with engineers and designers to build intuitive payment features that minimized transaction time and improved reliability.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Collaborated with engineers and designers'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Engaged with retailers to gather feedback, using insights to continuously optimize payment flows and increase app adoption.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Engaged with retailers to gather feedback'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led the creation of data products for enterprise clients, focusing on automation and scalability.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Led the creation of data products'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Managed the roadmap for an automobile, telematics project - team of 12 engineers, 2 designers and 3 analysts.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Managed the roadmap'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with cross-functional teams (including clients) to design solutions that streamlined customer operations.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Partnered with cross-functional teams'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Conducted extensive user research to identify gaps and opportunities in the FMCG market.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Conducted extensive user research'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Developed and launched new product lines, including Frutchill and Yo Noodles, tailored to evolving consumer needs.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Developed and launched new product lines'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with cross-functional teams to oversee product lifecycle, from ideation to market launch. Key partner sales & commercial teams.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Partnered with cross-functional teams'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Designed go-to-market strategies, ensuring effective positioning and distribution across key regions and channels - \u00a39m+ ARR.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Designed go-to-market strategies'.",
+                "result": true,
+                "result_rationale": "The result is present as it mentions '\u00a39m+ ARR', which is a quantifiable outcome.",
+                "complete": false
+              },
+              "metrics": [
+                "\u00a39m+ ARR"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Conducted in-depth shopper research to identify behavioral patterns and inform marketing strategies - improving retention.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Conducted in-depth shopper research'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Built analytics frameworks to measure campaign effectiveness and provide actionable insights for category management.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Built analytics frameworks'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with merchandising and marketing teams to optimize store layouts and enhance shopper journeys.",
+              "star": {
+                "situation": false,
+                "situation_rationale": "The point does not explicitly describe the context or situation with keywords like 'when', 'during', or 'while'.",
+                "task": false,
+                "task_rationale": "The point does not clearly state a specific responsibility with keywords like 'tasked with', 'goal was', or 'needed to'.",
+                "action": true,
+                "action_rationale": "The action is present as it describes 'Collaborated with merchandising and marketing teams'.",
+                "result": false,
+                "result_rationale": "The result is not explicitly stated with quantifiable outcomes or metrics.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            }
+          ]
+        },
+        {
+          "type": "Education",
+          "points": [
+            {
+              "text": "ICFAI Business School MBA \u2013 Marketing & Technology | Grade: A # Organised Zephyr - Business Quiz - inter-business school",
+              "star": {
+                "situation": false,
+                "situation_rationale": "Education section does not require STAR analysis.",
+                "task": false,
+                "task_rationale": "Education section does not require STAR analysis.",
+                "action": false,
+                "action_rationale": "Education section does not require STAR analysis.",
+                "result": false,
+                "result_rationale": "Education section does not require STAR analysis.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Mohanlal Sukhadia University Bachelor of Business Management | Grade: A # Captain of the university cricket team, state-level athlete for high jump # Captain of the state under-19 cricket team",
+              "star": {
+                "situation": false,
+                "situation_rationale": "Education section does not require STAR analysis.",
+                "task": false,
+                "task_rationale": "Education section does not require STAR analysis.",
+                "action": false,
+                "action_rationale": "Education section does not require STAR analysis.",
+                "result": false,
+                "result_rationale": "Education section does not require STAR analysis.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "prompt_name": "strict",
+    "prompt_description": "Strict",
+    "analysis": {
+      "sections": [
+        {
+          "type": "Experience",
+          "points": [
+            {
+              "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is managing a \u00a375M ARR portfolio across 4 countries.",
+                "task": true,
+                "task_rationale": "The task is to drive the roadmap for expenses, bills, and invoicing.",
+                "action": true,
+                "action_rationale": "The action involves driving the roadmap, which implies strategic planning and execution.",
+                "result": true,
+                "result_rationale": "The result is delivering revenue goals, which is a measurable outcome.",
+                "complete": true
+              },
+              "metrics": [
+                "\u00a375M ARR",
+                "4 countries"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context involves leading product and engineering teams.",
+                "task": true,
+                "task_rationale": "The task is to lead quarterly OKRs and execution.",
+                "action": true,
+                "action_rationale": "The action is managing teams and leading OKRs execution.",
+                "result": true,
+                "result_rationale": "The result is a promotion, indicating successful leadership.",
+                "complete": true
+              },
+              "metrics": [
+                "3 PMs",
+                "40+ engineering teams",
+                "3 squads"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Cross-Functional Leadership: Drive OKR delivery, new product launch and revenue goals \u2013 working with commercial, marketing, analytics, onboarding, risk, compliance, GDPR, legal, and product squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is cross-functional leadership involving multiple departments.",
+                "task": true,
+                "task_rationale": "The task is to drive OKR delivery, new product launch, and revenue goals.",
+                "action": true,
+                "action_rationale": "The action involves working with various departments to achieve goals.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Discovery & New Market Expansion: Led discovery projects with PM, UR, analyst, corp dev teams to launch new products & countries - Invoicing for Germany, Bill Payments for India, and Pay-Links for the UK.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is leading product discovery and market expansion projects.",
+                "task": true,
+                "task_rationale": "The task is to lead discovery projects for launching new products and markets.",
+                "action": true,
+                "action_rationale": "The action involves leading teams to launch products in new markets.",
+                "result": true,
+                "result_rationale": "The result is the successful launch of products in Germany, India, and the UK.",
+                "complete": true
+              },
+              "metrics": [
+                "New products in Germany, India, UK"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Product & Revenue Strategy: Led cross-functional collaboration across product, commercial, marketing, finance, and analytics to align on monetization, growth, and GTM strategies.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is leading cross-functional collaboration for strategy alignment.",
+                "task": true,
+                "task_rationale": "The task is to align on monetization, growth, and GTM strategies.",
+                "action": true,
+                "action_rationale": "The action involves leading collaboration across multiple departments.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Scaling Data-Driven Decision Making: Trained and mentored speedboat analytics teams to drive forecasting, risk assessment, and revenue modeling, embedding data fluency across squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is scaling data-driven decision-making within teams.",
+                "task": true,
+                "task_rationale": "The task is to train and mentor analytics teams.",
+                "action": true,
+                "action_rationale": "The action involves training and mentoring teams to improve data fluency.",
+                "result": false,
+                "result_rationale": "The result is implied but not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Analytics & Revenue Impact (IC Role): Led analytics for Invoices, Expenses, and Bills, driving product usage, retention, and revenue forecasting, while connecting product initiatives to revenue goals.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is leading analytics for specific financial products.",
+                "task": true,
+                "task_rationale": "The task is to lead analytics to drive product usage, retention, and revenue forecasting.",
+                "action": true,
+                "action_rationale": "The action involves leading analytics efforts to connect initiatives to revenue goals.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Data-Driven Roadmap Framework: Built & institutionalized a metrics-led product planning framework, now integral to 15+ product squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is building a data-driven roadmap framework.",
+                "task": true,
+                "task_rationale": "The task is to build and institutionalize a product planning framework.",
+                "action": true,
+                "action_rationale": "The action involves creating and implementing the framework across squads.",
+                "result": true,
+                "result_rationale": "The result is the framework becoming integral to 15+ squads, indicating successful adoption.",
+                "complete": true
+              },
+              "metrics": [
+                "15+ product squads"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Team Leadership & Expansion: Hired & onboarded analysts, expanding analytics coverage to Payments, Acceptance, Credit (Flex), Partner Credit, and Member Engagement\u2014covering all revenue speedboats.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is expanding team and analytics coverage.",
+                "task": true,
+                "task_rationale": "The task is to hire and onboard analysts to expand coverage.",
+                "action": true,
+                "action_rationale": "The action involves hiring and onboarding to expand analytics coverage.",
+                "result": false,
+                "result_rationale": "The result is implied but not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Impact & Decision Support: Enabled PMs with data-driven insights for strategic planning and prioritization.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is providing decision support to PMs.",
+                "task": true,
+                "task_rationale": "The task is to enable PMs with data-driven insights.",
+                "action": true,
+                "action_rationale": "The action involves providing insights for planning and prioritization.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Discovery and Experimentation: Worked across the b2b and b2c product stack, a long list of \u201cbacklog, employing advanced discovery techniques and hypothesis-driven development to refine product offerings.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is working on product discovery and experimentation.",
+                "task": true,
+                "task_rationale": "The task is to refine product offerings through discovery and experimentation.",
+                "action": true,
+                "action_rationale": "The action involves using discovery techniques and hypothesis-driven development.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Customer Insights: Acted as the voice of the customer, synthesizing insights from diverse qual & quant sources to shape strategic decisions.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is gathering and synthesizing customer insights.",
+                "task": true,
+                "task_rationale": "The task is to act as the voice of the customer for strategic decisions.",
+                "action": true,
+                "action_rationale": "The action involves synthesizing insights from various sources.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Optimized Experiences: Led initiatives to streamline user journeys from onboarding to purchase, driving engagement and retention.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is optimizing user experiences.",
+                "task": true,
+                "task_rationale": "The task is to streamline user journeys to drive engagement and retention.",
+                "action": true,
+                "action_rationale": "The action involves leading initiatives to optimize experiences.",
+                "result": false,
+                "result_rationale": "The result is implied but not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Data-Driven Leadership: Established robust success metrics, ensuring alignment with company-wide KPIs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is establishing success metrics for leadership.",
+                "task": true,
+                "task_rationale": "The task is to establish metrics for alignment with KPIs.",
+                "action": true,
+                "action_rationale": "The action involves creating and aligning metrics with KPIs.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Designed and launched the Park & Shop feature, seamlessly integrating Shopholix\u2019s shopping solutions with Park+ parking offering for users.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is designing and launching a new feature for Park+.",
+                "task": true,
+                "task_rationale": "The task is to design and launch the Park & Shop feature.",
+                "action": true,
+                "action_rationale": "The action involves integrating shopping solutions with parking offerings.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with engineering, design, sales teams to implement scalable solutions, resulting in significant revenue growth - 12m ARR.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is partnering with teams to implement solutions.",
+                "task": true,
+                "task_rationale": "The task is to implement scalable solutions with teams.",
+                "action": true,
+                "action_rationale": "The action involves collaboration with various teams for implementation.",
+                "result": true,
+                "result_rationale": "The result is significant revenue growth, quantified as 12m ARR.",
+                "complete": true
+              },
+              "metrics": [
+                "12m ARR"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Worked with sales team to ensure the partner product works seamlessly across merchant, mall, and parking lot operators.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is ensuring product functionality across various operators.",
+                "task": true,
+                "task_rationale": "The task is to ensure seamless product functionality with the sales team.",
+                "action": true,
+                "action_rationale": "The action involves working with the sales team for product functionality.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led merchant product strategy, creating tools for retailers to enhance customer engagement and transaction efficiency.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is leading merchant product strategy.",
+                "task": true,
+                "task_rationale": "The task is to create tools for retailers.",
+                "action": true,
+                "action_rationale": "The action involves creating tools to enhance engagement and efficiency.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Oversaw the end-to-end development of merchant platforms, ensuring alignment with market needs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is overseeing development of merchant platforms.",
+                "task": true,
+                "task_rationale": "The task is to ensure alignment with market needs.",
+                "action": true,
+                "action_rationale": "The action involves overseeing development to meet market needs.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Spearheaded platform enhancements - scalability and data integration.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is enhancing platform scalability and data integration.",
+                "task": true,
+                "task_rationale": "The task is to enhance platform scalability and integration.",
+                "action": true,
+                "action_rationale": "The action involves spearheading enhancements for scalability and integration.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Developed dashboards - insights to merchants for better decisions.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is developing dashboards for merchant insights.",
+                "task": true,
+                "task_rationale": "The task is to develop dashboards for decision-making.",
+                "action": true,
+                "action_rationale": "The action involves creating dashboards for insights.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with stakeholders to align product roadmaps with company goals, ensuring measurable outcomes.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is aligning product roadmaps with company goals.",
+                "task": true,
+                "task_rationale": "The task is to ensure alignment with company goals.",
+                "action": true,
+                "action_rationale": "The action involves collaboration with stakeholders for alignment.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led development and iteration of Shopholix\u2019s in-store payments app, focusing on simplifying transaction workflows for retailers and end-users.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is developing an in-store payments app.",
+                "task": true,
+                "task_rationale": "The task is to simplify transaction workflows.",
+                "action": true,
+                "action_rationale": "The action involves leading development and iteration of the app.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with engineers and designers to build intuitive payment features that minimized transaction time and improved reliability.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is building payment features with engineers and designers.",
+                "task": true,
+                "task_rationale": "The task is to minimize transaction time and improve reliability.",
+                "action": true,
+                "action_rationale": "The action involves collaboration to build features.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Engaged with retailers to gather feedback, using insights to continuously optimize payment flows and increase app adoption.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is engaging with retailers for feedback.",
+                "task": true,
+                "task_rationale": "The task is to optimize payment flows and increase adoption.",
+                "action": true,
+                "action_rationale": "The action involves using feedback to optimize and increase adoption.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led the creation of data products for enterprise clients, focusing on automation and scalability.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is creating data products for enterprise clients.",
+                "task": true,
+                "task_rationale": "The task is to focus on automation and scalability.",
+                "action": true,
+                "action_rationale": "The action involves leading the creation of data products.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Managed the roadmap for an automobile, telematics project - team of 12 engineers, 2 designers and 3 analysts.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is managing a telematics project roadmap.",
+                "task": true,
+                "task_rationale": "The task is to manage the project roadmap.",
+                "action": true,
+                "action_rationale": "The action involves managing a team for the project.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [
+                "12 engineers",
+                "2 designers",
+                "3 analysts"
+              ],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with cross-functional teams (including clients) to design solutions that streamlined customer operations.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is designing solutions with cross-functional teams.",
+                "task": true,
+                "task_rationale": "The task is to streamline customer operations.",
+                "action": true,
+                "action_rationale": "The action involves partnering with teams to design solutions.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Conducted extensive user research to identify gaps and opportunities in the FMCG market.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is conducting user research in the FMCG market.",
+                "task": true,
+                "task_rationale": "The task is to identify gaps and opportunities.",
+                "action": true,
+                "action_rationale": "The action involves conducting extensive research.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Developed and launched new product lines, including Frutchill and Yo Noodles, tailored to evolving consumer needs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is developing and launching new product lines.",
+                "task": true,
+                "task_rationale": "The task is to tailor products to consumer needs.",
+                "action": true,
+                "action_rationale": "The action involves developing and launching products.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with cross-functional teams to oversee product lifecycle, from ideation to market launch. Key partner sales & commercial teams.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is overseeing product lifecycle with teams.",
+                "task": true,
+                "task_rationale": "The task is to oversee the product lifecycle.",
+                "action": true,
+                "action_rationale": "The action involves partnering with teams for lifecycle management.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Designed go-to-market strategies, ensuring effective positioning and distribution across key regions and channels - \u00a39m+ ARR.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is designing go-to-market strategies.",
+                "task": true,
+                "task_rationale": "The task is to ensure effective positioning and distribution.",
+                "action": true,
+                "action_rationale": "The action involves designing strategies for market entry.",
+                "result": true,
+                "result_rationale": "The result is achieving \u00a39m+ ARR, a measurable outcome.",
+                "complete": true
+              },
+              "metrics": [
+                "\u00a39m+ ARR"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Conducted in-depth shopper research to identify behavioral patterns and inform marketing strategies - improving retention.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is conducting shopper research for marketing strategies.",
+                "task": true,
+                "task_rationale": "The task is to identify patterns and inform strategies.",
+                "action": true,
+                "action_rationale": "The action involves conducting research to inform strategies.",
+                "result": false,
+                "result_rationale": "The result is implied but not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Built analytics frameworks to measure campaign effectiveness and provide actionable insights for category management.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is building analytics frameworks for campaigns.",
+                "task": true,
+                "task_rationale": "The task is to measure effectiveness and provide insights.",
+                "action": true,
+                "action_rationale": "The action involves building frameworks for analytics.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with merchandising and marketing teams to optimize store layouts and enhance shopper journeys.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is optimizing store layouts with teams.",
+                "task": true,
+                "task_rationale": "The task is to enhance shopper journeys.",
+                "action": true,
+                "action_rationale": "The action involves collaboration for layout optimization.",
+                "result": false,
+                "result_rationale": "The result is not clearly stated or measurable.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            }
+          ]
+        },
+        {
+          "type": "Education",
+          "points": [
+            {
+              "text": "ICFAI Business School MBA \u2013 Marketing & Technology | Grade: A # Organised Zephyr - Business Quiz - inter-business school",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Mohanlal Sukhadia University Bachelor of Business Management | Grade: A # Captain of the university cricket team, state-level athlete for high jump # Captain of the state under-19 cricket team",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            }
+          ]
+        },
+        {
+          "type": "Skills",
+          "points": [
+            {
+              "text": "Product Leadership: Building scalable platforms, cross-functional collaboration, outcome-driven roadmaps",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Data-Driven Strategy: KPI frameworks, A/B testing, data insights for product discovery",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Technical Fluency: Data Platforms, Cloud architecture, APIs, developer toolchains, e-commerce platforms",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Customer-Centric Design: Voice of customer, user-centered innovation, CX optimization",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Leadership & Mentoring: Team building, coaching, fostering a growth-focused culture",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Stakeholder Management: Influencing C-level executives, PR, marketing, finance, legal",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "prompt_name": "balanced",
+    "prompt_description": "Balanced",
+    "analysis": {
+      "sections": [
+        {
+          "type": "Experience",
+          "points": [
+            {
+              "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context is provided by mentioning the \u00a375M ARR portfolio and the focus on expenses, bills, and invoicing across 4 countries.",
+                "task": true,
+                "task_rationale": "The task is to drive the roadmap for expenses, bills, and invoicing, with a focus on delivering revenue goals.",
+                "action": true,
+                "action_rationale": "The action involves driving the roadmap, which implies strategic planning and execution.",
+                "result": true,
+                "result_rationale": "The result is implied by the mention of delivering revenue goals, indicating successful achievement.",
+                "complete": true
+              },
+              "metrics": [
+                "\u00a375M ARR",
+                "4 countries"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading product and engineering efforts, with a focus on quarterly OKRs and execution.",
+                "task": true,
+                "task_rationale": "The task is to lead quarterly OKRs and manage a team of PMs, a designer, and an analyst.",
+                "action": true,
+                "action_rationale": "The action includes managing teams and leading product leadership across engineering squads.",
+                "result": true,
+                "result_rationale": "The result is indicated by the mention of delivering a deserving promotion, suggesting successful leadership.",
+                "complete": true
+              },
+              "metrics": [
+                "3 PMs",
+                "40+ engineering teams",
+                "3 squads"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Cross-Functional Leadership: Drive OKR delivery, new product launch and revenue goals \u2013 working with commercial, marketing, analytics, onboarding, risk, compliance, GDPR, legal, and product squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves cross-functional leadership to drive OKR delivery and new product launches.",
+                "task": true,
+                "task_rationale": "The task is to drive OKR delivery and achieve revenue goals through cross-functional collaboration.",
+                "action": true,
+                "action_rationale": "The action involves working with various teams such as commercial, marketing, and legal to achieve goals.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the outcome of these efforts unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Discovery & New Market Expansion: Led discovery projects with PM, UR, analyst, corp dev teams to launch new products & countries - Invoicing for Germany, Bill Payments for India, and Pay-Links for the UK.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading product discovery and market expansion efforts.",
+                "task": true,
+                "task_rationale": "The task is to lead discovery projects to launch new products and expand into new markets.",
+                "action": true,
+                "action_rationale": "The action includes collaborating with various teams to launch products in different countries.",
+                "result": true,
+                "result_rationale": "The result is indicated by the successful launch of products in Germany, India, and the UK.",
+                "complete": true
+              },
+              "metrics": [
+                "New products in Germany, India, UK"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Product & Revenue Strategy: Led cross-functional collaboration across product, commercial, marketing, finance, and analytics to align on monetization, growth, and GTM strategies.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading strategy efforts for product and revenue.",
+                "task": true,
+                "task_rationale": "The task is to align on monetization, growth, and GTM strategies through cross-functional collaboration.",
+                "action": true,
+                "action_rationale": "The action involves leading collaboration across various departments to achieve strategic alignment.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the outcome of these strategic efforts unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Scaling Data-Driven Decision Making: Trained and mentored speedboat analytics teams to drive forecasting, risk assessment, and revenue modeling, embedding data fluency across squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves scaling data-driven decision-making within the organization.",
+                "task": true,
+                "task_rationale": "The task is to train and mentor analytics teams to enhance data-driven capabilities.",
+                "action": true,
+                "action_rationale": "The action includes training and mentoring teams to improve forecasting and risk assessment.",
+                "result": true,
+                "result_rationale": "The result is implied by the embedding of data fluency across squads, indicating successful training.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Analytics & Revenue Impact (IC Role): Led analytics for Invoices, Expenses, and Bills, driving product usage, retention, and revenue forecasting, while connecting product initiatives to revenue goals.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading analytics efforts for specific financial products.",
+                "task": true,
+                "task_rationale": "The task is to drive product usage, retention, and revenue forecasting through analytics.",
+                "action": true,
+                "action_rationale": "The action includes leading analytics efforts to connect product initiatives to revenue goals.",
+                "result": true,
+                "result_rationale": "The result is implied by the successful connection of product initiatives to revenue goals.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Data-Driven Roadmap Framework: Built & institutionalized a metrics-led product planning framework, now integral to 15+ product squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need for a structured product planning framework.",
+                "task": true,
+                "task_rationale": "The task is to build and institutionalize a metrics-led product planning framework.",
+                "action": true,
+                "action_rationale": "The action includes building and institutionalizing the framework across product squads.",
+                "result": true,
+                "result_rationale": "The result is indicated by the framework becoming integral to 15+ product squads.",
+                "complete": true
+              },
+              "metrics": [
+                "15+ product squads"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Team Leadership & Expansion: Hired & onboarded analysts, expanding analytics coverage to Payments, Acceptance, Credit (Flex), Partner Credit, and Member Engagement\u2014covering all revenue speedboats.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to expand analytics coverage across various areas.",
+                "task": true,
+                "task_rationale": "The task is to hire and onboard analysts to expand analytics coverage.",
+                "action": true,
+                "action_rationale": "The action includes hiring and onboarding analysts to cover all revenue speedboats.",
+                "result": true,
+                "result_rationale": "The result is indicated by the successful expansion of analytics coverage across all revenue speedboats.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Impact & Decision Support: Enabled PMs with data-driven insights for strategic planning and prioritization.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need for data-driven insights to support strategic planning.",
+                "task": true,
+                "task_rationale": "The task is to enable PMs with insights for planning and prioritization.",
+                "action": true,
+                "action_rationale": "The action includes providing data-driven insights to PMs.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these insights unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Discovery and Experimentation: Worked across the b2b and b2c product stack, a long list of \u201cbacklog, employing advanced discovery techniques and hypothesis-driven development to refine product offerings.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to refine product offerings through discovery and experimentation.",
+                "task": true,
+                "task_rationale": "The task is to work across product stacks to refine offerings using discovery techniques.",
+                "action": true,
+                "action_rationale": "The action includes employing advanced discovery techniques and hypothesis-driven development.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the outcome of these efforts unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Customer Insights: Acted as the voice of the customer, synthesizing insights from diverse qual & quant sources to shape strategic decisions.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to gather customer insights to inform strategy.",
+                "task": true,
+                "task_rationale": "The task is to synthesize customer insights to shape strategic decisions.",
+                "action": true,
+                "action_rationale": "The action includes acting as the voice of the customer and synthesizing insights.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these insights unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Optimized Experiences: Led initiatives to streamline user journeys from onboarding to purchase, driving engagement and retention.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to optimize user experiences to enhance engagement and retention.",
+                "task": true,
+                "task_rationale": "The task is to lead initiatives to streamline user journeys.",
+                "action": true,
+                "action_rationale": "The action includes leading initiatives to optimize user journeys.",
+                "result": true,
+                "result_rationale": "The result is implied by the mention of driving engagement and retention.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Data-Driven Leadership: Established robust success metrics, ensuring alignment with company-wide KPIs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need for robust success metrics to align with KPIs.",
+                "task": true,
+                "task_rationale": "The task is to establish success metrics for alignment with KPIs.",
+                "action": true,
+                "action_rationale": "The action includes establishing metrics to ensure alignment.",
+                "result": true,
+                "result_rationale": "The result is implied by the successful alignment with company-wide KPIs.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Designed and launched the Park & Shop feature, seamlessly integrating Shopholix\u2019s shopping solutions with Park+ parking offering for users.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to integrate shopping solutions with parking offerings.",
+                "task": true,
+                "task_rationale": "The task is to design and launch the Park & Shop feature.",
+                "action": true,
+                "action_rationale": "The action includes designing and launching the feature to integrate solutions.",
+                "result": true,
+                "result_rationale": "The result is implied by the successful integration of solutions for users.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with engineering, design, sales teams to implement scalable solutions, resulting in significant revenue growth - 12m ARR.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to implement scalable solutions for revenue growth.",
+                "task": true,
+                "task_rationale": "The task is to partner with teams to implement solutions.",
+                "action": true,
+                "action_rationale": "The action includes partnering with various teams to implement solutions.",
+                "result": true,
+                "result_rationale": "The result is explicitly mentioned as significant revenue growth of 12m ARR.",
+                "complete": true
+              },
+              "metrics": [
+                "12m ARR"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Worked with sales team to ensure the partner product works seamlessly across merchant, mall, and parking lot operators.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves ensuring seamless operation of partner products across various operators.",
+                "task": true,
+                "task_rationale": "The task is to work with the sales team to ensure product functionality.",
+                "action": true,
+                "action_rationale": "The action includes collaborating with the sales team to ensure seamless operation.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the outcome of these efforts unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led merchant product strategy, creating tools for retailers to enhance customer engagement and transaction efficiency.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to enhance customer engagement and transaction efficiency for retailers.",
+                "task": true,
+                "task_rationale": "The task is to lead the merchant product strategy and create tools for retailers.",
+                "action": true,
+                "action_rationale": "The action includes creating tools to enhance engagement and efficiency.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these tools unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Oversaw the end-to-end development of merchant platforms, ensuring alignment with market needs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to develop merchant platforms aligned with market needs.",
+                "task": true,
+                "task_rationale": "The task is to oversee the development of merchant platforms.",
+                "action": true,
+                "action_rationale": "The action includes overseeing development to ensure market alignment.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the outcome of the development efforts unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Spearheaded platform enhancements - scalability and data integration.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need for platform enhancements in scalability and data integration.",
+                "task": true,
+                "task_rationale": "The task is to spearhead platform enhancements.",
+                "action": true,
+                "action_rationale": "The action includes spearheading enhancements for scalability and integration.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these enhancements unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Developed dashboards - insights to merchants for better decisions.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need for dashboards to provide insights to merchants.",
+                "task": true,
+                "task_rationale": "The task is to develop dashboards for merchant insights.",
+                "action": true,
+                "action_rationale": "The action includes developing dashboards to aid decision-making.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these dashboards unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with stakeholders to align product roadmaps with company goals, ensuring measurable outcomes.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to align product roadmaps with company goals.",
+                "task": true,
+                "task_rationale": "The task is to collaborate with stakeholders for alignment.",
+                "action": true,
+                "action_rationale": "The action includes collaborating with stakeholders to ensure alignment.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the outcome of these alignment efforts unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led development and iteration of Shopholix\u2019s in-store payments app, focusing on simplifying transaction workflows for retailers and end-users.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to simplify transaction workflows for an in-store payments app.",
+                "task": true,
+                "task_rationale": "The task is to lead the development and iteration of the payments app.",
+                "action": true,
+                "action_rationale": "The action includes focusing on simplifying workflows during development.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these efforts unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with engineers and designers to build intuitive payment features that minimized transaction time and improved reliability.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to build intuitive payment features for improved reliability.",
+                "task": true,
+                "task_rationale": "The task is to collaborate with engineers and designers to build features.",
+                "action": true,
+                "action_rationale": "The action includes building features to minimize transaction time and improve reliability.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these features unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Engaged with retailers to gather feedback, using insights to continuously optimize payment flows and increase app adoption.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to optimize payment flows and increase app adoption.",
+                "task": true,
+                "task_rationale": "The task is to engage with retailers to gather feedback for optimization.",
+                "action": true,
+                "action_rationale": "The action includes using feedback to optimize payment flows.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these optimizations unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led the creation of data products for enterprise clients, focusing on automation and scalability.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to create data products for enterprise clients.",
+                "task": true,
+                "task_rationale": "The task is to lead the creation of data products focusing on automation and scalability.",
+                "action": true,
+                "action_rationale": "The action includes focusing on automation and scalability during product creation.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these products unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Managed the roadmap for an automobile, telematics project - team of 12 engineers, 2 designers and 3 analysts.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves managing a roadmap for a telematics project.",
+                "task": true,
+                "task_rationale": "The task is to manage the roadmap for the project.",
+                "action": true,
+                "action_rationale": "The action includes managing a team to execute the roadmap.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the outcome of the roadmap management unclear.",
+                "complete": false
+              },
+              "metrics": [
+                "12 engineers",
+                "2 designers",
+                "3 analysts"
+              ],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with cross-functional teams (including clients) to design solutions that streamlined customer operations.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to design solutions for streamlined operations.",
+                "task": true,
+                "task_rationale": "The task is to partner with teams to design solutions.",
+                "action": true,
+                "action_rationale": "The action includes partnering with teams to streamline operations.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of these solutions unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Conducted extensive user research to identify gaps and opportunities in the FMCG market.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to identify gaps and opportunities in the FMCG market.",
+                "task": true,
+                "task_rationale": "The task is to conduct user research to identify market gaps.",
+                "action": true,
+                "action_rationale": "The action includes conducting extensive user research.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of the research unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Developed and launched new product lines, including Frutchill and Yo Noodles, tailored to evolving consumer needs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to develop new product lines for evolving consumer needs.",
+                "task": true,
+                "task_rationale": "The task is to develop and launch new product lines.",
+                "action": true,
+                "action_rationale": "The action includes developing and launching products like Frutchill and Yo Noodles.",
+                "result": true,
+                "result_rationale": "The result is implied by the successful launch of new product lines.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Partnered with cross-functional teams to oversee product lifecycle, from ideation to market launch. Key partner sales & commercial teams.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves overseeing the product lifecycle from ideation to launch.",
+                "task": true,
+                "task_rationale": "The task is to partner with teams to oversee the product lifecycle.",
+                "action": true,
+                "action_rationale": "The action includes partnering with teams to manage the lifecycle.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the outcome of the lifecycle management unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Designed go-to-market strategies, ensuring effective positioning and distribution across key regions and channels - \u00a39m+ ARR.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves designing go-to-market strategies for effective positioning.",
+                "task": true,
+                "task_rationale": "The task is to design strategies for positioning and distribution.",
+                "action": true,
+                "action_rationale": "The action includes designing strategies for market entry.",
+                "result": true,
+                "result_rationale": "The result is indicated by the achievement of \u00a39m+ ARR.",
+                "complete": true
+              },
+              "metrics": [
+                "\u00a39m+ ARR"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Conducted in-depth shopper research to identify behavioral patterns and inform marketing strategies - improving retention.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need to understand shopper behavior to inform strategies.",
+                "task": true,
+                "task_rationale": "The task is to conduct research to identify patterns and inform strategies.",
+                "action": true,
+                "action_rationale": "The action includes conducting in-depth research on shopper behavior.",
+                "result": true,
+                "result_rationale": "The result is implied by the improvement in retention.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Built analytics frameworks to measure campaign effectiveness and provide actionable insights for category management.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves the need for analytics frameworks to measure effectiveness.",
+                "task": true,
+                "task_rationale": "The task is to build frameworks for measuring campaign effectiveness.",
+                "action": true,
+                "action_rationale": "The action includes building frameworks to provide insights.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of the frameworks unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with merchandising and marketing teams to optimize store layouts and enhance shopper journeys.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves optimizing store layouts to enhance shopper journeys.",
+                "task": true,
+                "task_rationale": "The task is to collaborate with teams to optimize layouts.",
+                "action": true,
+                "action_rationale": "The action includes collaborating with teams for optimization.",
+                "result": false,
+                "result_rationale": "The result is not explicitly mentioned, leaving the impact of the optimization unclear.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 3
+            }
+          ]
+        },
+        {
+          "type": "Education",
+          "points": [
+            {
+              "text": "ICFAI Business School MBA \u2013 Marketing & Technology | Grade: A # Organised Zephyr - Business Quiz - inter-business school",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Mohanlal Sukhadia University Bachelor of Business Management | Grade: A # Captain of the university cricket team, state-level athlete for high jump # Captain of the state under-19 cricket team",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            }
+          ]
+        },
+        {
+          "type": "Skills",
+          "points": [
+            {
+              "text": "Product Leadership: Building scalable platforms, cross-functional collaboration, outcome-driven roadmaps",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Data-Driven Strategy: KPI frameworks, A/B testing, data insights for product discovery",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Technical Fluency: Data Platforms, Cloud architecture, APIs, developer toolchains, e-commerce platforms",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Customer-Centric Design: Voice of customer, user-centered innovation, CX optimization",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Leadership & Mentoring: Team building, coaching, fostering a growth-focused culture",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Stakeholder Management: Influencing C-level executives, PR, marketing, finance, legal",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "prompt_name": "lenient",
+    "prompt_description": "Lenient",
+    "analysis": {
+      "sections": [
+        {
+          "type": "Experience",
+          "points": [
+            {
+              "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation is implied as managing a significant portfolio in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of driving the roadmap for expenses, bills, and invoicing is clear.",
+                "action": true,
+                "action_rationale": "The action of driving the roadmap is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of delivering revenue goals is implied.",
+                "complete": true
+              },
+              "metrics": [
+                "\u00a375M ARR",
+                "4 countries"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading product and engineering teams in a fintech setting.",
+                "task": true,
+                "task_rationale": "The task of leading OKRs and execution is clear.",
+                "action": true,
+                "action_rationale": "The action of managing teams and leading OKRs is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of a promotion is mentioned, indicating success.",
+                "complete": true
+              },
+              "metrics": [
+                "3 PMs",
+                "40+ engineering teams",
+                "3 squads"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Cross-Functional Leadership: Drive OKR delivery, new product launch and revenue goals \u2013 working with commercial, marketing, analytics, onboarding, risk, compliance, GDPR, legal, and product squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves cross-functional leadership in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of driving OKR delivery and new product launch is clear.",
+                "action": true,
+                "action_rationale": "The action of working with various teams is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of achieving revenue goals is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Product Discovery & New Market Expansion: Led discovery projects with PM, UR, analyst, corp dev teams to launch new products & countries - Invoicing for Germany, Bill Payments for India, and Pay-Links for the UK.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading product discovery and market expansion projects.",
+                "task": true,
+                "task_rationale": "The task of leading discovery projects is clear.",
+                "action": true,
+                "action_rationale": "The action of leading projects with various teams is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of launching new products and countries is mentioned.",
+                "complete": true
+              },
+              "metrics": [
+                "Invoicing for Germany",
+                "Bill Payments for India",
+                "Pay-Links for the UK"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Product & Revenue Strategy: Led cross-functional collaboration across product, commercial, marketing, finance, and analytics to align on monetization, growth, and GTM strategies.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading strategy in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of aligning on monetization and growth strategies is clear.",
+                "action": true,
+                "action_rationale": "The action of leading cross-functional collaboration is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of alignment on strategies is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Scaling Data-Driven Decision Making: Trained and mentored speedboat analytics teams to drive forecasting, risk assessment, and revenue modeling, embedding data fluency across squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves scaling data-driven decision making in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of training and mentoring teams is clear.",
+                "action": true,
+                "action_rationale": "The action of training and mentoring is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of embedding data fluency is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Analytics & Revenue Impact (IC Role): Led analytics for Invoices, Expenses, and Bills, driving product usage, retention, and revenue forecasting, while connecting product initiatives to revenue goals.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading analytics in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of leading analytics for specific areas is clear.",
+                "action": true,
+                "action_rationale": "The action of leading analytics is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of driving product usage and retention is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Data-Driven Roadmap Framework: Built & institutionalized a metrics-led product planning framework, now integral to 15+ product squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves building a roadmap framework in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of building a product planning framework is clear.",
+                "action": true,
+                "action_rationale": "The action of building and institutionalizing the framework is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of integration into 15+ squads is mentioned.",
+                "complete": true
+              },
+              "metrics": [
+                "15+ product squads"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Team Leadership & Expansion: Hired & onboarded analysts, expanding analytics coverage to Payments, Acceptance, Credit (Flex), Partner Credit, and Member Engagement\u2014covering all revenue speedboats.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves team leadership and expansion in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of hiring and onboarding analysts is clear.",
+                "action": true,
+                "action_rationale": "The action of hiring and onboarding is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of expanded analytics coverage is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Product Impact & Decision Support: Enabled PMs with data-driven insights for strategic planning and prioritization.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves providing decision support in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of enabling PMs with insights is clear.",
+                "action": true,
+                "action_rationale": "The action of enabling PMs is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of strategic planning and prioritization is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Product Discovery and Experimentation: Worked across the b2b and b2c product stack, a long list of \u201cbacklog, employing advanced discovery techniques and hypothesis-driven development to refine product offerings.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves product discovery and experimentation in an e-commerce company.",
+                "task": true,
+                "task_rationale": "The task of refining product offerings is clear.",
+                "action": true,
+                "action_rationale": "The action of employing discovery techniques is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of refined product offerings is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Customer Insights: Acted as the voice of the customer, synthesizing insights from diverse qual & quant sources to shape strategic decisions.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves gathering customer insights in an e-commerce company.",
+                "task": true,
+                "task_rationale": "The task of shaping strategic decisions is clear.",
+                "action": true,
+                "action_rationale": "The action of synthesizing insights is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of shaping strategic decisions is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Optimized Experiences: Led initiatives to streamline user journeys from onboarding to purchase, driving engagement and retention.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves optimizing user experiences in an e-commerce company.",
+                "task": true,
+                "task_rationale": "The task of streamlining user journeys is clear.",
+                "action": true,
+                "action_rationale": "The action of leading initiatives is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of driving engagement and retention is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Data-Driven Leadership: Established robust success metrics, ensuring alignment with company-wide KPIs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves data-driven leadership in an e-commerce company.",
+                "task": true,
+                "task_rationale": "The task of establishing success metrics is clear.",
+                "action": true,
+                "action_rationale": "The action of establishing metrics is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of alignment with KPIs is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Designed and launched the Park & Shop feature, seamlessly integrating Shopholix\u2019s shopping solutions with Park+ parking offering for users.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves designing and launching a feature in a consumer product company.",
+                "task": true,
+                "task_rationale": "The task of integrating shopping solutions is clear.",
+                "action": true,
+                "action_rationale": "The action of designing and launching is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of seamless integration is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Partnered with engineering, design, sales teams to implement scalable solutions, resulting in significant revenue growth - 12m ARR.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves partnering with teams to implement solutions in a consumer product company.",
+                "task": true,
+                "task_rationale": "The task of implementing scalable solutions is clear.",
+                "action": true,
+                "action_rationale": "The action of partnering with teams is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of significant revenue growth is mentioned.",
+                "complete": true
+              },
+              "metrics": [
+                "12m ARR"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Worked with sales team to ensure the partner product works seamlessly across merchant, mall, and parking lot operators.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves working with sales teams in a consumer product company.",
+                "task": true,
+                "task_rationale": "The task of ensuring seamless product operation is clear.",
+                "action": true,
+                "action_rationale": "The action of working with the sales team is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of seamless operation is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Led merchant product strategy, creating tools for retailers to enhance customer engagement and transaction efficiency.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading product strategy in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of creating tools for retailers is clear.",
+                "action": true,
+                "action_rationale": "The action of creating tools is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of enhanced engagement and efficiency is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Oversaw the end-to-end development of merchant platforms, ensuring alignment with market needs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves overseeing development in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of ensuring alignment with market needs is clear.",
+                "action": true,
+                "action_rationale": "The action of overseeing development is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of alignment with market needs is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Spearheaded platform enhancements - scalability and data integration.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves enhancing platforms in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of enhancing platforms is clear.",
+                "action": true,
+                "action_rationale": "The action of spearheading enhancements is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of scalability and integration is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Developed dashboards - insights to merchants for better decisions.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves developing dashboards in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of providing insights for better decisions is clear.",
+                "action": true,
+                "action_rationale": "The action of developing dashboards is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of better decisions is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Collaborated with stakeholders to align product roadmaps with company goals, ensuring measurable outcomes.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves collaboration in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of aligning roadmaps with goals is clear.",
+                "action": true,
+                "action_rationale": "The action of collaborating with stakeholders is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of measurable outcomes is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Led development and iteration of Shopholix\u2019s in-store payments app, focusing on simplifying transaction workflows for retailers and end-users.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves leading app development in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of simplifying transaction workflows is clear.",
+                "action": true,
+                "action_rationale": "The action of leading development is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of simplified workflows is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Collaborated with engineers and designers to build intuitive payment features that minimized transaction time and improved reliability.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves collaboration in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of building payment features is clear.",
+                "action": true,
+                "action_rationale": "The action of collaborating to build features is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of minimized time and improved reliability is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Engaged with retailers to gather feedback, using insights to continuously optimize payment flows and increase app adoption.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves engaging with retailers in a fintech company.",
+                "task": true,
+                "task_rationale": "The task of optimizing payment flows is clear.",
+                "action": true,
+                "action_rationale": "The action of gathering feedback and using insights is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of increased app adoption is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Led the creation of data products for enterprise clients, focusing on automation and scalability.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves creating data products in a consulting firm.",
+                "task": true,
+                "task_rationale": "The task of focusing on automation and scalability is clear.",
+                "action": true,
+                "action_rationale": "The action of leading creation is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of automation and scalability is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Managed the roadmap for an automobile, telematics project - team of 12 engineers, 2 designers and 3 analysts.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves managing a project in a consulting firm.",
+                "task": true,
+                "task_rationale": "The task of managing the roadmap is clear.",
+                "action": true,
+                "action_rationale": "The action of managing the roadmap is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of managing a team is implied.",
+                "complete": true
+              },
+              "metrics": [
+                "12 engineers",
+                "2 designers",
+                "3 analysts"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Partnered with cross-functional teams (including clients) to design solutions that streamlined customer operations.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves partnering with teams in a consulting firm.",
+                "task": true,
+                "task_rationale": "The task of designing solutions is clear.",
+                "action": true,
+                "action_rationale": "The action of partnering with teams is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of streamlined operations is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Conducted extensive user research to identify gaps and opportunities in the FMCG market.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves conducting research in an FMCG company.",
+                "task": true,
+                "task_rationale": "The task of identifying gaps and opportunities is clear.",
+                "action": true,
+                "action_rationale": "The action of conducting research is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of identifying gaps and opportunities is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Developed and launched new product lines, including Frutchill and Yo Noodles, tailored to evolving consumer needs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves developing product lines in an FMCG company.",
+                "task": true,
+                "task_rationale": "The task of launching new product lines is clear.",
+                "action": true,
+                "action_rationale": "The action of developing and launching is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of tailored products is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Partnered with cross-functional teams to oversee product lifecycle, from ideation to market launch. Key partner sales & commercial teams.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves overseeing product lifecycle in an FMCG company.",
+                "task": true,
+                "task_rationale": "The task of overseeing lifecycle is clear.",
+                "action": true,
+                "action_rationale": "The action of partnering with teams is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of lifecycle management is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Designed go-to-market strategies, ensuring effective positioning and distribution across key regions and channels - \u00a39m+ ARR.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves designing strategies in an FMCG company.",
+                "task": true,
+                "task_rationale": "The task of ensuring positioning and distribution is clear.",
+                "action": true,
+                "action_rationale": "The action of designing strategies is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of \u00a39m+ ARR is mentioned.",
+                "complete": true
+              },
+              "metrics": [
+                "\u00a39m+ ARR"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Conducted in-depth shopper research to identify behavioral patterns and inform marketing strategies - improving retention.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves conducting research in a retail company.",
+                "task": true,
+                "task_rationale": "The task of identifying patterns is clear.",
+                "action": true,
+                "action_rationale": "The action of conducting research is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of improved retention is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Built analytics frameworks to measure campaign effectiveness and provide actionable insights for category management.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves building frameworks in a retail company.",
+                "task": true,
+                "task_rationale": "The task of measuring effectiveness is clear.",
+                "action": true,
+                "action_rationale": "The action of building frameworks is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of actionable insights is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Collaborated with merchandising and marketing teams to optimize store layouts and enhance shopper journeys.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The situation involves collaboration in a retail company.",
+                "task": true,
+                "task_rationale": "The task of optimizing layouts is clear.",
+                "action": true,
+                "action_rationale": "The action of collaborating is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of enhanced journeys is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            }
+          ]
+        },
+        {
+          "type": "Education",
+          "points": [
+            {
+              "text": "ICFAI Business School MBA \u2013 Marketing & Technology | Grade: A # Organised Zephyr - Business Quiz - inter-business school",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Mohanlal Sukhadia University Bachelor of Business Management | Grade: A # Captain of the university cricket team, state-level athlete for high jump # Captain of the state under-19 cricket team",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            }
+          ]
+        },
+        {
+          "type": "Skills",
+          "points": [
+            {
+              "text": "Product Leadership: Building scalable platforms, cross-functional collaboration, outcome-driven roadmaps",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Data-Driven Strategy: KPI frameworks, A/B testing, data insights for product discovery",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Technical Fluency: Data Platforms, Cloud architecture, APIs, developer toolchains, e-commerce platforms",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Customer-Centric Design: Voice of customer, user-centered innovation, CX optimization",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Leadership & Mentoring: Team building, coaching, fostering a growth-focused culture",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Stakeholder Management: Influencing C-level executives, PR, marketing, finance, legal",
+              "star": {},
+              "metrics": [],
+              "technical_score": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "prompt_name": "very_lenient",
+    "prompt_description": "Very Lenient",
+    "analysis": {
+      "sections": [
+        {
+          "type": "Experience",
+          "points": [
+            {
+              "text": "Own \u00a375M ARR Portfolio: Drive the roadmap for expenses, bills, and invoicing across 4 countries, delivering revenue goals.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of managing a \u00a375M ARR portfolio across 4 countries is provided.",
+                "task": true,
+                "task_rationale": "The task of driving the roadmap for expenses, bills, and invoicing is implied.",
+                "action": true,
+                "action_rationale": "The action of driving the roadmap is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of delivering revenue goals is stated.",
+                "complete": true
+              },
+              "metrics": [
+                "\u00a375M ARR",
+                "4 countries"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Product & Engineering Leadership: Lead quarterly OKRs & execution, managing 3 PMs, a designer, and an analyst, with product leadership spanning 40+ engineering teams across 3 squads. Delivered a deserving promotion.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of leading product and engineering teams is provided.",
+                "task": true,
+                "task_rationale": "The task of leading quarterly OKRs and execution is implied.",
+                "action": true,
+                "action_rationale": "The action of managing teams and leading OKRs is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of delivering a promotion is stated.",
+                "complete": true
+              },
+              "metrics": [
+                "3 PMs",
+                "40+ engineering teams",
+                "3 squads"
+              ],
+              "technical_score": 5
+            },
+            {
+              "text": "Cross-Functional Leadership: Drive OKR delivery, new product launch and revenue goals \u2013 working with commercial, marketing, analytics, onboarding, risk, compliance, GDPR, legal, and product squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of cross-functional leadership is provided.",
+                "task": true,
+                "task_rationale": "The task of driving OKR delivery and new product launch is implied.",
+                "action": true,
+                "action_rationale": "The action of working with various teams is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of achieving revenue goals is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Product Discovery & New Market Expansion: Led discovery projects with PM, UR, analyst, corp dev teams to launch new products & countries - Invoicing for Germany, Bill Payments for India, and Pay-Links for the UK.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of leading product discovery and market expansion is provided.",
+                "task": true,
+                "task_rationale": "The task of launching new products and countries is implied.",
+                "action": true,
+                "action_rationale": "The action of leading discovery projects is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of launching products in specific countries is stated.",
+                "complete": true
+              },
+              "metrics": [
+                "Invoicing for Germany",
+                "Bill Payments for India",
+                "Pay-Links for the UK"
+              ],
+              "technical_score": 5
+            },
+            {
+              "text": "Product & Revenue Strategy: Led cross-functional collaboration across product, commercial, marketing, finance, and analytics to align on monetization, growth, and GTM strategies.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of leading product and revenue strategy is provided.",
+                "task": true,
+                "task_rationale": "The task of aligning on monetization, growth, and GTM strategies is implied.",
+                "action": true,
+                "action_rationale": "The action of leading cross-functional collaboration is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of alignment on strategies is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Scaling Data-Driven Decision Making: Trained and mentored speedboat analytics teams to drive forecasting, risk assessment, and revenue modeling, embedding data fluency across squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of scaling data-driven decision making is provided.",
+                "task": true,
+                "task_rationale": "The task of driving forecasting, risk assessment, and revenue modeling is implied.",
+                "action": true,
+                "action_rationale": "The action of training and mentoring teams is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of embedding data fluency is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Analytics & Revenue Impact (IC Role): Led analytics for Invoices, Expenses, and Bills, driving product usage, retention, and revenue forecasting, while connecting product initiatives to revenue goals.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of leading analytics for specific areas is provided.",
+                "task": true,
+                "task_rationale": "The task of driving product usage, retention, and revenue forecasting is implied.",
+                "action": true,
+                "action_rationale": "The action of leading analytics is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of connecting initiatives to revenue goals is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Data-Driven Roadmap Framework: Built & institutionalized a metrics-led product planning framework, now integral to 15+ product squads.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of building a roadmap framework is provided.",
+                "task": true,
+                "task_rationale": "The task of institutionalizing a framework is implied.",
+                "action": true,
+                "action_rationale": "The action of building and institutionalizing is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of integration into 15+ squads is stated.",
+                "complete": true
+              },
+              "metrics": [
+                "15+ product squads"
+              ],
+              "technical_score": 5
+            },
+            {
+              "text": "Team Leadership & Expansion: Hired & onboarded analysts, expanding analytics coverage to Payments, Acceptance, Credit (Flex), Partner Credit, and Member Engagement\u2014covering all revenue speedboats.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of team leadership and expansion is provided.",
+                "task": true,
+                "task_rationale": "The task of expanding analytics coverage is implied.",
+                "action": true,
+                "action_rationale": "The action of hiring and onboarding is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of covering all revenue speedboats is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Product Impact & Decision Support: Enabled PMs with data-driven insights for strategic planning and prioritization.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of providing decision support is provided.",
+                "task": true,
+                "task_rationale": "The task of enabling PMs with insights is implied.",
+                "action": true,
+                "action_rationale": "The action of enabling with insights is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of supporting strategic planning is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Product Discovery and Experimentation: Worked across the b2b and b2c product stack, a long list of \u201cbacklog, employing advanced discovery techniques and hypothesis-driven development to refine product offerings.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of working on product discovery and experimentation is provided.",
+                "task": true,
+                "task_rationale": "The task of refining product offerings is implied.",
+                "action": true,
+                "action_rationale": "The action of employing discovery techniques is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of refining product offerings is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Customer Insights: Acted as the voice of the customer, synthesizing insights from diverse qual & quant sources to shape strategic decisions.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of acting as the voice of the customer is provided.",
+                "task": true,
+                "task_rationale": "The task of shaping strategic decisions is implied.",
+                "action": true,
+                "action_rationale": "The action of synthesizing insights is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of shaping decisions is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Optimized Experiences: Led initiatives to streamline user journeys from onboarding to purchase, driving engagement and retention.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of optimizing user experiences is provided.",
+                "task": true,
+                "task_rationale": "The task of driving engagement and retention is implied.",
+                "action": true,
+                "action_rationale": "The action of leading initiatives is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of driving engagement and retention is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Data-Driven Leadership: Established robust success metrics, ensuring alignment with company-wide KPIs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of data-driven leadership is provided.",
+                "task": true,
+                "task_rationale": "The task of ensuring alignment with KPIs is implied.",
+                "action": true,
+                "action_rationale": "The action of establishing success metrics is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of alignment with KPIs is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Designed and launched the Park & Shop feature, seamlessly integrating Shopholix\u2019s shopping solutions with Park+ parking offering for users.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of designing and launching a feature is provided.",
+                "task": true,
+                "task_rationale": "The task of integrating solutions is implied.",
+                "action": true,
+                "action_rationale": "The action of designing and launching is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of seamless integration is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Partnered with engineering, design, sales teams to implement scalable solutions, resulting in significant revenue growth - 12m ARR.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of partnering with teams is provided.",
+                "task": true,
+                "task_rationale": "The task of implementing scalable solutions is implied.",
+                "action": true,
+                "action_rationale": "The action of partnering is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of significant revenue growth is stated.",
+                "complete": true
+              },
+              "metrics": [
+                "12m ARR"
+              ],
+              "technical_score": 5
+            },
+            {
+              "text": "Worked with sales team to ensure the partner product works seamlessly across merchant, mall, and parking lot operators.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of working with the sales team is provided.",
+                "task": true,
+                "task_rationale": "The task of ensuring seamless product operation is implied.",
+                "action": true,
+                "action_rationale": "The action of working with the sales team is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of seamless operation is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Led merchant product strategy, creating tools for retailers to enhance customer engagement and transaction efficiency.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of leading merchant product strategy is provided.",
+                "task": true,
+                "task_rationale": "The task of enhancing engagement and efficiency is implied.",
+                "action": true,
+                "action_rationale": "The action of creating tools is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of enhanced engagement and efficiency is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Oversaw the end-to-end development of merchant platforms, ensuring alignment with market needs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of overseeing development is provided.",
+                "task": true,
+                "task_rationale": "The task of ensuring alignment with market needs is implied.",
+                "action": true,
+                "action_rationale": "The action of overseeing development is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of alignment with market needs is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Spearheaded platform enhancements - scalability and data integration.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of spearheading platform enhancements is provided.",
+                "task": true,
+                "task_rationale": "The task of enhancing scalability and integration is implied.",
+                "action": true,
+                "action_rationale": "The action of spearheading enhancements is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of enhanced scalability and integration is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Developed dashboards - insights to merchants for better decisions.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of developing dashboards is provided.",
+                "task": true,
+                "task_rationale": "The task of providing insights for better decisions is implied.",
+                "action": true,
+                "action_rationale": "The action of developing dashboards is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of better decisions is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Collaborated with stakeholders to align product roadmaps with company goals, ensuring measurable outcomes.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of collaborating with stakeholders is provided.",
+                "task": true,
+                "task_rationale": "The task of aligning roadmaps with goals is implied.",
+                "action": true,
+                "action_rationale": "The action of collaborating is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of measurable outcomes is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Led development and iteration of Shopholix\u2019s in-store payments app, focusing on simplifying transaction workflows for retailers and end-users.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of leading app development is provided.",
+                "task": true,
+                "task_rationale": "The task of simplifying workflows is implied.",
+                "action": true,
+                "action_rationale": "The action of leading development is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of simplified workflows is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Collaborated with engineers and designers to build intuitive payment features that minimized transaction time and improved reliability.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of collaborating to build features is provided.",
+                "task": true,
+                "task_rationale": "The task of minimizing time and improving reliability is implied.",
+                "action": true,
+                "action_rationale": "The action of collaborating is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of minimized time and improved reliability is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Engaged with retailers to gather feedback, using insights to continuously optimize payment flows and increase app adoption.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of engaging with retailers is provided.",
+                "task": true,
+                "task_rationale": "The task of optimizing flows and increasing adoption is implied.",
+                "action": true,
+                "action_rationale": "The action of gathering feedback is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of optimized flows and increased adoption is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Led the creation of data products for enterprise clients, focusing on automation and scalability.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of leading data product creation is provided.",
+                "task": true,
+                "task_rationale": "The task of focusing on automation and scalability is implied.",
+                "action": true,
+                "action_rationale": "The action of leading creation is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of created products is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Managed the roadmap for an automobile, telematics project - team of 12 engineers, 2 designers and 3 analysts.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of managing a project roadmap is provided.",
+                "task": true,
+                "task_rationale": "The task of managing the roadmap is implied.",
+                "action": true,
+                "action_rationale": "The action of managing is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of a managed project is implied.",
+                "complete": true
+              },
+              "metrics": [
+                "12 engineers",
+                "2 designers",
+                "3 analysts"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Partnered with cross-functional teams (including clients) to design solutions that streamlined customer operations.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of partnering with teams is provided.",
+                "task": true,
+                "task_rationale": "The task of designing solutions is implied.",
+                "action": true,
+                "action_rationale": "The action of partnering is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of streamlined operations is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Conducted extensive user research to identify gaps and opportunities in the FMCG market.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of conducting research is provided.",
+                "task": true,
+                "task_rationale": "The task of identifying gaps and opportunities is implied.",
+                "action": true,
+                "action_rationale": "The action of conducting research is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of identified gaps and opportunities is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Developed and launched new product lines, including Frutchill and Yo Noodles, tailored to evolving consumer needs.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of developing and launching products is provided.",
+                "task": true,
+                "task_rationale": "The task of tailoring to consumer needs is implied.",
+                "action": true,
+                "action_rationale": "The action of developing and launching is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of launched product lines is stated.",
+                "complete": true
+              },
+              "metrics": [
+                "Frutchill",
+                "Yo Noodles"
+              ],
+              "technical_score": 4
+            },
+            {
+              "text": "Partnered with cross-functional teams to oversee product lifecycle, from ideation to market launch. Key partner sales & commercial teams.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of partnering to oversee lifecycle is provided.",
+                "task": true,
+                "task_rationale": "The task of overseeing lifecycle is implied.",
+                "action": true,
+                "action_rationale": "The action of partnering is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of a complete lifecycle is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Designed go-to-market strategies, ensuring effective positioning and distribution across key regions and channels - \u00a39m+ ARR.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of designing strategies is provided.",
+                "task": true,
+                "task_rationale": "The task of ensuring positioning and distribution is implied.",
+                "action": true,
+                "action_rationale": "The action of designing strategies is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of \u00a39m+ ARR is stated.",
+                "complete": true
+              },
+              "metrics": [
+                "\u00a39m+ ARR"
+              ],
+              "technical_score": 5
+            },
+            {
+              "text": "Conducted in-depth shopper research to identify behavioral patterns and inform marketing strategies - improving retention.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of conducting research is provided.",
+                "task": true,
+                "task_rationale": "The task of informing strategies is implied.",
+                "action": true,
+                "action_rationale": "The action of conducting research is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of improved retention is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            },
+            {
+              "text": "Built analytics frameworks to measure campaign effectiveness and provide actionable insights for category management.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of building frameworks is provided.",
+                "task": true,
+                "task_rationale": "The task of providing insights is implied.",
+                "action": true,
+                "action_rationale": "The action of building frameworks is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of actionable insights is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 4
+            },
+            {
+              "text": "Collaborated with merchandising and marketing teams to optimize store layouts and enhance shopper journeys.",
+              "star": {
+                "situation": true,
+                "situation_rationale": "The context of collaborating to optimize layouts is provided.",
+                "task": true,
+                "task_rationale": "The task of enhancing journeys is implied.",
+                "action": true,
+                "action_rationale": "The action of collaborating is explicitly mentioned.",
+                "result": true,
+                "result_rationale": "The result of enhanced journeys is implied.",
+                "complete": true
+              },
+              "metrics": [],
+              "technical_score": 3
+            }
+          ]
+        },
+        {
+          "type": "Education",
+          "points": [
+            {
+              "text": "ICFAI Business School MBA \u2013 Marketing & Technology | Grade: A # Organised Zephyr - Business Quiz - inter-business school",
+              "star": {
+                "situation": false,
+                "situation_rationale": "Education section does not follow STAR format.",
+                "task": false,
+                "task_rationale": "Education section does not follow STAR format.",
+                "action": false,
+                "action_rationale": "Education section does not follow STAR format.",
+                "result": false,
+                "result_rationale": "Education section does not follow STAR format.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 0
+            },
+            {
+              "text": "Mohanlal Sukhadia University Bachelor of Business Management | Grade: A # Captain of the university cricket team, state-level athlete for high jump # Captain of the state under-19 cricket team",
+              "star": {
+                "situation": false,
+                "situation_rationale": "Education section does not follow STAR format.",
+                "task": false,
+                "task_rationale": "Education section does not follow STAR format.",
+                "action": false,
+                "action_rationale": "Education section does not follow STAR format.",
+                "result": false,
+                "result_rationale": "Education section does not follow STAR format.",
+                "complete": false
+              },
+              "metrics": [],
+              "technical_score": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

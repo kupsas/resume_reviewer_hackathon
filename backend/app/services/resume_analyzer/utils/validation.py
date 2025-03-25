@@ -6,17 +6,18 @@ from pydantic import BaseModel, Field, validator
 class Star(BaseModel):
     """STAR format validation model."""
     situation: bool = Field(..., description="Whether situation is present")
-    task: bool = Field(..., description="Whether task is present")
+    situation_rationale: str = Field(..., description="Explanation for situation assessment")
     action: bool = Field(..., description="Whether action is present")
+    action_rationale: str = Field(..., description="Explanation for action assessment")
     result: bool = Field(..., description="Whether result is present")
+    result_rationale: str = Field(..., description="Explanation for result assessment")
     complete: bool = Field(..., description="Whether all STAR components are present")
 
     @validator('complete')
     def validate_complete(cls, v: bool, values: Dict) -> bool:
         """Validate that complete is True only if all components are True."""
         if v:
-            return all([values.get('situation'), values.get('task'), 
-                       values.get('action'), values.get('result')])
+            return all([values.get('situation'), values.get('action'), values.get('result')])
         return v
 
 class TokenUsage(BaseModel):
@@ -126,24 +127,163 @@ def validate_analysis_response(response: Dict[str, Any]) -> Dict[str, Any]:
     except Exception as e:
         raise ValueError(f"Invalid response format: {str(e)}")
 
-def validate_section_response(response: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Validate and normalize a single section analysis response.
+def validate_star_components(star: Dict[str, Any]) -> Dict[str, Any]:
+    """Validate STAR components in a resume point."""
+    required_fields = [
+        "situation", "situation_rationale",
+        "action", "action_rationale",
+        "result", "result_rationale",
+        "complete"
+    ]
     
-    Args:
-        response: Raw section analysis response
-        
-    Returns:
-        Validated and normalized section analysis
-        
-    Raises:
-        ValueError: If section format is invalid
-    """
-    try:
-        validated_section = SectionAnalysis(**response)
-        return validated_section.dict()
-    except Exception as e:
-        raise ValueError(f"Invalid section format: {str(e)}")
+    # Check if all required fields are present
+    missing_fields = [field for field in required_fields if field not in star]
+    if missing_fields:
+        raise ValueError(f"Missing required STAR fields: {', '.join(missing_fields)}")
+    
+    # Validate field types
+    if not isinstance(star["situation"], bool):
+        raise ValueError("situation must be a boolean")
+    if not isinstance(star["action"], bool):
+        raise ValueError("action must be a boolean")
+    if not isinstance(star["result"], bool):
+        raise ValueError("result must be a boolean")
+    if not isinstance(star["complete"], bool):
+        raise ValueError("complete must be a boolean")
+    if not isinstance(star["situation_rationale"], str):
+        raise ValueError("situation_rationale must be a string")
+    if not isinstance(star["action_rationale"], str):
+        raise ValueError("action_rationale must be a string")
+    if not isinstance(star["result_rationale"], str):
+        raise ValueError("result_rationale must be a string")
+    
+    # Validate rationale lengths
+    if len(star["situation_rationale"]) < 10:
+        raise ValueError("situation_rationale must be at least 10 characters")
+    if len(star["action_rationale"]) < 10:
+        raise ValueError("action_rationale must be at least 10 characters")
+    if len(star["result_rationale"]) < 10:
+        raise ValueError("result_rationale must be at least 10 characters")
+    
+    return star
+
+def validate_resume_point(point: Dict[str, Any]) -> Dict[str, Any]:
+    """Validate a single resume point."""
+    required_fields = ["text", "star", "metrics", "technical_score", "improvement"]
+    
+    # Check if all required fields are present
+    missing_fields = [field for field in required_fields if field not in point]
+    if missing_fields:
+        raise ValueError(f"Missing required fields: {', '.join(missing_fields)}")
+    
+    # Validate text
+    if not isinstance(point["text"], str) or not point["text"].strip():
+        raise ValueError("text must be a non-empty string")
+    
+    # Validate STAR components
+    point["star"] = validate_star_components(point["star"])
+    
+    # Validate metrics
+    if not isinstance(point["metrics"], list):
+        raise ValueError("metrics must be a list")
+    for metric in point["metrics"]:
+        if not isinstance(metric, str):
+            raise ValueError("each metric must be a string")
+    
+    # Validate technical score
+    if not isinstance(point["technical_score"], (int, float)):
+        raise ValueError("technical_score must be a number")
+    if not 0 <= point["technical_score"] <= 5:
+        raise ValueError("technical_score must be between 0 and 5")
+    
+    # Validate improvement
+    if not isinstance(point["improvement"], str):
+        raise ValueError("improvement must be a string")
+    
+    return point
+
+def validate_education_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
+    """Validate an education entry."""
+    required_fields = ["text", "subject", "course", "school", "subject_course_school_reputation"]
+    
+    # Check if all required fields are present
+    missing_fields = [field for field in required_fields if field not in entry]
+    if missing_fields:
+        raise ValueError(f"Missing required fields: {', '.join(missing_fields)}")
+    
+    # Validate text
+    if not isinstance(entry["text"], str) or not entry["text"].strip():
+        raise ValueError("text must be a non-empty string")
+    
+    # Validate subject
+    if not isinstance(entry["subject"], str) or not entry["subject"].strip():
+        raise ValueError("subject must be a non-empty string")
+    
+    # Validate course
+    if not isinstance(entry["course"], str) or not entry["course"].strip():
+        raise ValueError("course must be a non-empty string")
+    
+    # Validate school
+    if not isinstance(entry["school"], str) or not entry["school"].strip():
+        raise ValueError("school must be a non-empty string")
+    
+    # Validate reputation scores
+    rep = entry["subject_course_school_reputation"]
+    required_rep_fields = [
+        "domestic_score", "domestic_score_rationale",
+        "international_score", "international_score_rationale"
+    ]
+    
+    missing_rep_fields = [field for field in required_rep_fields if field not in rep]
+    if missing_rep_fields:
+        raise ValueError(f"Missing required reputation fields: {', '.join(missing_rep_fields)}")
+    
+    # Validate score types and ranges
+    if not isinstance(rep["domestic_score"], (int, float)):
+        raise ValueError("domestic_score must be a number")
+    if not isinstance(rep["international_score"], (int, float)):
+        raise ValueError("international_score must be a number")
+    if not 0 <= rep["domestic_score"] <= 10:
+        raise ValueError("domestic_score must be between 0 and 10")
+    if not 0 <= rep["international_score"] <= 10:
+        raise ValueError("international_score must be between 0 and 10")
+    
+    # Validate rationale types and lengths
+    if not isinstance(rep["domestic_score_rationale"], str):
+        raise ValueError("domestic_score_rationale must be a string")
+    if not isinstance(rep["international_score_rationale"], str):
+        raise ValueError("international_score_rationale must be a string")
+    if len(rep["domestic_score_rationale"]) < 10:
+        raise ValueError("domestic_score_rationale must be at least 10 characters")
+    if len(rep["international_score_rationale"]) < 10:
+        raise ValueError("international_score_rationale must be at least 10 characters")
+    
+    return entry
+
+def validate_section_response(section: Dict[str, Any]) -> Dict[str, Any]:
+    """Validate a section response from the resume analysis."""
+    required_fields = ["type", "points"]
+    
+    # Check if all required fields are present
+    missing_fields = [field for field in required_fields if field not in section]
+    if missing_fields:
+        raise ValueError(f"Missing required fields: {', '.join(missing_fields)}")
+    
+    # Validate type
+    if not isinstance(section["type"], str):
+        raise ValueError("type must be a string")
+    
+    # Validate points
+    if not isinstance(section["points"], list):
+        raise ValueError("points must be a list")
+    
+    # Validate each point based on section type
+    if section["type"] == "Education":
+        section["points"] = [validate_education_entry(point) for point in section["points"]]
+    else:
+        section["points"] = [validate_resume_point(point) for point in section["points"]]
+    
+    return section
 
 def validate_job_match_response(response: Dict[str, Any]) -> Dict[str, Any]:
     """

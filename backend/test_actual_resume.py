@@ -8,6 +8,9 @@ import time
 import re
 import textwrap
 
+# Get the absolute path to the backend directory
+BACKEND_DIR = Path(__file__).parent.absolute()
+
 def clean_text(text: str) -> str:
     """Clean text by removing extra whitespace and normalizing line breaks."""
     # Replace multiple spaces and newlines with a single space
@@ -40,9 +43,9 @@ def read_text_file(file_path: str) -> str:
 
 async def test_resume_analysis():
     """Test resume analysis with an actual resume and job description."""
-    # File paths
-    resume_path = "tests/data/resumes/Resume - Vinod Krishna .pdf"
-    job_desc_path = "tests/data/job_descriptions/sample_job_Vinod_1.txt"
+    # File paths - using absolute paths from backend directory
+    resume_path = BACKEND_DIR / "tests" / "data" / "resumes" / "Resume - Vinod Krishna .pdf"
+    job_desc_path = BACKEND_DIR / "tests" / "data" / "job_descriptions" / "sample_job_Vinod_1.txt"
     
     try:
         # Start timing
@@ -50,11 +53,11 @@ async def test_resume_analysis():
         
         # Read resume content
         print(f"\n📄 Reading resume from: {resume_path}")
-        resume_text = read_pdf_content(resume_path)
+        resume_text = read_pdf_content(str(resume_path))
         
         # Read job description
         print(f"\n📋 Reading job description from: {job_desc_path}")
-        job_description = read_text_file(job_desc_path)
+        job_description = read_text_file(str(job_desc_path))
         
         print("\n📝 Files loaded successfully!")
         print("\n--- First 500 characters of resume ---")
@@ -154,9 +157,10 @@ async def test_resume_analysis():
                                 print(f"    STAR Format: {'✅' if star.get('complete') else '❌'}")
                                 if not star.get("complete"):
                                     print("    Missing STAR components:")
-                                    for component in ["situation", "task", "action", "result"]:
+                                    for component in ["situation", "action", "result"]:
                                         if not star.get(component):
                                             print(f"      - {component.title()}")
+                                            print(f"        Rationale: {star.get(f'{component}_rationale', 'No rationale provided')}")
                             if "metrics" in point and point["metrics"]:
                                 print(f"    📊 Metrics found: {', '.join(point['metrics'])}")
                             if "technical_score" in point:
