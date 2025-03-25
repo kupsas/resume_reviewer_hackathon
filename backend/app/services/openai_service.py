@@ -156,11 +156,7 @@ class OpenAIService:
         if client:
             self.client = client
         else:
-            self.client = AsyncOpenAI(
-                api_key=settings.OPENAI_API_KEY,
-                max_retries=3,
-                timeout=60.0
-            )
+            self.client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
 
     @tenacity.retry(
         stop=tenacity.stop_after_attempt(3),
