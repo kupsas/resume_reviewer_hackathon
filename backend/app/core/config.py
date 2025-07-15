@@ -11,11 +11,11 @@ class Settings(BaseSettings):
     """Application settings."""
     # OpenAI settings
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
-    OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-2024-08-06")
+    OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4.1-mini-2025-04-14")
     
     # Token cost settings (per token)
-    COST_PER_INPUT_TOKEN: float = 0.00001  # $0.01 per 1K input tokens
-    COST_PER_OUTPUT_TOKEN: float = 0.00003  # $0.03 per 1K output tokens
+    COST_PER_INPUT_TOKEN: float = 0.0004  # $0.4 per 1M input tokens
+    COST_PER_OUTPUT_TOKEN: float = 0.0016  # $1.6 per 1M output tokens
     
     # API settings
     API_HOST: str = os.getenv("API_HOST", "localhost")
