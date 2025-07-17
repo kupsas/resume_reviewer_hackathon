@@ -47,3 +47,9 @@ backend/tests/data/
 
 # Test Data
 *.pdf 
+
+# Planning Documents
+cache_improvement_plan.md
+
+ResumeReviewer.git/
+ResumeReviewer.git.bfg-report/

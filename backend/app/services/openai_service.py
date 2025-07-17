@@ -6,6 +6,7 @@ import httpx
 from openai import AsyncOpenAI
 from app.core.config import settings
 import tenacity
+from app.services.cache import make_cache_key, get_cache_backend
 
 logger = logging.getLogger(__name__)
 
@@ -159,6 +160,8 @@ class OpenAIService:
             self.client = client
         else:
             self.client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+        # Initialize the cache (in-memory for dev; swap to RedisCache for prod)
+        self.cache = get_cache_backend()
 
     @tenacity.retry(
         stop=tenacity.stop_after_attempt(3),
@@ -169,13 +172,17 @@ class OpenAIService:
     async def analyze_resume_content(self, resume_text: str) -> Dict[str, Any]:
         """
         Analyze resume content using function calling.
-        
-        Args:
-            resume_text: The text content of the resume
-            
-        Returns:
-            Dict containing analysis results and token usage
+        Uses cache to avoid redundant OpenAI calls for the same resume.
         """
+        # Generate a cache key from the resume text
+        cache_key = make_cache_key(resume_text)
+        # Check the cache first
+        cached_result = self.cache.get(cache_key)
+        if cached_result is not None:
+            logger.info(f"Returning cached resume analysis for key: {cache_key}")
+            return cached_result
+
+        # If not cached, proceed with OpenAI call
         try:
             response = await self.client.chat.completions.create(
                 model="gpt-4o-2024-08-06",
@@ -214,8 +221,7 @@ class OpenAIService:
             
             # Parse the function call response
             function_response = json.loads(response.choices[0].message.function_call.arguments)
-            
-            return {
+            result = {
                 "status": "success",
                 "content": function_response,
                 "token_usage": {
@@ -228,6 +234,10 @@ class OpenAIService:
                     )
                 }
             }
+            # Store the result in cache (24h TTL)
+            self.cache.set(cache_key, result, ttl=86400)
+            logger.info(f"Cached resume analysis for key: {cache_key}")
+            return result
             
         except Exception as e:
             logger.error(f"Error in analyze_resume_content: {str(e)}", exc_info=True)
