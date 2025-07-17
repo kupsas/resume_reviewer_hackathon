@@ -61,7 +61,6 @@ class RedisCache(CacheBase):
     Connects to a Redis server using environment variables for configuration.
     """
     def __init__(self):
-       def __init__(self):
         redis_url = os.getenv('REDIS_URL')
         if redis_url:
             # Parse the URL
