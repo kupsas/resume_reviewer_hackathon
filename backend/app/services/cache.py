@@ -4,6 +4,7 @@ import hashlib
 import logging
 from typing import Any, Optional
 import os
+from urllib.parse import urlparse
 import redis  # Add the redis import
 
 logger = logging.getLogger(__name__)
@@ -60,22 +61,30 @@ class RedisCache(CacheBase):
     Connects to a Redis server using environment variables for configuration.
     """
     def __init__(self):
-        # Read connection info from environment variables (with sensible defaults)
-        redis_host = os.getenv('REDIS_HOST', 'localhost')
-        redis_port = int(os.getenv('REDIS_PORT', 6379))
-        redis_password = os.getenv('REDIS_PASSWORD', None)
-        redis_db = int(os.getenv('REDIS_DB', 0))
-        self.ttl = int(os.getenv('CACHE_TTL', 86400))  # Default: 24 hours
-
-        # Connect to Redis
+       def __init__(self):
+        redis_url = os.getenv('REDIS_URL')
+        if redis_url:
+            # Parse the URL
+            parsed = urlparse(redis_url)
+            redis_host = parsed.hostname
+            redis_port = parsed.port
+            redis_password = parsed.password
+            redis_db = int(parsed.path.lstrip('/')) if parsed.path else 0
+        else:
+            # Fallback to individual env vars
+            redis_host = os.getenv('REDIS_HOST', 'localhost')
+            redis_port = int(os.getenv('REDIS_PORT', 6379))
+            redis_password = os.getenv('REDIS_PASSWORD', None)
+            redis_db = int(os.getenv('REDIS_DB', 0))
+        self.ttl = int(os.getenv('CACHE_TTL', 86400))
         self.redis = redis.Redis(
             host=redis_host,
             port=redis_port,
             password=redis_password,
             db=redis_db,
-            decode_responses=True  # Store values as strings (not bytes)
+            decode_responses=True
         )
-        logger.info(f"RedisCache initialized (prod mode) at {redis_host}:{redis_port} (db={redis_db})")
+        logger.info(f"RedisCache initialized at {redis_host}:{redis_port} (db={redis_db})")
 
     def get(self, key: str) -> Optional[Any]:
         value = self.redis.get(key)
