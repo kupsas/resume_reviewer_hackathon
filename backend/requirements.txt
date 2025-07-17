@@ -13,6 +13,7 @@ aiohttp==3.9.3  # For async HTTP requests
 tiktoken==0.6.0  # For token counting
 httpx==0.24.1  # Required for OpenAI client
 tenacity>=8.2.3  # For retry logic
+redis>=4.0.0 # For Redis cache
 
 # Testing dependencies
 pytest==8.0.2
