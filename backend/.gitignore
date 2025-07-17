@@ -1,0 +1,3 @@
+# SSL/TLS Certificate Keys
+*.pem
+key.pem
